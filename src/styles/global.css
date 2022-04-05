@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Arsenica', serif;
+  --font-mono: Source Code Pro, monospace;
+  --font-dyslexic: OpenDyslexic, sans-serif;
+  --font-dyslexic-mono: OpenDyslexic Mono, monospace;
+  --font-16: 1.6rem;
+  --font-24: 2.4rem;
+  --font-32: 3.2rem;
+  --font-48: 4.8rem;
+  --font-96: 9.6rem;
+
+  --spacing-4: 0.4rem;
+  --spacing-8: 0.8rem;
+  --spacing-16: 1.6rem;
+  --spacing-24: 2.4rem;
+  --spacing-32: 3.2rem;
+  --spacing-64: 6.4rem;
+  --spacing-128: 12.8rem;
+
+  --clr-primary: hsl(173 100% 66%);
+  --clr-bg: hsl(210 7% 11%);
+  --clr-txt: hsl(0 0% 98%);
+
+  --clr-hero-txt-muted: hsl(174 27% 73%);
+  --clr-hero-bg: 'gradient';
+
+  --clr-hero-divider-bg: hsl(0 0% 21%);
+  --clr-input-bg: hsl(210 13% 24%);
+  --clr-input-text: hsl(177 100% 15%);
+  --clr-input-placeholder-txt: hsl(210 13% 50%);
+
+  --clr-card-bg: 'gradient';
+  --clr-card-views-bg: hsl(198 10% 75%);
+  --clr-card-txt-muted: hsl(0 0% 78%);
+
+  --clr-footer-bg: 'gradient';
+  --clr-footer-txt-muted: hsl(0 0% 78%);
+
+  --shadow-sm: 0px 0px 4px 4px hsl(0 0% 0% / 4%);
+  --shadow-md: 0px 0px 10px 4px hsl(0 0% 0% / 10%);
+  --shadow-lg: 0px 0px 20px 8px hsl(0 0% 0% / 20%);
+
+  --rounded-4: 4px;
+  --rounded-20: 20px;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poppins/Poppins-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/poppins/Poppins-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/poppins/Poppins-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/poppins/Poppins-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Arsenica';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/arsenica/Arsenica-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/source-code-pro/SourceCodePro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/source-code-pro/SourceCodePro-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/openDyslexic/OpenDyslexic-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/openDyslexic/OpenDyslexic-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/openDyslexic/OpenDyslexicMono-Regular.woff2') format('woff2');
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-16);
+  color: var(--clr-txt);
+  background-color: var(--clr-bg);
+
+  max-width: 80ch;
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+}
+
+h1 {
+  font-size: var(--font-48);
+  line-height: 64px;
+}
+
+h2 {
+  font-size: var(--font-32);
+  line-height: 48px;
+}
+
+h3 {
+  font-size: var(--font-24);
+  line-height: 32px;
+}
+
+p {
+  line-height: 32px;
+}
+
+img,
+svg,
+video,
+iframe {
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+img,
+iframe {
+  border-radius: var(--rounded-20);
+}
