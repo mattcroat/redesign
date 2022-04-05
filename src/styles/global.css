@@ -31,7 +31,11 @@
   --clr-txt: hsl(0 0% 98%);
 
   --clr-hero-txt-muted: hsl(174 27% 73%);
-  --clr-hero-bg: 'gradient';
+  --clr-hero-bg: linear-gradient(
+    270deg,
+    hsl(210 15% 13%) 43%,
+    hsl(176 19% 15%) 66%
+  );
 
   --clr-hero-divider-bg: hsl(0 0% 21%);
   --clr-input-bg: hsl(210 13% 24%);
@@ -147,13 +151,12 @@ body {
   font-size: var(--font-16);
   color: var(--clr-txt);
   background-color: var(--clr-bg);
-
-  max-width: 80ch;
 }
 
 h1,
 h2 {
   font-family: var(--font-serif);
+  text-transform: capitalize;
 }
 
 h1 {
