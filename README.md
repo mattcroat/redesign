@@ -1,3 +1,3 @@
-# Joy of Code
+# Redesign
 
-Joy of Code frontend redesign.
+Work in progress.
