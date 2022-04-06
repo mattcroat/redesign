@@ -84,7 +84,24 @@
         <h2>Subscribe for updates</h2>
         <form>
           <input type="email" placeholder="you@example.com" />
-          <button type="submit">Subscribe</button>
+          <button type="submit">
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            <span>Subscribe</span>
+          </button>
         </form>
         <p>Subscribe to the <a href="/">RSS feed</a> instead.</p>
       </div>
@@ -135,7 +152,7 @@
     display: grid;
     grid-template-columns: repeat(12, [column-start] 1fr);
     column-gap: var(--spacing-24);
-    margin: var(--spacing-64) 0;
+    /* margin: var(--spacing-64) 0; */
     padding: var(--spacing-32) 0;
     background: var(--clr-hero-bg);
     border-radius: var(--rounded-20);
@@ -160,7 +177,15 @@
   }
 
   .latest-post .continue-reading {
+    width: max-content;
+    display: flex;
+    align-items: center;
     margin-top: var(--spacing-32);
+  }
+
+  .latest-post a {
+    display: flex;
+    gap: var(--spacing-16);
   }
 
   .divider {
@@ -170,22 +195,44 @@
   }
 
   .newsletter {
+    min-width: 360px;
     display: grid;
     place-content: center;
     grid-auto-rows: min-content;
     grid-column: column-start 8 / span 4;
   }
 
-  /* sort out link styles baka */
-
-  a {
-    color: var(--clr-text);
-    font-weight: 700;
-    text-decoration: none;
+  .newsletter form {
+    display: flex;
+    height: 48px;
+    margin: var(--spacing-16) 0;
+    border-radius: var(--rounded-20);
+    box-shadow: var(--shadow-sm);
   }
 
-  .latest-post a {
+  .newsletter input {
+    width: 100%;
+    padding: var(--spacing-8) var(--spacing-16);
+    background-color: var(--clr-input-bg);
+    border-radius: var(--rounded-4) 0 0 var(--rounded-4);
+  }
+
+  .newsletter input::placeholder {
+    color: var(--clr-input-placeholder-txt);
+  }
+
+  .newsletter button {
     display: flex;
-    gap: var(--spacing-16);
+    gap: var(--spacing-4);
+    align-items: center;
+    padding: var(--spacing-8);
+    color: var(--clr-input-txt);
+    background-color: var(--clr-primary);
+    font-weight: 700;
+    border-radius: 0 var(--rounded-4) var(--rounded-4) 0;
+  }
+
+  .newsletter p {
+    color: var(--clr-hero-txt-muted);
   }
 </style>
