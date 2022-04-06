@@ -51,7 +51,7 @@
   </header>
 
   <main>
-    <div class="hero">
+    <section class="hero">
       <div class="latest-post">
         <span class="kicker">Latest post</span>
         <h1 class="title">TypeScript fundamentals</h1>
@@ -105,14 +105,52 @@
         </form>
         <p>Subscribe to the <a href="/">RSS feed</a> instead.</p>
       </div>
-    </div>
+    </section>
+
+    <section class="popular">
+      <h3>Popular</h3>
+      <div class="cards">
+        <a href="/">
+          <article class="card">
+            <span class="views">
+              <svg
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              <span>9,000</span>
+            </span>
+            <div class="details">
+              <span class="title">TypeScript Fundamentals</span>
+              <p class="description">
+                Learn how TypeScript can help you with the ladies.
+              </p>
+            </div>
+          </article>
+        </a>
+      </div>
+    </section>
   </main>
 </div>
 
 <style>
   .grid {
     max-width: 1200px;
-    /* height: 100%; useless because auto rows */
     display: grid;
     column-gap: var(--spacing-24);
     margin: 0 auto;
@@ -127,7 +165,7 @@
   header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: var(--spacing-32) 0;
+    margin-top: var(--spacing-32);
   }
 
   .logo {
@@ -139,8 +177,8 @@
 
   nav {
     display: flex;
-    margin-left: auto;
     gap: var(--spacing-16);
+    margin-left: auto;
   }
 
   .preferences,
@@ -152,7 +190,7 @@
     display: grid;
     grid-template-columns: repeat(12, [column-start] 1fr);
     column-gap: var(--spacing-24);
-    /* margin: var(--spacing-64) 0; */
+    margin-top: var(--spacing-64);
     padding: var(--spacing-32) 0;
     background: var(--clr-hero-bg);
     border-radius: var(--rounded-20);
@@ -234,5 +272,66 @@
 
   .newsletter p {
     color: var(--clr-hero-txt-muted);
+  }
+
+  .popular {
+    margin-top: var(--spacing-64);
+  }
+
+  .cards {
+    display: grid;
+    gap: var(--spacing-24);
+    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+    margin-top: var(--spacing-32);
+  }
+
+  .cards a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .cards a::before {
+    content: none;
+  }
+
+  .card {
+    height: 400px;
+    display: grid;
+    grid-template-rows: min-content;
+    padding: var(--spacing-16);
+    background-image: var(--clr-card-bg);
+    border-radius: var(--rounded-20);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card .views {
+    display: flex;
+    gap: var(--spacing-4);
+    font-weight: 500;
+    color: var(--clr-card-txt-muted);
+  }
+
+  .card .details {
+    align-self: end;
+  }
+
+  .card .title {
+    margin-bottom: var(--spacing-8);
+    font-family: var(--font-serif);
+    font-size: var(--font-32);
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  .card .description {
+    color: var(--clr-card-txt-muted);
   }
 </style>

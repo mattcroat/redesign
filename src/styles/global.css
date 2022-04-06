@@ -42,7 +42,7 @@
   --clr-input-txt: hsl(177 100% 15%);
   --clr-input-placeholder-txt: hsl(210 13% 50%);
 
-  --clr-card-bg: 'gradient';
+  --clr-card-bg: linear-gradient(180deg, #222727 0%, #222427 100%);
   --clr-card-views-bg: hsl(198 10% 75%);
   --clr-card-txt-muted: hsl(0 0% 78%);
 
@@ -164,7 +164,7 @@ body {
 
 body::after {
   content: '';
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-color: hsl(0 0% 0% / 20%);
   z-index: -1;
