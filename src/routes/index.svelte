@@ -16,7 +16,9 @@
 
 <div class="grid">
   <header>
-    <div class="logo">Joy of Code</div>
+    <div class="logo">
+      <a href="/">Joy of Code</a>
+    </div>
 
     <nav>
       <div class="preferences">
@@ -163,6 +165,10 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;
+  }
+
+  .logo a::before {
+    content: none;
   }
 
   nav {
