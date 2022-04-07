@@ -325,7 +325,7 @@
     width: 240px;
     height: 240px;
     position: absolute;
-    top: -25%;
+    top: -20%;
     right: 25%;
     background-image: linear-gradient(
       120deg,
