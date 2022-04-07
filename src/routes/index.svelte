@@ -82,6 +82,60 @@
       <h3 slot="title">Picks</h3>
     </Posts>
   </main>
+
+  <footer>
+    <div class="categories">
+      <p>Categories</p>
+      <ul>
+        <li><a href="/javascript">JavaScript</a></li>
+        <li><a href="/react">React</a></li>
+        <li><a href="/css">CSS</a></li>
+        <li><a href="/general">General</a></li>
+        <li><a href="/design">Design</a></li>
+        <li><a href="/git">Git & GitHub</a></li>
+        <li><a href="/next">Next.js</a></li>
+        <li><a href="/typescript">TypeScript</a></li>
+        <li><a href="/svelte">Svelte</a></li>
+      </ul>
+    </div>
+
+    <div class="follow">
+      <p>Follow</p>
+      <ul>
+        <li><a href="/newsletter">Newsletter</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li>
+          <a href="https://www.youtube.com/c/joyofcodedev" target="_blank">
+            YouTube
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/joyofcodedev" target="_blank">Twitter</a>
+        </li>
+        <li>
+          <a href="https://github.com/mattcroat" target="_blank">GitHub</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="other">
+      <p>Other</p>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/uses">Uses</a></li>
+      </ul>
+    </div>
+
+    <figure>
+      <blockquote>
+        <span>
+          “Talent is a pursued interest. Anything that you're willing to
+          practice, you can do.”
+        </span>
+      </blockquote>
+      <figcaption>— Bob Ross</figcaption>
+    </figure>
+  </footer>
 </div>
 
 <style>
@@ -208,5 +262,81 @@
 
   .newsletter p {
     color: var(--clr-hero-txt-muted);
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: repeat(12, [column-start] 1fr);
+    column-gap: var(--spacing-24);
+    margin-top: var(--spacing-64);
+    padding: var(--spacing-32);
+    background-color: var(--clr-footer-bg);
+    border-radius: var(--rounded-20) var(--rounded-20) 0 0;
+  }
+
+  footer p {
+    font-weight: 700;
+  }
+
+  footer ul {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    row-gap: var(--spacing-16);
+    margin-top: var(--spacing-16);
+  }
+
+  footer .categories {
+    grid-column: column-start 1 / span 4;
+  }
+
+  footer .follow {
+    grid-column: column-start 5 / span 2;
+  }
+
+  footer .other {
+    grid-column: column-start 7 / span 2;
+  }
+
+  footer li a {
+    font-weight: inherit;
+    color: var(--clr-footer-txt-muted);
+  }
+
+  footer li a:hover {
+    color: var(--clr-primary);
+  }
+
+  footer figure {
+    position: relative;
+    align-self: center;
+    grid-column: column-start 9 / -1;
+    z-index: 1;
+  }
+
+  footer figure::before {
+    content: '';
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    top: -25%;
+    right: 25%;
+    background-image: linear-gradient(
+      120deg,
+      hsl(270, 70%, 40%),
+      hsl(225, 74%, 58%)
+    );
+    border-radius: 100%;
+    z-index: -1;
+  }
+
+  footer blockquote {
+    font-size: var(--font-32);
+    font-family: var(--font-serif);
+    text-shadow: 2px 2px 10px hsl(0 0% 0% / 10%);
+  }
+
+  footer figcaption {
+    margin-top: var(--spacing-4);
   }
 </style>

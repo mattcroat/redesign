@@ -46,7 +46,7 @@
   --clr-card-views-bg: hsl(198 10% 75%);
   --clr-card-txt-muted: hsl(0 0% 78%);
 
-  --clr-footer-bg: 'gradient';
+  --clr-footer-bg: hsl(210 5% 7%);
   --clr-footer-txt-muted: hsl(0 0% 78%);
 
   --clr-link-txt: hsl(0 100% 98%);
@@ -197,12 +197,11 @@ p {
 
 a {
   position: relative;
-  color: var(--clr-primary);
+  color: var(--clr-link-txt);
   font-weight: 700;
   text-decoration: none;
   transition: color 0.3s ease;
   z-index: 1;
-  color: var(--clr-link-txt);
 }
 
 a:hover {
@@ -240,6 +239,11 @@ input {
 
 button {
   cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 img,
