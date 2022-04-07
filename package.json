@@ -12,5 +12,8 @@
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "svelte": "^3.44.0"
+  },
+  "dependencies": {
+    "@rgossiaux/svelte-heroicons": "^0.1.2"
   }
 }
