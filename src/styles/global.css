@@ -167,7 +167,16 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background-color: hsl(0 0% 0% / 40%);
+  background-color: hsl(0 0% 0% / 60%);
+  z-index: -1;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--clr-primary), var(--clr-bg));
+  opacity: 0.4;
   z-index: -1;
 }
 
