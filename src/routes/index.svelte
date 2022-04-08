@@ -129,6 +129,7 @@
     </div>
 
     <figure>
+      <div class="decorative" />
       <blockquote>
         <span>
           “Talent is a pursued interest. Anything that you're willing to
@@ -144,10 +145,11 @@
   .grid {
     max-width: 1200px;
     display: grid;
-    column-gap: var(--spacing-24);
-    margin: 0 auto;
     grid-template-columns: repeat(12, [column-start] 1fr);
     grid-auto-rows: minmax(min-content, max-content);
+    column-gap: var(--spacing-24);
+    margin: 0 auto;
+    padding: 0 var(--spacing-16);
   }
 
   .grid > * {
@@ -183,18 +185,11 @@
   }
 
   .hero {
-    display: grid;
-    grid-template-columns: repeat(12, [column-start] 1fr);
-    column-gap: var(--spacing-24);
     margin-top: var(--spacing-64);
-    padding: var(--spacing-32) 0;
+    padding: var(--spacing-24);
     background: var(--clr-hero-bg);
     border-radius: var(--rounded-20);
     box-shadow: var(--shadow-sm);
-  }
-
-  .latest-post {
-    grid-column: column-start 2 / span 4;
   }
 
   .latest-post .kicker {
@@ -223,17 +218,12 @@
   }
 
   .divider {
-    grid-column: column-start 7 / span 1;
-    justify-self: center;
-    border-left: 1px solid var(--clr-hero-divider-bg);
+    border-bottom: 1px solid var(--clr-hero-divider-bg);
+    margin: var(--spacing-32) 0;
   }
 
   .newsletter {
-    min-width: 360px;
-    display: grid;
-    place-content: center;
-    grid-auto-rows: min-content;
-    grid-column: column-start 8 / span 4;
+    width: min(360px);
   }
 
   .newsletter form {
@@ -270,14 +260,52 @@
     color: var(--clr-hero-txt-muted);
   }
 
+  @media (min-width: 860px) {
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(12, [column-start] 1fr);
+      column-gap: var(--spacing-24);
+    }
+
+    .latest-post {
+      grid-column: column-start 2 / span 4;
+    }
+
+    .divider {
+      grid-column: column-start 7 / span 1;
+      justify-self: center;
+      margin: 0;
+      border-left: 1px solid var(--clr-hero-divider-bg);
+      border-bottom: none;
+    }
+
+    .newsletter {
+      display: grid;
+      place-content: center;
+      grid-auto-rows: min-content;
+      grid-column: column-start 8 / span 4;
+    }
+  }
+
+  @media (min-width: 1240px) {
+    .grid {
+      padding: 0;
+    }
+  }
+
   footer {
     display: grid;
     grid-template-columns: repeat(12, [column-start] 1fr);
     column-gap: var(--spacing-24);
+    row-gap: var(--spacing-32);
     margin-top: var(--spacing-64);
     padding: var(--spacing-32);
     background-color: var(--clr-footer-bg);
     border-radius: var(--rounded-20) var(--rounded-20) 0 0;
+  }
+
+  footer > * {
+    grid-column: column-start 1 / span 12;
   }
 
   footer p {
@@ -285,23 +313,13 @@
   }
 
   footer ul {
+    width: max-content;
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: column;
+    column-gap: var(--spacing-32);
     row-gap: var(--spacing-16);
     margin-top: var(--spacing-16);
-  }
-
-  footer .categories {
-    grid-column: column-start 1 / span 4;
-  }
-
-  footer .follow {
-    grid-column: column-start 5 / span 2;
-  }
-
-  footer .other {
-    grid-column: column-start 7 / span 2;
   }
 
   footer li a {
@@ -314,26 +332,27 @@
   }
 
   footer figure {
-    position: relative;
-    align-self: center;
-    grid-column: column-start 9 / -1;
-    z-index: 1;
+    max-width: 400px;
+    display: grid;
+    align-items: center;
+    justify-self: center;
   }
 
-  footer figure::before {
-    content: '';
+  footer figure > * {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+
+  footer figure .decorative {
     width: 240px;
     height: 240px;
-    position: absolute;
-    top: -20%;
-    right: 25%;
+    justify-self: center;
     background-image: linear-gradient(
       120deg,
       hsl(270, 70%, 40%),
       hsl(225, 74%, 58%)
     );
     border-radius: 100%;
-    z-index: -1;
   }
 
   footer blockquote {
@@ -343,6 +362,35 @@
   }
 
   footer figcaption {
-    margin-top: var(--spacing-4);
+    align-self: end;
+  }
+
+  @media (min-width: 860px) {
+    footer ul {
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    footer figure {
+      grid-column: column-start 9 / -1;
+    }
+
+    footer .categories {
+      grid-column: column-start 1 / span 4;
+    }
+
+    footer .follow {
+      grid-column: column-start 5 / span 2;
+    }
+
+    footer .other {
+      grid-column: column-start 7 / span 2;
+    }
+  }
+
+  @media (min-width: 1240px) {
+    footer ul {
+      width: auto;
+      column-gap: 0;
+    }
   }
 </style>
