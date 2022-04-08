@@ -159,10 +159,21 @@ body {
     linear-gradient(hsl(0, 0%, 10%) 2%, hsl(270, 70%, 40%), hsl(225, 74%, 58%));
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: 100% -100%;
 }
 
+body::after {
+  content: '';
+  /* position: fixed; */
+  position: absolute;
+  inset: 0;
+  /* background-color: hsl(0 0% 0% / 60%); */
+  background-image: linear-gradient(transparent, var(--clr-bg));
+  z-index: -1;
+}
+
+/* 
 body::after {
   content: '';
   position: fixed;
@@ -178,7 +189,7 @@ body::before {
   background-image: radial-gradient(var(--clr-primary), var(--clr-bg));
   opacity: 0.4;
   z-index: -1;
-}
+} */
 
 h1,
 h2 {
