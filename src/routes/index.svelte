@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Posts from '$root/components/posts.svelte'
+  import Posts from '$root/components/ui/posts.svelte'
   import { posts } from '$root/data/posts.json'
 
   import {
