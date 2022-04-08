@@ -193,7 +193,7 @@
   }
 
   .latest-post .kicker {
-    color: var(--clr-hero-txt-muted);
+    color: var(--clr-hero-txt);
   }
 
   .latest-post .title {
@@ -202,7 +202,7 @@
   }
 
   .latest-post .description {
-    color: var(--clr-hero-txt-muted);
+    color: var(--clr-hero-txt);
   }
 
   .latest-post .continue-reading {
@@ -223,14 +223,15 @@
   }
 
   .newsletter {
-    width: min(360px);
+    max-width: 360px;
   }
 
   .newsletter form {
     display: flex;
     height: 48px;
     margin: var(--spacing-16) 0;
-    border-radius: var(--rounded-20);
+    border-radius: var(--rounded-4);
+    border: 1px solid hsl(0 0% 21%);
     box-shadow: var(--shadow-sm);
   }
 
@@ -257,7 +258,7 @@
   }
 
   .newsletter p {
-    color: var(--clr-hero-txt-muted);
+    color: var(--clr-hero-txt);
   }
 
   @media (min-width: 860px) {
@@ -324,7 +325,7 @@
 
   footer li a {
     font-weight: inherit;
-    color: var(--clr-footer-txt-muted);
+    color: var(--clr-footer-txt);
   }
 
   footer li a:hover {

@@ -76,7 +76,7 @@
     display: flex;
     gap: var(--spacing-4);
     font-weight: 500;
-    color: var(--clr-card-txt-muted);
+    color: var(--clr-card-txt);
   }
 
   .card .details {
@@ -84,7 +84,6 @@
   }
 
   .card .title {
-    margin-bottom: var(--spacing-8);
     font-family: var(--font-serif);
     font-size: var(--font-32);
     font-weight: 700;
@@ -92,7 +91,8 @@
   }
 
   .card .description {
-    color: var(--clr-card-txt-muted);
+    margin-top: var(--spacing-8);
+    color: var(--clr-card-txt);
   }
 
   :global([slot='see-more']) {
