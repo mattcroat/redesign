@@ -193,6 +193,7 @@
   }
 
   .latest-post .kicker {
+    font-weight: 500;
     color: var(--clr-hero-txt);
   }
 
