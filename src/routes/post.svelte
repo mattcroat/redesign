@@ -143,9 +143,18 @@
 		list-style-position: inside;
 	}
 
+	.prose ul + ol,
+	.prose ol + ul {
+		margin-top: var(--spacing-32);
+	}
+
+	.prose li a {
+		font-weight: inherit;
+	}
+
 	.prose ul li::before {
 		content: '👉️';
-		padding-right: 10px;
+		padding-right: var(--spacing-8);
 	}
 
 	.prose li > ul {
