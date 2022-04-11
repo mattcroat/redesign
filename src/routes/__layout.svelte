@@ -12,12 +12,12 @@
 
 <style>
   :global(.grid) {
+    height: 100%;
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(12, [column-start] 1fr);
-    grid-auto-rows: minmax(min-content, max-content);
     column-gap: var(--spacing-24);
-    margin: 0 auto;
+    margin-inline: auto;
     padding: 0 var(--spacing-16);
   }
 
