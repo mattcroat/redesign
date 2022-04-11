@@ -1,3 +1,7 @@
+<script lang="ts">
+	import Card from '$root/components/ui/card.svelte'
+</script>
+
 <svelte:head>
 	<title>Post</title>
 </svelte:head>
@@ -21,6 +25,8 @@
 		<li><a href="/">Section</a></li>
 		<li><a href="/">Source</a></li>
 	</ul>
+
+	<Card preset="edit" />
 
 	<h2>Introduction</h2>
 
@@ -111,6 +117,9 @@
 		Before & After magazine, contesting the editor's earlier claim that Lorem
 		ipsum held no meaning.
 	</p>
+
+	<Card preset="edit" />
+	<Card preset="newsletter" />
 </main>
 
 <style>
@@ -191,12 +200,12 @@
 	}
 
 	@media (min-width: 860px) {
-		.prose {
+		:global(.prose) {
 			display: grid;
 			grid-template-columns: 1fr [gutter-start] 40px [content-start] 70ch [content-end] 40px [gutter-end] 1fr;
 		}
 
-		.prose > * {
+		:global(.prose > *) {
 			grid-column: content-start / content-end;
 		}
 
