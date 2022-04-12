@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Header from '$root/components/ui/header.svelte'
   import Footer from '$root/components/ui/footer.svelte'
   import '$root/styles/global.css'

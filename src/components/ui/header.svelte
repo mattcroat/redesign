@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { CogIcon, MenuAlt1Icon } from '@rgossiaux/svelte-heroicons/outline'
 </script>
 
