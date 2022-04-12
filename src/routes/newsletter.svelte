@@ -1,8 +1,9 @@
 <script lang="ts">
+  import Heading from '$root/components/ui/heading.svelte'
   import Newsletter from '$root/components/ui/newsletter.svelte'
 </script>
 
-<h1>Newsletter</h1>
+<Heading>Newsletter</Heading>
 
 <div class="newsletter">
   <h3>Subscribe for updates and tasty web development treats</h3>
@@ -10,14 +11,6 @@
 </div>
 
 <style>
-  h1 {
-    margin: var(--spacing-64) 0;
-    font-size: clamp(var(--font-48), 8vw, var(--font-96));
-    line-height: clamp(48px, 10vw, 112px);
-    color: var(--clr-primary);
-    text-align: center;
-  }
-
   .newsletter {
     display: grid;
     justify-items: center;
@@ -29,10 +22,6 @@
   }
 
   @media (min-width: 860px) {
-    h1 {
-      margin: var(--spacing-128) 0;
-    }
-
     .newsletter {
       display: grid;
       justify-items: center;
