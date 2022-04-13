@@ -10,6 +10,7 @@
   import Themes from './themes.svelte'
   import Reading from './reading.svelte'
   import Dyslexic from './dyslexic.svelte'
+  import Reset from './reset.svelte'
 </script>
 
 <Popover let:open class="popover">
@@ -44,24 +45,10 @@
           <span class="title">Preferences</span>
 
           <div class="options">
-            <div class="theme">
-              <span>Theme</span>
-              <Themes />
-            </div>
-
+            <Themes />
             <Reading />
-
-            <div class="dyslexia">
-              <label for="dyslexia">
-                <span>Use font for dyslexia</span>
-              </label>
-              <Dyslexic />
-            </div>
-
-            <div class="reset-preferences">
-              <span>Use default settings</span>
-              <button>Reset</button>
-            </div>
+            <Dyslexic />
+            <Reset />
           </div>
         </div>
       </PopoverPanel>
@@ -127,24 +114,15 @@
     padding: var(--spacing-24) 0;
   }
 
-  .preferences .options > *:not(:last-child) {
+  .preferences .options > :global(*:not(:last-child)) {
     border-bottom: 1px solid var(--clr-menu-border);
   }
 
-  .preferences .options > *:last-child {
+  .preferences .options > :global(*:last-child) {
     padding-bottom: 0;
   }
 
   .preferences .options span {
     max-width: 180px;
-  }
-
-  button {
-    padding: var(--spacing-8) var(--spacing-16);
-    font-weight: 700;
-    color: var(--clr-input-txt);
-    background-color: var(--clr-primary);
-    border-radius: var(--rounded-4);
-    box-shadow: var(--shadow-sm);
   }
 </style>
