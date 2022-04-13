@@ -123,6 +123,10 @@
 </main>
 
 <style>
+  .prose {
+    font-size: var(--post-txt-size);
+  }
+
   .prose h1 {
     margin: var(--spacing-64) 0;
     font-size: clamp(var(--font-48), 8vw, var(--font-96));
@@ -202,7 +206,14 @@
   @media (min-width: 860px) {
     :global(.prose) {
       display: grid;
-      grid-template-columns: 1fr [gutter-start] 40px [content-start] 70ch [content-end] 40px [gutter-end] 1fr;
+      grid-template-columns:
+        1fr
+        [gutter-start]
+        40px
+        [content-start] var(--post-txt-length) [content-end]
+        40px
+        [gutter-end]
+        1fr;
     }
 
     :global(.prose > *) {

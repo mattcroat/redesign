@@ -6,11 +6,10 @@
     PopoverPanel
   } from '@rgossiaux/svelte-headlessui'
   import { CogIcon } from '@rgossiaux/svelte-heroicons/outline'
-  import Themes from './themes.svelte'
-  import Dyslexic from './dyslexic.svelte'
 
-  let textSize = 16
-  let textLength = 60
+  import Themes from './themes.svelte'
+  import Reading from './reading.svelte'
+  import Dyslexic from './dyslexic.svelte'
 </script>
 
 <Popover let:open class="popover">
@@ -50,38 +49,9 @@
               <Themes />
             </div>
 
-            <div class="reading-size">
-              <label for="text-size">
-                <span>{textSize} pixels reading size</span>
-              </label>
-              <input
-                bind:value={textSize}
-                type="range"
-                name="text-size"
-                id="text-size"
-                min="16"
-                max="24"
-                step="2"
-              />
-            </div>
-
-            <div class="reading-length">
-              <label for="text-length">
-                <span>{textLength} characters reading length</span>
-              </label>
-              <input
-                bind:value={textLength}
-                type="range"
-                name="text-length"
-                id="text-length"
-                min="60"
-                max="100"
-                step="10"
-              />
-            </div>
+            <Reading />
 
             <div class="dyslexia">
-              <!-- todo: move label inside component -->
               <label for="dyslexia">
                 <span>Use font for dyslexia</span>
               </label>
@@ -89,7 +59,6 @@
             </div>
 
             <div class="reset-preferences">
-              <!-- todo: move label inside component -->
               <span>Use default settings</span>
               <button>Reset</button>
             </div>
@@ -150,7 +119,7 @@
     color: var(--clr-menu-text);
   }
 
-  .preferences .options > * {
+  .preferences .options > :global(*) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -177,22 +146,5 @@
     background-color: var(--clr-primary);
     border-radius: var(--rounded-4);
     box-shadow: var(--shadow-sm);
-  }
-
-  input[type='range'] {
-    appearance: none;
-    height: 4px;
-    background-color: hsl(0 0% 24%);
-    border-radius: var(--rounded-20);
-  }
-
-  input[type='range']::-webkit-slider-thumb {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    background-color: var(--clr-primary);
-    border-radius: 50%;
-    box-shadow: var(--shadow-sm);
-    cursor: pointer;
   }
 </style>

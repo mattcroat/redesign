@@ -59,6 +59,11 @@ ol {
 */
 
 :root {
+  /* Post */
+
+  --post-txt-size: 16px;
+  --post-txt-length: 60ch;
+
   /* Font */
 
   --font-sans: 'Poppins', sans-serif;
