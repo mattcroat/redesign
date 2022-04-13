@@ -134,6 +134,11 @@ ol {
   --clr-menu-arrow-bg: hsl(180 7% 14%);
   --clr-menu-border: hsl(0 0% 19%);
 
+  /* Theme */
+  --clr-theme-bg: hsl(0 0% 24%);
+  --clr-theme-txt: hsl(177 100% 15%);
+  --clr-theme-active: hsl(177 100% 80%);
+
   /* Shadows */
 
   --shadow-sm: 0px 0px 4px 4px hsl(0 0% 0% / 4%);

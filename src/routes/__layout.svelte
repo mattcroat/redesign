@@ -3,7 +3,9 @@
 
   import Header from '$root/components/ui/header.svelte'
   import Footer from '$root/components/ui/footer.svelte'
+
   import '$root/styles/global.css'
+  import '$root/styles/themes.css'
 
   let scrollY = 0
   const htmlElement = browser && document.documentElement

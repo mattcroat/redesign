@@ -6,6 +6,7 @@
     PopoverPanel
   } from '@rgossiaux/svelte-headlessui'
   import { CogIcon } from '@rgossiaux/svelte-heroicons/outline'
+  import Themes from './themes.svelte'
 
   let textSize = 16
   let textLength = 60
@@ -21,9 +22,9 @@
       <PopoverPanel class="popover-panel" static>
         <div class="preferences">
           <svg
-            class="arrow"
             width="24"
             height="24"
+            class="arrow"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +46,7 @@
           <div class="options">
             <div class="theme">
               <span>Theme</span>
-              <button>Theme</button>
+              <Themes />
             </div>
 
             <div class="reading-size">
