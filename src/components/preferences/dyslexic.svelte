@@ -24,21 +24,25 @@
   }
 </script>
 
-<SwitchGroup>
-  <div class="switch-container">
-    <Switch
-      checked={enabled}
-      on:change={handleChange}
-      class={enabled ? 'switch switch-enabled' : 'switch switch-disabled'}
-    >
-      <span
-        class="toggle"
-        class:toggle-on={enabled}
-        class:toggle-off={!enabled}
-      />
-    </Switch>
-  </div>
-</SwitchGroup>
+<div class="dyslexia">
+  <span>Use font for dyslexia</span>
+
+  <SwitchGroup>
+    <div class="switch-container">
+      <Switch
+        checked={enabled}
+        on:change={handleChange}
+        class={enabled ? 'switch switch-enabled' : 'switch switch-disabled'}
+      >
+        <span
+          class="toggle"
+          class:toggle-on={enabled}
+          class:toggle-off={!enabled}
+        />
+      </Switch>
+    </div>
+  </SwitchGroup>
+</div>
 
 <style>
   .switch-container {
