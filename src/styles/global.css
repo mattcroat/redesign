@@ -44,6 +44,8 @@ input {
 }
 
 button {
+  font: inherit;
+  background: none;
   cursor: pointer;
 }
 
@@ -129,6 +131,7 @@ ol {
     hsl(180 7% 14%) 0%,
     hsl(216 7% 14%) 100%
   );
+  --clr-menu-arrow-bg: hsl(180 7% 14%);
   --clr-menu-border: hsl(0 0% 19%);
 
   /* Shadows */
