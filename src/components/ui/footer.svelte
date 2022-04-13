@@ -84,6 +84,10 @@
     margin-top: var(--spacing-16);
   }
 
+  html[data-font='dyslexic'] footer ul {
+    grid-template-rows: repeat(5, 1fr);
+  }
+
   footer li a {
     font-weight: inherit;
     color: var(--clr-footer-txt);
@@ -125,6 +129,8 @@
 
   html[data-font='dyslexic'] footer blockquote {
     font-family: var(--font-dyslexic);
+    font-size: var(--font-24);
+    line-height: 32px;
   }
 
   footer figcaption {

@@ -288,6 +288,16 @@ html[data-font='dyslexic'] h3 {
   font-family: var(--font-dyslexic);
 }
 
+html[data-font='dyslexic'] h1 {
+  font-size: clamp(var(--font-24), 4vw, var(--font-32));
+  line-height: clamp(32px, 6vw, 48px);
+}
+
+html[data-font='dyslexic'] h2 {
+  font-size: var(--font-24);
+  line-height: 32px;
+}
+
 h1,
 h2 {
   font-family: var(--font-serif);

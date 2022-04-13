@@ -94,6 +94,8 @@
 
   html[data-font='dyslexic'] .card .title {
     font-family: var(--font-dyslexic);
+    font-size: var(--font-24);
+    line-height: 32px;
   }
 
   .card .description {
