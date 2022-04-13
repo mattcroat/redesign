@@ -123,6 +123,10 @@
     text-shadow: 2px 2px 10px hsl(0 0% 0% / 10%);
   }
 
+  html[data-font='dyslexic'] footer blockquote {
+    font-family: var(--font-dyslexic);
+  }
+
   footer figcaption {
     align-self: end;
   }

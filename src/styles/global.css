@@ -264,8 +264,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: 100% -100%;
-
-  transition: backdrop-filter 4s;
 }
 
 body::after {
@@ -281,6 +279,13 @@ body::after {
     use filter instead for firefox and a transition
   */
   backdrop-filter: blur(var(--blur-bg));
+}
+
+html[data-font='dyslexic'] body,
+html[data-font='dyslexic'] h1,
+html[data-font='dyslexic'] h2,
+html[data-font='dyslexic'] h3 {
+  font-family: var(--font-dyslexic);
 }
 
 h1,

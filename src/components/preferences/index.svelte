@@ -7,6 +7,7 @@
   } from '@rgossiaux/svelte-headlessui'
   import { CogIcon } from '@rgossiaux/svelte-heroicons/outline'
   import Themes from './themes.svelte'
+  import Dyslexic from './dyslexic.svelte'
 
   let textSize = 16
   let textLength = 60
@@ -80,13 +81,15 @@
             </div>
 
             <div class="dyslexia">
+              <!-- todo: move label inside component -->
               <label for="dyslexia">
                 <span>Use font for dyslexia</span>
               </label>
-              <input type="checkbox" name="dyslexia" id="dyslexia" />
+              <Dyslexic />
             </div>
 
             <div class="reset-preferences">
+              <!-- todo: move label inside component -->
               <span>Use default settings</span>
               <button>Reset</button>
             </div>
@@ -179,7 +182,7 @@
   input[type='range'] {
     appearance: none;
     height: 4px;
-    background: hsl(0 0% 24%);
+    background-color: hsl(0 0% 24%);
     border-radius: var(--rounded-20);
   }
 
@@ -187,7 +190,7 @@
     appearance: none;
     width: 16px;
     height: 16px;
-    background: var(--clr-primary);
+    background-color: var(--clr-primary);
     border-radius: 50%;
     box-shadow: var(--shadow-sm);
     cursor: pointer;
