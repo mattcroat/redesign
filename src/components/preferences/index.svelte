@@ -69,8 +69,6 @@
   }
 
   .preferences {
-    width: max-content;
-    max-width: 400px;
     background-image: var(--clr-menu-bg);
     padding: var(--spacing-24);
     border: 1px solid var(--clr-menu-border);
@@ -110,7 +108,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-64);
+    gap: var(--spacing-32);
     padding: var(--spacing-24) 0;
   }
 
@@ -124,5 +122,16 @@
 
   .preferences .options span {
     max-width: 180px;
+  }
+
+  @media (min-width: 480px) {
+    .preferences {
+      width: max-content;
+      max-width: 400px;
+    }
+
+    .preferences .options > :global(*) {
+      gap: var(--spacing-64);
+    }
   }
 </style>
