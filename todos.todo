@@ -1,0 +1,29 @@
+General:
+  ☐ Newsletter API
+  ☐ Page transitions
+  ☐ Background blur
+  ☐ RSS feed
+  ☐ Sitemap
+  ☐ Theming
+  ☐ Convert old posts from `.mdx` to `.md`
+  ☐ Set HTTP cache-control headers
+  ☐ Analytics
+  ☐ SEO
+  ☐ Sounds
+  ☐ Configure Vercel to not redeploy for `/posts` and `/data`
+
+Data fetching:
+  ☐ Latest post
+  ☐ Popular posts
+  ☐ Latest posts
+  ☐ Series
+  ☐ Random picks
+
+Posts:
+  Images:
+    - Get dimensions
+    - Make shorthand like "{% image (.*?) %}" that represents "url/image.webp" because I don't want to type out a long URL which could also be awesome for other things like <iframe> and <video>
+    - Able to set class on image to take grid gutter space
+  Markdown:
+    ☐ Setup Markdown and plugins
+    ☐ Copy code
