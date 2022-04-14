@@ -159,6 +159,7 @@ ol {
 
   --blur-bg: 0px;
   --blur-bg-opacity: 40%;
+  --blur-bg-opacity-unsupported: var(--blur-bg-opacity);
 }
 
 /*
@@ -267,23 +268,24 @@ body {
     linear-gradient(hsl(0, 0%, 10%) 2%, hsl(270, 70%, 40%), hsl(225, 74%, 58%));
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
-  background-position: 100% -100%;
 }
 
-body::after {
+body::before {
   content: '';
   position: fixed;
   inset: 0;
   background-color: hsl(0 0% 0% / var(--blur-bg-opacity));
   background-image: linear-gradient(transparent, var(--clr-bg));
-  z-index: -1;
-
-  /*
-    this is just a proof of concept
-    use filter instead for firefox and a transition
-  */
   backdrop-filter: blur(var(--blur-bg));
+  z-index: -1;
+}
+
+@supports not (backdrop-filter: blur(0px)) {
+  body::before {
+    background-color: hsl(0 0% 0% / var(--blur-bg-opacity-unsupported));
+  }
 }
 
 html[data-font='dyslexic'] body,

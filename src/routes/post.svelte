@@ -1,6 +1,27 @@
 <script lang="ts">
+  import { browser } from '$app/env'
+
   import Card from '$root/components/ui/card.svelte'
+
+  let scrollY = 0
+  const rootElement = browser && document.documentElement
+
+  $: {
+    if (browser) {
+      if (scrollY > 400) {
+        rootElement.style.setProperty('--blur-bg', '200px')
+        rootElement.style.setProperty('--blur-bg-opacity', '60%')
+        rootElement.style.setProperty('--blur-bg-opacity-unsupported', '80%')
+      } else {
+        rootElement.style.setProperty('--blur-bg', '0px')
+        rootElement.style.setProperty('--blur-bg-opacity', '40%')
+        rootElement.style.setProperty('--blur-bg-opacity-unsupported', '40%')
+      }
+    }
+  }
 </script>
+
+<svelte:window bind:scrollY />
 
 <svelte:head>
   <title>Post</title>
