@@ -1,6 +1,6 @@
 General:
   ☐ Newsletter API
-  ☐ Page transitions
+  ✔ Page transitions @done
   ☐ Background blur
   ☐ RSS feed
   ☐ Sitemap
@@ -11,6 +11,8 @@ General:
   ☐ SEO
   ☐ Sounds
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
+  ☐ Social images
+  ☐ Prerender landing, newsletter, about, uses page
 
 Data fetching:
   ☐ Latest post
@@ -27,3 +29,8 @@ Posts:
   Markdown:
     ☐ Setup Markdown and plugins
     ☐ Copy code
+
+Issues:
+  ☐ SVG background not centered in Firefox
+  ☐ Firefox menu misalignment
+  ☐ Reset should also update theme in preferences
