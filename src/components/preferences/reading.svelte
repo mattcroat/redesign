@@ -59,7 +59,8 @@
     border-radius: var(--rounded-20);
   }
 
-  input[type='range']::-webkit-slider-thumb {
+  input[type='range']::-webkit-slider-thumb,
+  input[type='range']::-moz-range-thumb {
     appearance: none;
     width: 16px;
     height: 16px;
