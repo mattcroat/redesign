@@ -1,5 +1,6 @@
 <script lang="ts">
   import { EyeIcon } from '@rgossiaux/svelte-heroicons/outline'
+  import Transition from '$root/components/transition/index.svelte'
 
   export let posts = []
 </script>
@@ -8,19 +9,21 @@
   <slot name="title" />
 
   <div class="cards">
-    {#each posts as post}
-      <a href="/">
-        <article class="card">
-          <span class="views">
-            <EyeIcon width="24" height="24" aria-hidden="true" />
-            <span>{post.views}</span>
-          </span>
-          <div class="details">
-            <span class="title">{post.title}</span>
-            <p class="description">{post.description}</p>
-          </div>
-        </article>
-      </a>
+    {#each posts as post, index}
+      <Transition type="stagger" stagger={index}>
+        <a href="/">
+          <article class="card">
+            <span class="views">
+              <EyeIcon width="24" height="24" aria-hidden="true" />
+              <span>{post.views}</span>
+            </span>
+            <div class="details">
+              <span class="title">{post.title}</span>
+              <p class="description">{post.description}</p>
+            </div>
+          </article>
+        </a>
+      </Transition>
     {/each}
   </div>
 

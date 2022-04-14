@@ -1,8 +1,10 @@
 <script lang="ts">
   import { browser } from '$app/env'
+  import { page } from '$app/stores'
 
   import Header from '$root/components/ui/header.svelte'
   import Footer from '$root/components/ui/footer.svelte'
+  import Transition from '$root/components/transition/index.svelte'
 
   import '$root/styles/global.css'
   import '$root/styles/themes.css'
@@ -25,11 +27,15 @@
 
 <svelte:window bind:scrollY />
 
-<div class="grid">
-  <Header />
-  <slot />
-  <Footer />
-</div>
+<Transition type="fade">
+  <div class="grid">
+    <Header />
+    <Transition type="page" url={$page.url}>
+      <slot />
+    </Transition>
+    <Footer />
+  </div>
+</Transition>
 
 <style>
   :global(.grid) {
