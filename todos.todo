@@ -1,7 +1,6 @@
 General:
   ☐ Newsletter API
   ✔ Page transitions @done
-  ☐ Background blur
   ☐ RSS feed
   ☐ Sitemap
   ☐ Theming
@@ -12,7 +11,9 @@ General:
   ☐ Sounds
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
   ☐ Social images
-  ☐ Prerender landing, newsletter, about, uses page
+  ✔ Prerender landing, newsletter, about, uses page @done
+  ☐ Error page
+  ☐ Scrollbar
 
 Data fetching:
   ☐ Latest post
@@ -31,6 +32,9 @@ Posts:
     ☐ Copy code
 
 Issues:
-  ☐ SVG background not centered in Firefox
-  ☐ Firefox menu misalignment
-  ☐ Reset should also update theme in preferences
+  ✔ SVG background not centered in Firefox @done
+  ✔ Firefox menu misalignment @done
+  ☐ Reset should also update values in preferences
+  ☐ Sticky header
+  ✔ Input range thumb in Firefox @done
+  ✔ Background blur @done
