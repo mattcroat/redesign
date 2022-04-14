@@ -18,6 +18,7 @@
   header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     margin-top: var(--spacing-32);
   }
 

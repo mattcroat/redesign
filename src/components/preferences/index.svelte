@@ -59,7 +59,13 @@
 </div>
 
 <style>
+  .container {
+    width: 24px;
+    height: 24px;
+  }
+
   .container :global(.popover) {
+    height: 100%;
     position: relative;
   }
 
