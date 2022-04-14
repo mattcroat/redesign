@@ -114,10 +114,16 @@
 
   .menu ul {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     row-gap: var(--spacing-24);
     column-gap: var(--spacing-64);
     grid-auto-flow: column;
     margin-top: var(--spacing-24);
+  }
+
+  @media (min-width: 480px) {
+    .menu ul {
+      grid-template-rows: repeat(4, 1fr);
+    }
   }
 </style>

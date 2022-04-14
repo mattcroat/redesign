@@ -128,8 +128,7 @@
 
   @media (min-width: 480px) {
     .preferences {
-      width: max-content;
-      max-width: 400px;
+      width: 420px;
     }
 
     .preferences .options > :global(*) {
