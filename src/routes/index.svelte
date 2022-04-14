@@ -4,6 +4,8 @@
   import Newsletter from '$root/components/ui/newsletter.svelte'
   import Posts from '$root/components/ui/posts.svelte'
   import { posts } from '$root/data/posts.json'
+
+  export const prerender = true
 </script>
 
 <svelte:head>

@@ -1,5 +1,7 @@
 <script lang="ts">
   import Heading from '$root/components/ui/heading.svelte'
+
+  export const prerender = true
 </script>
 
 <Heading>Uses</Heading>
