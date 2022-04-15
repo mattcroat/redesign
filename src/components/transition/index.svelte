@@ -36,3 +36,9 @@
     </div>
   {/key}
 {/if}
+
+<style>
+  div {
+    height: 100%;
+  }
+</style>
