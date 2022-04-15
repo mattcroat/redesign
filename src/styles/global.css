@@ -69,6 +69,7 @@ ol {
 
   --post-txt-size: 16px;
   --post-txt-length: 60ch;
+  --post-txt-height: 40px;
   --post-blockquote-txt: hsl(173 100% 94%);
   --post-blockquote-bg: hsl(173, 60%, 4%);
   --post-blockquote-border: hsl(173 10% 10%);

@@ -16,6 +16,10 @@
   color: var(--clr-primary);
 }
 
+.prose p {
+  line-height: var(--post-txt-height);
+}
+
 .prose iframe,
 .prose video,
 .prose pre,

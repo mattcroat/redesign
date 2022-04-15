@@ -28,6 +28,7 @@
       const userFont = localStorage.font
       const userPostFontSize = localStorage.textSize
       const userPostTextLength = localStorage.textLength
+      const userPostTextHeight = localStorage.textHeight
 
       const prefersDarkMode = window.matchMedia(
         'prefers-color-scheme: dark'
@@ -49,6 +50,11 @@
       // check if the user set a text length for posts
       if (userPostTextLength) {
         htmlElement.style.setProperty('--post-txt-length', userPostTextLength)
+      }
+
+      // check if the user set a text height for posts
+      if (userPostTextLength) {
+        htmlElement.style.setProperty('--post-txt-height', userPostTextHeight)
       }
 
       // check if the user set a theme
