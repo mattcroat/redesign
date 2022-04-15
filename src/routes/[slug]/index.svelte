@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { browser } from '$app/env'
+  import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
 
   import { siteName, siteUrl, twitterHandle } from '$root/lib/config'
   import type { FrontMatterType } from '$root/types'
@@ -7,27 +8,27 @@
   export let content: string
   export let frontmatter: FrontMatterType
 
-  let scrollY = 0
-  const rootElement = browser && document.documentElement
+  let overlay = false
 
-  $: {
-    if (browser) {
-      if (scrollY > 600) {
-        rootElement.style.setProperty('--blur-bg', '200px')
-        rootElement.style.setProperty('--blur-bg-opacity', '60%')
-        rootElement.style.setProperty('--blur-bg-opacity-unsupported', '80%')
-      }
+  onMount(() => {
+    const headingElement = document.querySelector('h1')
 
-      if (scrollY < 600) {
-        rootElement.style.setProperty('--blur-bg', '0px')
-        rootElement.style.setProperty('--blur-bg-opacity', '40%')
-        rootElement.style.setProperty('--blur-bg-opacity-unsupported', '40%')
-      }
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0 // invoke when element is not visible
     }
-  }
-</script>
 
-<svelte:window bind:scrollY />
+    function handleIntersect([entry]) {
+      !entry.isIntersecting ? (overlay = true) : (overlay = false)
+    }
+
+    const observer = new IntersectionObserver(handleIntersect, options)
+    observer.observe(headingElement)
+
+    return () => observer.unobserve(headingElement)
+  })
+</script>
 
 <svelte:head>
   <title>{frontmatter.title}</title>
@@ -47,6 +48,25 @@
   <meta content={frontmatter.image} name="twitter:image" />
 </svelte:head>
 
-<main class="prose">
-  {@html content}
+<main>
+  {#if overlay}
+    <div transition:fade={{ duration: 300 }} class="overlay" />
+  {/if}
+  <div class="prose">
+    {@html content}
+  </div>
+  <div>
+    <!-- Edit -->
+    <!-- Newsletter -->
+  </div>
 </main>
+
+<style>
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(hsl(173 100% 4% / 40%), var(--clr-bg));
+    backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+</style>
