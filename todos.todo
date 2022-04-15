@@ -16,6 +16,7 @@ General:
   ☐ Scrollbar
 
 Data fetching:
+  ✔ Post @done
   ☐ Latest post
   ☐ Popular posts
   ☐ Latest posts
@@ -28,7 +29,7 @@ Posts:
     - Make shorthand like "{% image (.*?) %}" that represents "url/image.webp" because I don't want to type out a long URL which could also be awesome for other things like <iframe> and <video>
     - Able to set class on image to take grid gutter space
   Markdown:
-    ☐ Setup Markdown and plugins
+    ✔ Setup Markdown and plugins @done
     ☐ Copy code
 
 Issues:
