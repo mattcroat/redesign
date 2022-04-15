@@ -12,13 +12,13 @@
 
   $: {
     if (browser) {
-      if (scrollY > 400) {
+      if (scrollY > 600) {
         rootElement.style.setProperty('--blur-bg', '200px')
         rootElement.style.setProperty('--blur-bg-opacity', '60%')
         rootElement.style.setProperty('--blur-bg-opacity-unsupported', '80%')
       }
 
-      if (scrollY < 400) {
+      if (scrollY < 600) {
         rootElement.style.setProperty('--blur-bg', '0px')
         rootElement.style.setProperty('--blur-bg-opacity', '40%')
         rootElement.style.setProperty('--blur-bg-opacity-unsupported', '40%')
