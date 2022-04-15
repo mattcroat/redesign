@@ -12,7 +12,9 @@
         rootElement.style.setProperty('--blur-bg', '200px')
         rootElement.style.setProperty('--blur-bg-opacity', '60%')
         rootElement.style.setProperty('--blur-bg-opacity-unsupported', '80%')
-      } else {
+      }
+
+      if (scrollY < 400) {
         rootElement.style.setProperty('--blur-bg', '0px')
         rootElement.style.setProperty('--blur-bg-opacity', '40%')
         rootElement.style.setProperty('--blur-bg-opacity-unsupported', '40%')
@@ -96,6 +98,31 @@
     improper Latin.
   </p>
 
+  <blockquote>
+    <p>
+      🐿️ ESLint is like a spellchecker for your code and Prettier helps you
+      format your code so it's neat and tidy.
+    </p>
+  </blockquote>
+
+  <img
+    alt="Placeholder"
+    src="https://images.unsplash.com/photo-1536007164800-b7f11331f35c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  />
+
+  <pre>
+    <code>
+      Code
+    </code>
+  </pre>
+
+  <p>
+    Lorem ipsum may be used as a placeholder before the final copy is available.
+    It is also used to temporarily replace text in a process called greeking,
+    which allows designers to consider the form of a webpage or publication,
+    without the meaning of the text influencing the design.
+  </p>
+
   <img
     alt="Placeholder"
     src="https://images.unsplash.com/photo-1536007164800-b7f11331f35c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -144,6 +171,8 @@
 </main>
 
 <style>
+  /* Please use margin-bottom and save me from hell */
+
   .prose {
     font-size: var(--post-txt-size);
   }
@@ -222,6 +251,32 @@
 
   .prose img {
     object-fit: cover;
+  }
+
+  .prose h2 + img,
+  .prose blockquote + img {
+    margin-top: var(--spacing-32);
+  }
+
+  .prose pre {
+    grid-column: gutter-start / gutter-end;
+    margin: var(--spacing-32) 0;
+    background: black;
+    border-radius: var(--rounded-20);
+  }
+
+  .prose pre + p {
+    margin-top: 0;
+  }
+
+  .prose blockquote {
+    margin-bottom: var(--spacing-32);
+    padding: var(--spacing-16) var(--spacing-24);
+    color: hsl(173 100% 94%);
+    background-color: hsl(173, 100%, 4%);
+    border-top: 4px solid var(--clr-primary);
+    border-radius: var(--rounded-20);
+    box-shadow: var(--shadow-sm);
   }
 
   @media (min-width: 860px) {

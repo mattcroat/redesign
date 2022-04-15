@@ -1,6 +1,6 @@
 html[data-theme='🌛 Night'] {
   --color-highlight: hsl(38 93% 76%);
-  --color-code-line-highlight: hsl(218 26% 20%);
+  --color-code-line-highlight: hsl(173, 40%, 8%);
   --color-code-line-number: hsl(218 26% 40%);
   --color-token-1: hsl(211 96% 78%);
   --color-token-2: var(--highlight);

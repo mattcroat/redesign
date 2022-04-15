@@ -6,7 +6,9 @@
   import Transition from '$root/components/transition/index.svelte'
 
   import '$root/styles/global.css'
+  import '$root/styles/post.css'
   import '$root/styles/themes.css'
+  import '$root/styles/code.css'
 </script>
 
 <Transition type="fade">

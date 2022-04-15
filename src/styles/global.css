@@ -19,6 +19,12 @@ svg {
   max-width: 100%;
 }
 
+iframe {
+  width: 100%;
+  border: none;
+  aspect-ratio: 16 / 9;
+}
+
 input,
 button,
 textarea,
@@ -63,6 +69,9 @@ ol {
 
   --post-txt-size: 16px;
   --post-txt-length: 60ch;
+  --post-blockquote-txt: hsl(173 100% 94%);
+  --post-blockquote-bg: hsl(173, 60%, 4%);
+  --post-blockquote-border: hsl(173 10% 10%);
 
   /* Font */
 
@@ -143,6 +152,16 @@ ol {
   --clr-theme-bg: hsl(0 0% 24%);
   --clr-theme-txt: hsl(177 100% 15%);
   --clr-theme-active: hsl(177 100% 80%);
+
+  /* Code */
+
+  --clr-code-bg: hsl(173 60% 4%);
+  --clr-code-title: hsl(173 100% 94%);
+  --clr-code-border: hsl(173 10% 10%);
+  --clr-code-line-number: hsl(173 20% 20%);
+  --clr-code-line-highlight: hsl(173 40% 8%);
+  --clr-code-inline-txt: hsl(173 100% 94%);
+  --clr-code-inline-bg: hsl(173 60% 4%);
 
   /* Shadows */
 
