@@ -7,6 +7,7 @@
   } from '@rgossiaux/svelte-headlessui'
   import { CogIcon } from '@rgossiaux/svelte-heroicons/outline'
 
+  import { sounds } from '$root/stores/sfx'
   import Themes from './themes.svelte'
   import Reading from './reading.svelte'
   import Dyslexic from './dyslexic.svelte'
@@ -15,7 +16,7 @@
 
 <div class="container">
   <Popover let:open class="popover">
-    <PopoverButton>
+    <PopoverButton on:click={() => $sounds.click.play()}>
       <CogIcon width="24" height="24" />
     </PopoverButton>
 

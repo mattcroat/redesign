@@ -6,12 +6,14 @@
     PopoverPanel
   } from '@rgossiaux/svelte-headlessui'
   import { MenuAlt1Icon } from '@rgossiaux/svelte-heroicons/outline'
+
   import { categories } from '$root/lib/config'
+  import { sounds } from '$root/stores/sfx'
 </script>
 
 <div class="container">
   <Popover let:open class="popover">
-    <PopoverButton>
+    <PopoverButton on:click={() => $sounds.click.play()}>
       <MenuAlt1Icon width="24" height="24" />
     </PopoverButton>
 
