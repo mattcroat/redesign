@@ -1,11 +1,15 @@
+<script context="module" lang="ts">
+  export const prerender = true
+</script>
+
 <script lang="ts">
   import { ArrowNarrowRightIcon } from '@rgossiaux/svelte-heroicons/outline'
 
   import Newsletter from '$root/components/ui/newsletter.svelte'
   import Posts from '$root/components/ui/posts.svelte'
-  import { posts } from '$root/data/posts.json'
+  import type { PostsType } from '$root/types'
 
-  export const prerender = true
+  export let posts: PostsType
 </script>
 
 <svelte:head>
@@ -16,11 +20,11 @@
   <section class="hero">
     <div class="latest-post">
       <span class="kicker">Latest post</span>
-      <h1 class="title">TypeScript fundamentals</h1>
+      <h1 class="title">{posts.latestPost.title}</h1>
       <p class="description">
-        Learn how learning TypeScript can make you popular with the ladies.
+        {posts.latestPost.title}
       </p>
-      <a class="continue-reading" href="/">
+      <a class="continue-reading" href={posts.latestPost.slug}>
         <span>Continue reading</span>
         <ArrowNarrowRightIcon width="24" height="24" aria-hidden="true" />
       </a>
@@ -35,11 +39,11 @@
     </div>
   </section>
 
-  <Posts {posts}>
+  <Posts posts={posts.popular}>
     <h3 slot="title">Popular</h3>
   </Posts>
 
-  <Posts {posts}>
+  <Posts posts={posts.latest}>
     <h3 slot="title">Latest</h3>
     <a slot="see-more" href="/posts">
       <span>See more</span>
@@ -47,7 +51,7 @@
     </a>
   </Posts>
 
-  <Posts {posts}>
+  <Posts posts={posts.series}>
     <h3 slot="title">Series</h3>
     <a slot="see-more" href="/series">
       <span>See more</span>
@@ -55,7 +59,7 @@
     </a>
   </Posts>
 
-  <Posts {posts}>
+  <Posts posts={posts.picks}>
     <h3 slot="title">Picks</h3>
   </Posts>
 </main>
