@@ -45,7 +45,7 @@
 
   <Posts posts={posts.latest}>
     <h3 slot="title">Latest</h3>
-    <a slot="see-more" href="/posts">
+    <a slot="see-more" href="/articles">
       <span>See more</span>
       <ArrowNarrowRightIcon width="24" height="24" aria-hidden="true" />
     </a>
