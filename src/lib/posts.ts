@@ -46,33 +46,9 @@ export async function getRateLimit(): Promise<RateType> {
 }
 
 /**
- * Get post by slug from GitHub
+ * Get posts data from `data/posts.json` on GitHub
  */
-export async function getPost(slug: string): Promise<PostMarkdownType> {
-  const postUrl = `${postsUrl}/${slug}/${slug}.md`
-
-  const response = await fetch(postUrl, {
-    headers: {
-      ...headers,
-      // https://docs.github.com/en/rest/overview/media-types
-      Accept: 'application/vnd.github.v3.raw'
-    }
-  })
-
-  if (!response.ok) {
-    throw new Error(`💩 Could not fetch ${postUrl}`)
-  }
-
-  const postMarkdown = await response.text()
-  const { content, frontmatter } = await markdownToHTML(postMarkdown)
-
-  return { content, frontmatter, postMarkdown }
-}
-
-/**
- * Get posts from GitHub
- */
-export async function getPosts(): Promise<PostsType> {
+async function getPostsData() {
   const response = await fetch(postsDataUrl, {
     headers: {
       ...headers,
@@ -82,10 +58,18 @@ export async function getPosts(): Promise<PostsType> {
   })
 
   if (!response.ok) {
-    throw new Error('💩 Could not fetch posts!')
+    throw new Error('💩 Could not fetch posts')
   }
 
   const posts: PostType[] = await response.json()
+  return posts
+}
+
+/**
+ * Turn posts from GitHub into categories
+ */
+export async function getPosts(): Promise<PostsType> {
+  const posts = await getPostsData()
   const postLimit = 4
   const characterLimit = 80
 
@@ -150,7 +134,18 @@ export async function getPosts(): Promise<PostsType> {
 export async function getPostsByCategory(
   category: string
 ): Promise<PostType[]> {
-  const response = await fetch(postsDataUrl, {
+  const posts = await getPostsData()
+  const postsByCategory = posts.filter((post) => post.category === category)
+  return postsByCategory
+}
+
+/**
+ * Get post by slug from GitHub
+ */
+export async function getPost(slug: string): Promise<PostMarkdownType> {
+  const postUrl = `${postsUrl}/${slug}/${slug}.md`
+
+  const response = await fetch(postUrl, {
     headers: {
       ...headers,
       // https://docs.github.com/en/rest/overview/media-types
@@ -159,11 +154,11 @@ export async function getPostsByCategory(
   })
 
   if (!response.ok) {
-    throw new Error('💩 Could not fetch posts!')
+    throw new Error(`💩 Could not fetch ${postUrl}`)
   }
 
-  const posts: PostType[] = await response.json()
-  const postsByCategory = posts.filter((post) => post.category === category)
+  const postMarkdown = await response.text()
+  const { content, frontmatter } = await markdownToHTML(postMarkdown)
 
-  return postsByCategory
+  return { content, frontmatter, postMarkdown }
 }
