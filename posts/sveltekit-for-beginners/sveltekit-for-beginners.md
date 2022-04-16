@@ -17,15 +17,19 @@ image: 'social-image.webp'
   allowfullscreen
 ></iframe>
 
+{% youtube bLBHecY4-ak  %}
+
 ## Table of Contents
 
 ## Introduction
 
 You're going to make **Twittr** — a social media site for sharing hot takes.
 
-<video autoPlay={true} loop muted controls>
+<video>
   <source src="https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/twittr.mp4" type="video/mp4" />
 </video>
+
+{% video twittr.mp4 %}
 
 Here are the [finished project files](https://github.com/JoysOfCode/sveltekit-for-beginners).
 
@@ -50,6 +54,9 @@ This isn't just true for SvelteKit but all the other meta-frameworks you might h
   on top of another framework.
 </blockquote>
 
+> 🐿️ A meta-framework is just a term used to describe a framework that's built
+on top of another framework.
+
 Why do we need these frameworks and what does it even mean to be a "meta-framework"?
 
 Despite the jokes about a new JavaScript framework being released each day we as developers have come together and decided that the component model is the best way moving forwards.
@@ -70,6 +77,8 @@ You can press "open the preview in new window" button if you want to follow alon
   title="Svelte Single Page Application Example"
   src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1"
 />
+
+{% sandbox https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1 %}
 
 Everything you see on the page like the content changing and navigation is done by JavaScript.
 
