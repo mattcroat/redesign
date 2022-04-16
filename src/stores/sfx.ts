@@ -1,7 +1,7 @@
 import { readable } from 'svelte/store'
 
 /**
- * Sound credit
+ * Credits
  * https://www.zapsplat.com/music/organic-button-click-good-for-apps-games-ui-software-etc-7/
  */
 
