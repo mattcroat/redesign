@@ -8,15 +8,15 @@ General:
   ☐ Set HTTP cache-control headers
   ☐ Analytics
   ☐ SEO
-  ☐ Sounds
+  ✔ Sounds @done
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
   ☐ Social images
   ✔ Prerender landing, newsletter, about, uses page @done
   ☐ Error page
-  ☐ Scrollbar
+  ✔ Scrollbar @done
   ☐ Lazy loading
-  ☐ Series page
-  ☐ Posts page
+  ✔ Series page @done
+  ✔ Articles page @done
 
 Data fetching:
   ✔ Post @done
