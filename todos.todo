@@ -15,14 +15,16 @@ General:
   ☐ Error page
   ☐ Scrollbar
   ☐ Lazy loading
+  ☐ Series page
+  ☐ Posts page
 
 Data fetching:
   ✔ Post @done
-  ☐ Latest post
-  ☐ Popular posts
-  ☐ Latest posts
-  ☐ Series
-  ☐ Random picks
+  ✔ Latest post @done
+  ✔ Popular posts @done
+  ✔ Latest posts @done
+  ✔ Series @done
+  ✔ Picks @done
 
 Posts:
   Images:
