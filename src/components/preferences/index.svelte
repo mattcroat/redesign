@@ -16,7 +16,7 @@
 
 <div class="container">
   <Popover let:open class="popover">
-    <PopoverButton on:click={() => $sounds.click.play()}>
+    <PopoverButton on:click={() => $sounds.click()}>
       <CogIcon width="24" height="24" />
     </PopoverButton>
 
