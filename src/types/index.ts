@@ -34,6 +34,7 @@ export type PostType = {
 }
 
 export type PostsType = {
+  posts: PostType[]
   latestPost: PostType
   popular: PostType[]
   latest: PostType[]

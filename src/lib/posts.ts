@@ -69,11 +69,11 @@ async function getPostsData() {
  * Turn posts from GitHub into categories
  */
 export async function getPosts(): Promise<PostsType> {
-  const posts = await getPostsData()
+  const data = await getPostsData()
   const postLimit = 4
   const characterLimit = 80
 
-  const filteredPosts = posts
+  const posts = data
     .filter((post) => !post.draft)
     .map((post) => {
       const descriptionLength = post.description.length
@@ -113,13 +113,14 @@ export async function getPosts(): Promise<PostsType> {
     return posts.sort(() => Math.random() - 0.5).slice(0, postLimit)
   }
 
-  const latestPost = getLatestPosts(filteredPosts)[0]
-  const latest = getLatestPosts(filteredPosts)
+  const latestPost = getLatestPosts(posts)[0]
+  const latest = getLatestPosts(posts)
   const popular = latest // placeholder
-  const series = getSeries(filteredPosts)
-  const picks = getPicks(filteredPosts)
+  const series = getSeries(posts)
+  const picks = getPicks(posts)
 
   return {
+    posts,
     latestPost,
     latest,
     popular,
