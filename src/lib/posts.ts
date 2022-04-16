@@ -143,3 +143,27 @@ export async function getPosts(): Promise<PostsType> {
     picks
   }
 }
+
+/**
+ * Gets posts by category from GitHub
+ */
+export async function getPostsByCategory(
+  category: string
+): Promise<PostType[]> {
+  const response = await fetch(postsDataUrl, {
+    headers: {
+      ...headers,
+      // https://docs.github.com/en/rest/overview/media-types
+      Accept: 'application/vnd.github.v3.raw'
+    }
+  })
+
+  if (!response.ok) {
+    throw new Error('💩 Could not fetch posts!')
+  }
+
+  const posts: PostType[] = await response.json()
+  const postsByCategory = posts.filter((post) => post.category === category)
+
+  return postsByCategory
+}

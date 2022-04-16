@@ -1,15 +1,32 @@
 <script lang="ts">
+  import { page } from '$app/stores'
+
   import Heading from '$root/components/ui/heading.svelte'
   import Posts from '$root/components/ui/posts.svelte'
+  import type { PostType } from '$root/types'
 
-  import { posts } from '$root/data/posts.json'
+  export let posts: PostType[]
+  const category = $page.params.category
+
+  const categories = {
+    javascript: 'JavaScript',
+    react: 'React',
+    css: 'CSS',
+    general: 'General',
+    design: 'Design',
+    git: 'Git & GitHub',
+    next: 'Next.js',
+    typescript: 'TypeScript',
+    svelte: 'Svelte',
+    sveltekit: 'SvelteKit'
+  }
 </script>
 
-<Heading>Category</Heading>
+<Heading>{categories[category]}</Heading>
 <Posts {posts}>
   <div class="container" slot="title">
     <div>
-      <span class="tag">Category</span>
+      <span class="tag">{category}</span>
     </div>
     <div>
       <span class="results">{posts.length}</span> results
