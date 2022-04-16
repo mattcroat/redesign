@@ -3,23 +3,11 @@
 
   import Heading from '$root/components/ui/heading.svelte'
   import Posts from '$root/components/ui/posts.svelte'
+  import { categories } from '$root/lib/config'
   import type { PostType } from '$root/types'
 
   export let posts: PostType[]
   const category = $page.params.category
-
-  const categories = {
-    javascript: 'JavaScript',
-    react: 'React',
-    css: 'CSS',
-    general: 'General',
-    design: 'Design',
-    git: 'Git & GitHub',
-    next: 'Next.js',
-    typescript: 'TypeScript',
-    svelte: 'Svelte',
-    sveltekit: 'SvelteKit'
-  }
 </script>
 
 <Heading>{categories[category]}</Heading>

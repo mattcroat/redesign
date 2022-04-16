@@ -1,17 +1,16 @@
+<script>
+  import { categories } from '$root/lib/config'
+</script>
+
 <footer>
   <div class="categories">
     <p>Categories</p>
     <ul>
-      <li><a href="/javascript">JavaScript</a></li>
-      <li><a href="/react">React</a></li>
-      <li><a href="/css">CSS</a></li>
-      <li><a href="/general">General</a></li>
-      <li><a href="/design">Design</a></li>
-      <li><a href="/git">Git & GitHub</a></li>
-      <li><a href="/next">Next.js</a></li>
-      <li><a href="/typescript">TypeScript</a></li>
-      <li><a href="/svelte">Svelte</a></li>
-      <li><a href="/svelte">SvelteKit</a></li>
+      {#each Object.entries(categories) as [slug, category]}
+        <li>
+          <a href={slug}>{category}</a>
+        </li>
+      {/each}
     </ul>
   </div>
 
