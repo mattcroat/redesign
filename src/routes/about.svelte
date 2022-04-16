@@ -1,7 +1,9 @@
+<script context="module" lang="ts">
+  export const prerender = true
+</script>
+
 <script lang="ts">
   import Heading from '$root/components/ui/heading.svelte'
-
-  export const prerender = true
 </script>
 
 <Heading>About</Heading>
