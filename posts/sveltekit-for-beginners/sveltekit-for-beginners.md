@@ -1,23 +1,17 @@
 ---
-title: Full Stack SvelteKit For Beginners
-description: SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.
+title: 'Full Stack SvelteKit For Beginners'
+description: 'SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience'.
 slug: 'sveltekit-for-beginners'
 published: '2022-2-28'
 category: 'sveltekit'
 image: 'social-image.webp'
+series: 'true'
+draft: 'false'
 ---
 
 # Full Stack Web Development With SvelteKit For Beginners
 
-<iframe
-  title="SvelteKit For Beginners"
-  src="https://www.youtube.com/embed/bLBHecY4-ak"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
-
-{% youtube bLBHecY4-ak  %}
+{% embed src="bLBHecY4-ak" title="SvelteKit For Beginners" %}
 
 ## Table of Contents
 
@@ -25,11 +19,7 @@ image: 'social-image.webp'
 
 You're going to make **Twittr** — a social media site for sharing hot takes.
 
-<video>
-  <source src="https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/twittr.mp4" type="video/mp4" />
-</video>
-
-{% video twittr.mp4 %}
+{% video src="twittr.mp4" %}
 
 Here are the [finished project files](https://github.com/JoysOfCode/sveltekit-for-beginners).
 
@@ -41,7 +31,7 @@ Let's dive into it! 🐬
 
 [SvelteKit](https://kit.svelte.dev/) is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.
 
-![Diagram showing how the frontend Svelte and backend Kit combined make the full stack framework SvelteKit](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/sveltekit.webp)
+{% img src="sveltekit.webp" alt="Diagram showing how the frontend Svelte and backend Kit combined make the full stack framework SvelteKit" %}
 
 SvelteKit is made by [@rich_harris](https://twitter.com/rich_harris) and a group of amazing [contributors](https://github.com/sveltejs/kit/graphs/contributors).
 
@@ -49,13 +39,7 @@ In simplest terms — SvelteKit does all the boring stuff for you and empowers y
 
 This isn't just true for SvelteKit but all the other meta-frameworks you might have heard of such as [Next.js](https://nextjs.org/) that's built on top of React or [Nuxt.js](https://nuxtjs.org/) built on top of Vue.
 
-<blockquote>
-  🐿️ A meta-framework is just a term used to describe a framework that's built
-  on top of another framework.
-</blockquote>
-
-> 🐿️ A meta-framework is just a term used to describe a framework that's built
-on top of another framework.
+> 🐿️ A meta-framework is just a term used to describe a framework that's built on top of another framework.
 
 Why do we need these frameworks and what does it even mean to be a "meta-framework"?
 
@@ -73,12 +57,7 @@ I made a simple Svelte example site with a Pokémon search together with a coupl
 
 You can press "open the preview in new window" button if you want to follow along.
 
-<Iframe
-  title="Svelte Single Page Application Example"
-  src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1"
-/>
-
-{% sandbox https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1 %}
+{% embed src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1" title="Svelte Single Page Application Example"  %}
 
 Everything you see on the page like the content changing and navigation is done by JavaScript.
 
@@ -92,20 +71,17 @@ What happens when the page loads? The default Pokémon it fetches is Pikachu so 
 
 If you inspect the elements on the page inside the elements tab the fetched Pokémon is right there.
 
-![Showing the elements tab inside developer tools](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/elements-tab.webp)
+{% img src="elements-tab.webp" alt="Showing the elements tab inside developers tools" %}
 
 If you look at the response when you load the page inside the network tab (refresh the page) or view page source it's just a HTML shell that you query using JavaScript and attach the Svelte app onto.
 
-<blockquote>
-  🐿️ This means when a bot tries to index your site unless it can execute the
-  JavaScript it's like nothing is there.
-</blockquote>
+> 🐿️ This means when a bot tries to index your site unless it can execute the JavaScript it's like nothing is there.
 
-![Showing the network tab for initial page load inside developer tools](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/network-tab.webp)
+{% img src="network-tab.webp" alt="Showing the network tab for initial page load inside developer tools" %}
 
 Try searching for "charizard" (press <kbd>Enter</kbd> to submit the form) and you can see a fetch API request has been made and Svelte updates the user interface but we're still using the same `index.html` file.
 
-![Showing the network request response inside the network tab when fetching a Pokémon](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/network-request.webp)
+{% img src="network-request.webp" alt="Showing the network request response inside the network tab when fetching a Pokémon" %}
 
 This might be alright for a dashboard where we don't care about indexing pages for search engine optimization but most sites do and using any secrets like user authentication is where things start to become hard.
 
@@ -121,11 +97,7 @@ Let's do a mental exercise. Stick with me!
 
 You could build your own full stack framework if we look at the [Svelte documentation for SSR](https://svelte.dev/docs#compile-time-svelte-compile) and figure out how to server-render a component and hydrate it on the client.
 
-<blockquote>
-  🐿️ Hydration is a term that means adding JavaScript to the page after the
-  server builds and hands you the HTML page. The page is "dry" so you "hydrate"
-  it. 🤭
-</blockquote>
+> 🐿️ Hydration is a term that means adding JavaScript to the page after the server builds and hands you the HTML page. The page is "dry" so you "hydrate" it. 🤭
 
 You also want a nice developer experience and a fast development server that instantly updates when you make a change and can resolve dependencies and bundle your code so you decide to use [Vite](https://vitejs.dev/).
 
@@ -151,12 +123,7 @@ If you want you can even prerender every page or only do it for ones that don't 
 
 SvelteKit uses the web platform [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) and [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects of the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) so it's not tied to any environment but uses [adapters](https://kit.svelte.dev/docs/adapters) that generate the output required for the target platform without configuration.
 
-<blockquote>
-  🐿️ Fetch provides a generic definition of `Request` and `Response` objects.
-  This will allow them to be used wherever they are needed in the future,
-  whether it’s for service workers, Cache API, and other similar things that
-  handle or modify requests and responses.
-</blockquote>
+> 🐿️ Fetch provides a generic definition of `Request` and `Response` objects. This will allow them to be used wherever they are needed in the future, whether it’s for service workers, Cache API, and other similar things that handle or modify requests and responses.
 
 This just means that you can spend more time on [MDN](https://developer.mozilla.org/en-US/) learning about web fundamentals and improve as a web developer instead of just learning a framework abstraction.
 
@@ -164,11 +131,8 @@ SvelteKit and Next.js let you prerender your site meaning all your pages are bui
 
 Because we're using a full stack framework we can create endpoints that correspond to [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) such as **GET** and **POST** same as using a backend framework like [Express](https://expressjs.com/).
 
-<Iframe
-  title="SvelteKit example"
-  src="https://stackblitz.com/edit/sveltekit-example?ctl=1&embed=1&file=src/routes/index.svelte&hideExplorer=1&hideNavigation=1
-"
-/>
+{% embed src="https://stackblitz.com/edit/sveltekit-example?ctl=1&embed=1&file=src/routes/index.svelte&hideExplorer=1&hideNavigation=1
+" title="SvelteKit example" %}
 
 For the example to work you need to **allow cookies**.
 
@@ -186,13 +150,13 @@ Open the page inside a new window and navigate to the network tab inside your de
 
 Try refreshing the page and enter a Pokémon.
 
-![Network tab showing how the page works with JavaScript disabled](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/javascript-disabled.webp)
+{% img src="javascript-disabled.webp" alt="Network tab showing how the page works with JavaScript disabled" %}
 
 You can see the page refresh if you look at the favicon at the top left. There's no JavaScript! 🤯
 
 If you look at the response or view the page source the HTML generated from the server is right there! You can see how the page is being hydrated.
 
-![Shows page source using server-side rendering and hydration](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/ssr-hydrate.webp)
+{% img src="ssr-hydrate.webp" alt="Shows page source using server-side rendering and hydration" %}
 
 Over the years we forgot how basic things like forms work and started to rely on JavaScript for everything but now we can have the best of both of worlds using progressive enhancement.
 
@@ -206,10 +170,7 @@ Since the about page doesn't have any interactivity you don't have to ship any J
 
 Meta-frameworks like SvelteKit **blur the line between frontend and backend** which is great because you don't even realize you're a full stack developer.
 
-<blockquote>
-  🐿️ You might wonder when to use Svelte or Sveltekit but always use SvelteKit
-  because it's opinionated.
-</blockquote>
+> 🐿️ You might wonder when to use Svelte or Sveltekit but always use SvelteKit because it's opinionated.
 
 There's a lot more to learn about SvelteKit but first let me give you a tour of SvelteKit.
 
@@ -219,10 +180,7 @@ You should have [Node.js](https://nodejs.org/en/) installed. A basic understandi
 
 For the editor I'm using [Visual Studio Code](https://code.visualstudio.com/) but you use what you prefer. If you're on a potato 🥔 you can try [StackBlitz](https://stackblitz.com/) at no cost. Sign in with GitHub and select the SvelteKit project.
 
-<blockquote>
-  🐿️ At the time of writing this post SvelteKit is near its 1.0 release so there
-  shouldn't be breaking changes but always practice reading the documentation.
-</blockquote>
+> 🐿️ At the time of writing this post SvelteKit is near its 1.0 release so there shouldn't be breaking changes but always practice reading the documentation.
 
 🖌️ Let's start a fresh [SvelteKit](https://kit.svelte.dev/) project!
 
@@ -244,10 +202,7 @@ I'm going to use TypeScript but it's optional! You can ignore the types if you w
 ✔ Add Playwright for browser testing? … No / Yes
 ```
 
-<blockquote>
-  🐿️ ESLint is like a spellchecker for your code and Prettier helps you format
-  your code so it's neat and tidy.
-</blockquote>
+> 🐿️ ESLint is like a spellchecker for your code and Prettier helps you format your code so it's neat and tidy.
 
 🖌️ Don't forget to install the dependencies after which you can start the development server at [http://localhost:3000/](http://localhost:3000/).
 
@@ -298,10 +253,7 @@ The config for the TypeScript compiler that's already set up for you.
 
 There's some other unimportant configuration files you're not going to touch besides `.gitignore` and `.prettierrc`.
 
-<blockquote>
-  🐿️ Don't be afraid to poke around files and folders. It might surprise you
-  what you can learn even if you don't understand the code.
-</blockquote>
+> 🐿️ Don't be afraid to poke around files and folders. It might surprise you what you can learn even if you don't understand the code.
 
 Phew! That's it for this episode of SvelteKit cribs.
 
@@ -359,11 +311,7 @@ This is going to create a `prisma` folder and set up the SQLite config for you. 
 
 That's right, you already have a database! 🤯
 
-<blockquote>
-  🐿️ `npx` lets you use a package without having to do a global install. The
-  binaries are located in `node_modules/.bin` where you can also find
-  `svelte-kit`. You can run `npx prisma` to see the CLI options.
-</blockquote>
+> 🐿️ `npx` lets you use a package without having to do a global install. The binaries are located in `node_modules/.bin` where you can also find `svelte-kit`. You can run `npx prisma` to see the CLI options.
 
 🖌️ Open `schema.prisma` and let's create our schema! You can ignore the config at the top.
 
@@ -435,19 +383,13 @@ SQLite database dev.db created at file:./dev.db
 
 That's it! 😄
 
-<blockquote>
-  🐿️ If `npx prisma db push` fails at generating try installing the Prisma CLI
-  with `npm i -D prisma` and run it again.
-</blockquote>
+> 🐿️ If `npx prisma db push` fails at generating try installing the Prisma CLI with `npm i -D prisma` and run it again.
 
 This creates a `dev.db` file that's our SQLite database.
 
 If you ever want to start fresh you can simply delete `dev.db` and run the same command.
 
-<blockquote>
-  🐿️ `db push` is great for prototyping but use `migrate dev` in a real project
-  to create a history of your database when you make any change.
-</blockquote>
+> 🐿️ `db push` is great for prototyping but use `migrate dev` in a real project to create a history of your database when you make any change.
 
 🖌️ It's a great idea to `.gitignore` any generated file but our database could contain sensitive information.
 
@@ -599,10 +541,7 @@ I'm creating an array of users that matches the fields in the schema we created 
 npm i -D ts-node @types/node
 ```
 
-<blockquote>
-  🐿️ Because there are growing pains in Node.js with the transition to ES
-  modules we need to specify a loader.
-</blockquote>
+> 🐿️ Because there are growing pains in Node.js with the transition to ES modules we need to specify a loader.
 
 I figured this out by reading the error and doing some good old fashioned detective work but I hope they expand [Seeding your database](https://www.prisma.io/docs/guides/database/seed-database) until this gets resolved. 🕵️
 
@@ -626,10 +565,8 @@ npx prisma db seed
 
 You can look at your data inside Prisma Studio.
 
-<blockquote>
-  🐿️ You can find the generated client and types if you dig around
-  `node_modules` inside `@prisma+client/.prisma/client`.
-</blockquote>
+> 🐿️ You can find the generated client and types if you dig around
+> `node_modules` inside `@prisma+client/.prisma/client`.
 
 ## Landing Page Layout
 
@@ -919,9 +856,7 @@ We can import the global styles but they wouldn't work for other pages.
 
 You could create a `<Layout>` component that wraps everything but in SvelteKit you should use nested layout using the `__layout.svelte` component for repeating content and `<slot>` to catch everything else.
 
-<blockquote>
-  🐿️ Files starting with `_` and `__` are ignored as pages in SvelteKit.
-</blockquote>
+> 🐿️ Files starting with `_` and `__` are ignored as pages in SvelteKit.
 
 Let's see how this looks in practice!
 
@@ -935,7 +870,7 @@ Let's see how this looks in practice!
 <slot />
 ```
 
-![Landing page](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/landing-page.webp)
+{% img src="landing-page.webp" alt="Landing page" %}
 
 It's that simple to have nested layouts! 🤯
 
@@ -994,12 +929,9 @@ SvelteKit provides a default error page but it's hard to read so we can do bette
 </style>
 ```
 
-![Custom error page](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/custom-error.webp)
+{% img src="custom-error.webp" alt="Custom error page" %}
 
-<blockquote>
-  🐿️ If you remember from earlier `__error.svelte` and `__layout.svelte`
-  templates come from `.svelte-kit`.
-</blockquote>
+> 🐿️ If you remember from earlier `__error.svelte` and `__layout.svelte` templates come from `.svelte-kit`.
 
 The `context="module"` script runs before the component on the server inside the `load` function and returns a `title` prop that's exposed to our component.
 
@@ -1396,7 +1328,7 @@ Now we can create another nested layout and it's going to inherit the global sty
 
 The home page is done! 🥳
 
-[Home page](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/home-page.webp))
+{% img src="home-page.webp" alt="Home page" %}
 
 I want to show you the real power of nested layouts — if a part of your site explodes it won't bring the entire thing down but just the part that failed with a useful error message. 🤯
 
@@ -1441,7 +1373,7 @@ I want to show you the real power of nested layouts — if a part of your site e
 </style>
 ```
 
-![Error page](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/nested-error.webp)
+{% img src="nested-error.webp" alt="Error page" %}
 
 ## Showing Tweets
 
@@ -1457,11 +1389,7 @@ A `<form>` has an `action` that's the destination that processes the form submis
 </form>
 ```
 
-<blockquote>
-  🐿️ If might be unclear when to use **GET** and **POST** but think of **GET**
-  as receiving data and **POST** when you're sending data from a form to change
-  something.
-</blockquote>
+> 🐿️ If might be unclear when to use **GET** and **POST** but think of **GET** as receiving data and **POST** when you're sending data from a form to change something.
 
 You might have an endpoint inside `routes/api/items.ts` that has a `get` function which returns a list of items in a JSON format when you hit the `/api/items` endpoint.
 
@@ -1501,13 +1429,7 @@ If the endpoint has the same name as the component you can just use the `items` 
 </script>
 ```
 
-<blockquote>
-  🐿️ Because the page and route have the same URL the SvelteKit documentation
-  says to include the `accept: application/json` header to get JSON from the
-  endpoint rather than HTML from the page. You can view the raw data by
-  appending `/__data.json` to the URL. Because of this you can exclude the
-  `action` attribute on the form when doing a **POST** to the same endpoint.
-</blockquote>
+> 🐿️ Because the page and route have the same URL the SvelteKit documentation says to include the `accept: application/json` header to get JSON from the endpoint rather than HTML from the page. You can view the raw data by appending `/__data.json` to the URL. Because of this you can exclude the `action` attribute on the form when doing a **POST** to the same endpoint.
 
 I'm going to use the second method because it's less code and having your endpoint where your component is makes it easier to update.
 
@@ -1517,21 +1439,13 @@ Because the compute is on the server we can talk to a database and return only t
 
 It's alright if this is confusing if you're not used to receiving and sending data with forms because it's almost a forgotten art if you only worked with modern JavaScript frameworks.
 
-<blockquote>
-  🐿️ Using SvelteKit you can have have a working site before JavaScript and use
-  progressive enhancement after JavaScript loads.
-</blockquote>
+> 🐿️ Using SvelteKit you can have have a working site before JavaScript and use progressive enhancement after JavaScript loads.
 
 Let's start with showing the tweets which means we have to get the **user information**, **tweet contents** and if a tweet is **liked**.
 
 Because we're using Prisma we can get the data we need and shape it on the server to return only what we need. We're in charge.
 
-<blockquote>
-  🐿️ Twitter is a single-page application so it can have nice things as infinite
-  scrolling but if you disable JavaScript it's unusable. Later you learn how you
-  can use server-side rendering as a fallback and enhance the user experience
-  with JavaScript.
-</blockquote>
+> 🐿️ Twitter is a single-page application so it can have nice things as infinite scrolling but if you disable JavaScript it's unusable. Later you learn how you can use server-side rendering as a fallback and enhance the user experience with JavaScript.
 
 🖌️ We should initialize the Prisma client so we can use it. I like to keep third party code inside the `src/lib` folder so create the `prisma.ts` file.
 
@@ -1574,11 +1488,7 @@ export function timePosted(createdAt: Date): string {
 
 Since authentication is outside the scope of this post we're going to use a hardcoded user id but you can implement it later if you want.
 
-<blockquote>
-  🐿️ Use <kbd>Ctrl</kbd> + <kbd>Spacebar</kbd> to try out the amazing Prisma
-  autocompletion because it knows everything about your schema and is strongly
-  typed.
-</blockquote>
+> 🐿️ Use <kbd>Ctrl</kbd> + <kbd>Spacebar</kbd> to try out the amazing Prisma autocompletion because it knows everything about your schema and is strongly typed.
 
 🖌️ Start by creating the `index.ts` endpoint inside `home`. It has the same name as `index.svelte` so we get access to the props.
 
@@ -1634,11 +1544,7 @@ export const get: RequestHandler = async () => {
 }
 ```
 
-<blockquote>
-  🐿️ Anything you `console.log` here gets logged to the terminal because it's on
-  the server. The `loader` function on the other hand runs on the server and
-  client so you shouldn't use it for secrets.
-</blockquote>
+> 🐿️ Anything you `console.log` here gets logged to the terminal because it's on the server. The `loader` function on the other hand runs on the server and client so you shouldn't use it for secrets.
 
 🖌️ Let's quickly add a type for the tweet inside `src/types` by creating a `index.ts` file so we can reuse it.
 
@@ -1940,27 +1846,24 @@ We're going to pass each tweet as a prop to a `<Tweet>` component mostly because
 
 </details>
 
-![Tweets](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/tweets.webp)
+{% img src="tweets.webp" alt="Tweets" %}
 
 Because we designed the API and shaped the data we have complete control of how we want to use it.
 
-<blockquote>
-  🐿️ If you're prerendering pages you don't have to think about caching because
-  they're static so if there's a [CDN](https://developer.mozilla.org/en-US/docs/Glossary/CDN) in front of your site it caches it for you until you rebuild and redeploy the site but if you're using server-side rendering you can set [cache-control
-  HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) in your endpoint and specify when the page should rebuild.
+If you're prerendering pages you don't have to think about caching because they're static so if there's a [CDN](https://developer.mozilla.org/en-US/docs/Glossary/CDN) in front of your site it caches it for you until you rebuild and redeploy the site but if you're using server-side rendering you can set [cache-control HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) in your endpoint and specify when the page should rebuild.
 
-    ```js
-    export async function get() {
-    	// ...
+```js
+export async function get() {
+  // ...
 
-    	return {
-    		headers: {
-    			'Cache-Control': 'max-age=0, s-maxage=60'
-    		},
-    		body: { data }
-    	}
-    }
-    ```
+  return {
+    headers: {
+      'Cache-Control': 'max-age=0, s-maxage=60'
+    },
+    body: { data }
+  }
+}
+```
 
 The `max-age` response directive informs the browser to not cache the page and `s-max-age` helps the CDN know how long to cache the page in seconds.
 
@@ -2100,15 +2003,11 @@ After you get the value from the form you can create a new tweet that's tied to 
 
 This is what I love about SvelteKit because it's using the web platform since `request` is just a [request object](https://developer.mozilla.org/en-US/docs/Web/API/Request) making you a better web developer.
 
-<blockquote>
-  🐿️ You should do validation on the client to give the user feedback and the
-  server for proper validation because anyone can change the code on the client.
-  Use a form validation library to give you a nice API.
-</blockquote>
+> 🐿️ You should do validation on the client to give the user feedback and the server for proper validation because anyone can change the code on the client. Use a form validation library to give you a nice API.
 
 Share your hot take! 🔥
 
-![Hot take](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/hot-take.webp)
+{% img src="hot-take.webp" alt="Hot take" %}
 
 ## Removing Tweets
 
@@ -2176,10 +2075,7 @@ You get the tweet id from the form and turn it into a number after which you rem
 
 Because **POST** is used for **DELETE** a 303 redirect status is used that means it doesn't link to a new resource.
 
-<blockquote>
-  🐿️ You can't use `delete` as the function name because it's a reserved word in
-  JavaScript.
-</blockquote>
+> 🐿️ You can't use `delete` as the function name because it's a reserved word in JavaScript.
 
 ## Liking a Tweet
 
@@ -2444,7 +2340,7 @@ export const get: RequestHandler = async ({ params }) => {
 
 Notice you get redirected to `home` if you like or remove a tweet but it's fine. You can always change that later in a couple of ways like passing where you want to redirect or using another endpoint.
 
-![User profile](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/user-profile.webp)
+{% img src="user-profile.webp" alt="User profile" %}
 
 ## Linking to a Tweet
 
@@ -2535,6 +2431,8 @@ That's it! 😄
 I even recreated how Twitter shows the name and content in the title. Did you know that `<title>` in most browsers can only show up to 60 characters?
 
 ## Settings Page
+
+**Update**: SvelteKit introduced a breaking change with [named layouts](https://kit.svelte.dev/docs/layouts#named-layouts) replacing layout resets. The solution is to create a named layout inside routes at `routes/__layout-reset.svelte` that has `<slot />` inside and use `@reset` when you need to reset a layout with `routes/home/settings/__layout@reset.svelte`.
 
 In this section you're going to learn how to reset a layout.
 
@@ -2729,7 +2627,7 @@ The content is going to show on the right when we use the navigation inside the 
 
 Unfortunately I didn't have enough time to make it responsive. 😅
 
-![Settings page](https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/sveltekit-for-beginners/images/settings.webp)
+{% img src="settings.webp" alt="Settings page" %}
 
 ## About Page
 
@@ -2787,11 +2685,7 @@ If you don't need JavaScript for a simple page you know doesn't change often you
 </style>
 ```
 
-<blockquote>
-  🐿️ You don't have to put every page inside a folder. In fact because there are
-  so many files sharing the same name it's hard to find what you want if you
-  perform a search.
-</blockquote>
+> 🐿️ You don't have to put every page inside a folder. In fact because there are so many files sharing the same name it's hard to find what you want if you perform a search.
 
 ## Progressive Enhancement
 
@@ -2843,10 +2737,7 @@ Remember the work forms do for us? Yeah, that's what we lost when we decided to 
 
 If JavaScript fails the form works but if JavaScript is on the page we're going to use it instead.
 
-<blockquote>
-  🐿️ This is an example but you would have to refresh the page because Svelte
-  doesn't know that `tweets` in `home/index.svelte` are updated.
-</blockquote>
+> 🐿️ This is an example but you would have to refresh the page because Svelte doesn't know that `tweets` in `home/index.svelte` are updated.
 
 This is great but we would have to to do this for every form duplicating the work so this is where actions can help us.
 
@@ -2953,10 +2844,7 @@ I want to reset the form when the user submits a tweet so I'm going to pass a `r
 
 I tried to make the types more readable compared to the `form.ts` example in the [default SvelteKit project](https://github.com/sveltejs/kit/blob/master/packages/create-svelte/templates/default/src/lib/form.ts) but use their example in a real project because it includes more things such as error handling.
 
-<blockquote>
-  🐿️ In the future this is probably going to be part of SvelteKit so it's going
-  to be even simpler.
-</blockquote>
+> 🐿️ In the future this is probably going to be part of SvelteKit so it's going to be even simpler.
 
 🖌️ This is the final version of `form.ts` with types.
 
@@ -3195,10 +3083,7 @@ You're going to create a `<Transition>` component that's going to wrap the `<slo
 
 One thing we need to know is when the URL changes so we can use the `page` store value from Svelte to pass as a prop to the `<Transition>` component which has a [key block](https://svelte.dev/docs#template-syntax-key) that is going to destroy and recreate the content when the URL changes.
 
-<blockquote>
-  🐿️ You already used key block for liking the tweet so it plays the animation
-  if you haven't noticed.
-</blockquote>
+> 🐿️ You already used key block for liking the tweet so it plays the animation if you haven't noticed.
 
 🖌️ Create the `transition.svelte` component inside `components`.
 
@@ -3219,10 +3104,7 @@ One thing we need to know is when the URL changes so we can use the `page` store
 {/key}
 ```
 
-<blockquote>
-  🐿️ The 300ms delay is because we need to wait out the 250ms duration of the
-  animation so it doesn't overlap when the new one starts.
-</blockquote>
+> 🐿️ The 300ms delay is because we need to wait out the 250ms duration of the animation so it doesn't overlap when the new one starts.
 
 🖌️ Update `__layout.svelte` inside `home`.
 
