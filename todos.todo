@@ -14,7 +14,7 @@ General:
   ✔ Prerender landing, newsletter, about, uses page @done
   ☐ Error page
   ✔ Scrollbar @done
-  ☐ Lazy loading
+  ✔ Lazy loading @done
   ✔ Series page @done
   ✔ Articles page @done
 
@@ -28,9 +28,9 @@ Data fetching:
 
 Posts:
   Images:
-    - Get dimensions
-    - Make shorthand like "{% image (.*?) %}" that represents "url/image.webp" because I don't want to type out a long URL which could also be awesome for other things like <iframe> and <video>
-    - Able to set class on image to take grid gutter space
+    ☐ Get dimensions
+    ✔ Make shorthand like "{% image (.*?) %}" that represents "url/image.webp" because I don't want to type out a long URL which could also be awesome for other things like <iframe> and <video> @done
+    ☐ Able to set class on image to take grid gutter space
   Markdown:
     ✔ Setup Markdown and plugins @done
     ☐ Copy code
