@@ -1,12 +1,12 @@
 ---
-title: 'Full Stack SvelteKit For Beginners'
-description: 'SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience'.
+title: Full Stack SvelteKit For Beginners
+description: SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.
 slug: 'sveltekit-for-beginners'
 published: '2022-2-28'
 category: 'sveltekit'
 image: 'social-image.webp'
-series: 'true'
-draft: 'false'
+series: true
+draft: false
 ---
 
 # Full Stack Web Development With SvelteKit For Beginners
