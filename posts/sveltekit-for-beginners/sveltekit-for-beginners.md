@@ -57,7 +57,7 @@ I made a simple Svelte example site with a Pokémon search together with a coupl
 
 You can press "open the preview in new window" button if you want to follow along.
 
-{% embed src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1" title="Svelte Single Page Application Example"  %}
+{% embed src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1" title="Svelte Single Page Application Example" %}
 
 Everything you see on the page like the content changing and navigation is done by JavaScript.
 
@@ -131,8 +131,7 @@ SvelteKit and Next.js let you prerender your site meaning all your pages are bui
 
 Because we're using a full stack framework we can create endpoints that correspond to [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) such as **GET** and **POST** same as using a backend framework like [Express](https://expressjs.com/).
 
-{% embed src="https://stackblitz.com/edit/sveltekit-example?ctl=1&embed=1&file=src/routes/index.svelte&hideExplorer=1&hideNavigation=1
-" title="SvelteKit example" %}
+{% embed src="https://stackblitz.com/edit/sveltekit-example?ctl=1&embed=1&file=src/routes/index.svelte&hideExplorer=1&hideNavigation=1" title="SvelteKit example" %}
 
 For the example to work you need to **allow cookies**.
 
