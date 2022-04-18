@@ -11,7 +11,7 @@ draft: false
 
 # Full Stack Web Development With SvelteKit For Beginners
 
-{% embed src="bLBHecY4-ak" title="SvelteKit For Beginners" %}
+{% embed src="https://www.youtube.com/embed/bLBHecY4-ak" title="SvelteKit For Beginners" %}
 
 ## Table of Contents
 
