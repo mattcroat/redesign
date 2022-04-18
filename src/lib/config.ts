@@ -28,3 +28,6 @@ export const postsUrl = `${api}/repos/${owner}/${repo}/contents/${path}`
 
 // https://github.com/mattcroat/gitkit/blob/main/posts
 export const fileUrl = `https://github.com/${owner}/${repo}/blob/main/posts`
+
+// https://raw.githubusercontent.com/mattcroat/gitkit/main/posts/post-slug/images/image.webp
+export const imagesUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/posts`

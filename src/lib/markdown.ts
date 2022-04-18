@@ -15,11 +15,48 @@ import remarkUnwrapImages from 'remark-unwrap-images'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeCodeTitles from 'rehype-code-titles'
 
+import { imagesUrl } from '$root/lib/config'
 import type { FrontMatterType } from '$root/types'
 
 type ContentType = {
   content: string
   frontmatter: FrontMatterType
+}
+
+function searchAndReplace(content: string, slug: string): string {
+  const embeds = /{% embed src="(.*?)" title="(.*?)" %}/g
+  const videos = /{% video src="(.*?)" %}/g
+  const images = /{% img src="(.*?)" alt="(.*?)" %}/g
+
+  return content
+    .replace(embeds, (_, src, title) => {
+      return `
+        <iframe
+          title="${title}"
+          src="${src}"
+          loading="lazy"
+        ></iframe>
+      `.trim()
+    })
+    .replace(videos, (_, src) => {
+      return `
+        <video controls>
+          <source
+            src="${imagesUrl}/${slug}/images/${src}"
+            type="video/mp4"
+          />
+        </video>
+      `.trim()
+    })
+    .replace(images, (_, src, alt) => {
+      return `
+      <img
+        src="${imagesUrl}/${slug}/images/${src}"
+        alt="${alt}"
+        loading="lazy"
+      />
+  `.trim()
+    })
 }
 
 export async function markdownToHTML(markdown: string): Promise<ContentType> {
@@ -48,11 +85,13 @@ export async function markdownToHTML(markdown: string): Promise<ContentType> {
     // `remark-rehype` is required with `rehype-raw`
     // https://github.com/rehypejs/rehype-raw
     .use(fromMarkdownToHtml, { allowDangerousHtml: true })
+    // Adds code titles above code blocks
     .use(rehypeCodeTitles)
+    // Adds syntax highlight, line numbers and higlight
     .use(rehypePrism)
     .use(parseHtmlAndMarkdown)
     .use(toHtml)
-    .process(content)
+    .process(searchAndReplace(content, data.slug))
   const processedMarkdown = result.value
 
   return {
