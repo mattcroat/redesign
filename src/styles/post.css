@@ -88,7 +88,10 @@
   border-top: 4px solid var(--clr-primary);
   border-radius: var(--rounded-20);
   box-shadow: var(--shadow-sm);
-  line-height: 40px;
+}
+
+.prose blockquote p {
+  margin-bottom: 0;
 }
 
 .prose details summary {
