@@ -1,20 +1,24 @@
 import { visit, SKIP } from 'unist-util-visit'
-import type { Node, Parent } from 'unist'
+import type { Root, Element } from 'hast'
 
 export function rehypeUnwrapImages() {
-  function visitor(node: Node, index: number | null, parent: Parent | null) {
-    parent.children.splice(index, 1, ...node.children)
-    return [SKIP, index]
-  }
-
-  function containsImage(node: Node) {
+  function containsImage(node: Element) {
     return (
       node.tagName === 'p' &&
-      node.children.some((child) => child.tagName === 'img')
+      node.children.some((child) => {
+        if (child.type === 'element') {
+          return child.tagName === 'img'
+        }
+      })
     )
   }
 
-  return (tree: Node) => {
-    visit(tree, containsImage, visitor)
+  return (tree: Root) => {
+    visit(tree, containsImage, (node, index, parent) => {
+      if (node.type === 'element') {
+        parent.children.splice(index, 1, ...node.children)
+        return [SKIP, index]
+      }
+    })
   }
 }
