@@ -56,7 +56,9 @@ html[data-font='dyslexic'] .prose code {
 }
 
 .prose .rehype-code-title {
-  padding: var(--spacing-16) 0 0 var(--spacing-24);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-16) var(--spacing-24) 0 var(--spacing-24);
   color: var(--clr-code-title);
   background-color: var(--clr-code-bg);
   border: 1px solid var(--clr-code-border);

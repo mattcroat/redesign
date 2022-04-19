@@ -13,7 +13,7 @@ import remarkSmartypants from 'remark-smartypants'
 import remarkTableofContents from 'remark-toc'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeCodeTitles from 'rehype-code-titles'
-import { rehypeUnwrapImages } from './plugins'
+import { rehypeCopyCode, rehypeUnwrapImages } from './plugins'
 
 import { imagesUrl } from '$root/lib/config'
 import type { FrontMatterType } from '$root/types'
@@ -99,6 +99,9 @@ export async function markdownToHTML(markdown: string): Promise<ContentType> {
 
     // Remove paragraph around images
     .use(rehypeUnwrapImages)
+
+    // Copy code to clipboard
+    .use(rehypeCopyCode)
 
     .use(toHtml)
     .process(searchAndReplace(content, data.slug))
