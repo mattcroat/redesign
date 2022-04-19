@@ -11,9 +11,9 @@ import remarkHeadings from 'remark-autolink-headings'
 import remarkSlug from 'remark-slug'
 import remarkSmartypants from 'remark-smartypants'
 import remarkTableofContents from 'remark-toc'
-import remarkUnwrapImages from 'remark-unwrap-images'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeCodeTitles from 'rehype-code-titles'
+import { rehypeUnwrapImages } from './plugins'
 
 import { imagesUrl } from '$root/lib/config'
 import type { FrontMatterType } from '$root/types'
@@ -69,27 +69,37 @@ export async function markdownToHTML(markdown: string): Promise<ContentType> {
     .use([
       // GitHub flavored Markdown
       remarkGfm,
+
       // Unique identifier for headings
       remarkHeadings,
+
       // Links for headings
       remarkSlug,
+
       // Typographic punctuation like real quotes
       remarkSmartypants,
+
       // Generates table of contents from headings
       // `tight` removes <p> from <li> when nested
-      [remarkTableofContents, { tight: true }],
-      // Remove paragraph around images
-      remarkUnwrapImages
+      [remarkTableofContents, { tight: true }]
     ])
     // To be able to parse a mix of Markdown and HTML
     // `remark-rehype` is required with `rehype-raw`
     // https://github.com/rehypejs/rehype-raw
     .use(fromMarkdownToHtml, { allowDangerousHtml: true })
+
     // Adds code titles above code blocks
     .use(rehypeCodeTitles)
+
     // Adds syntax highlight, line numbers and higlight
     .use(rehypePrism)
+
+    // For further processing turn content into a regular syntax tree
     .use(parseHtmlAndMarkdown)
+
+    // Remove paragraph around images
+    .use(rehypeUnwrapImages)
+
     .use(toHtml)
     .process(searchAndReplace(content, data.slug))
   const processedMarkdown = result.value
