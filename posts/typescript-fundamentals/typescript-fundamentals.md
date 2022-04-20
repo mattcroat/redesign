@@ -136,7 +136,7 @@ That's also a **limitation** of TypeScript to keep in mind.
 
 This means **you can't rely on TypeScript for checks in your code** such as user input when you ship your code.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon = []
 
 function addPokemon(pokemonName: string) {
@@ -168,7 +168,7 @@ addPokemon(1)
 
 This is the **compiled** ([transpiled](https://en.wikipedia.org/wiki/Source-to-source_compiler) 😄) JavaScript code. TypeScript didn't betray us. We neglected to put **checks and error validation** in the code.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon = []
 
 function addPokemon(pokemonName: string) {
@@ -264,7 +264,7 @@ const string = String(number) // '42'
 
 As we've learned TypeScript doesn't save us at **runtime**, so we have to put **checks** in place.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 function isString(value: string): boolean {
   return typeof value === 'string' ? true : false
 }
@@ -296,7 +296,7 @@ Even if we look at the implementation of `addPokemon` we don't know what date fo
 
 TypeScript **prevents** us from making those mistakes in the first place by knowing we are accessing the **right properties** and passing the **right arguments** alongside **code completion**.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon = []
 
 function addPokemon(name: string, timeAdded: Date) {
@@ -310,7 +310,7 @@ In the example the argument `name` is of type `string` and argument `timeAdded` 
 
 This is extremely useful when dealing with some API because the documentation lives inside your editor.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 // Type 'string' is not assignable to
 // parameter of type 'Date'. 🚫
 addPokemon('Pikachu', Date())
@@ -320,7 +320,7 @@ addPokemon('Pikachu', Date())
 
 The `Date` function returns a `string` but we have to pass the `new Date` constructor that returns an object. The type **doesn't match** so TypeScript complains that you **can't assign** `string` to `Date`.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 // [{ name: 'Pikachu', added: Date... }] ✅
 addPokemon('Pikachu', new Date())
 ```
@@ -352,7 +352,7 @@ If you can't see the right sidebar press the **arrow icon** at the top right.
 
 TypeScript can **infer** types to provide **type information**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 let pokemon = 'Pikachu'
 
 pokemon = 'Charizard'
@@ -371,7 +371,7 @@ How great is this **instant feedback** in your editor?
 
 TypeScript can also **infer** the **return type** of a function. If it doesn't return anything it's `void`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function returnPokemon() {
   // return string
   return 'Pikachu'
@@ -385,7 +385,7 @@ function logPokemon() {
 
 It's encouraged by the TypeScript documentation to let TypeScript **infer** the type when possible and later I'm going to show an example of that but you can always be **explicit** if you want.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function returnPokemon(): string {
   // return string
   return 'Pikachu'
@@ -399,7 +399,7 @@ function logPokemon(): void {
 
 In the next example we're looking at the **return type** of a fetch API request.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const API = 'https://pokeapi.co/api/v2/pokemon/'
 
 async function getPokemon(name: string) {
@@ -416,7 +416,7 @@ If you hover over `getPokemon` you can see TypeScript **infered** the **return t
 
 `any` is an **escape hatch** when we don't know what the type is.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const API = 'https://pokeapi.co/api/v2/pokemon/'
 
 async function getPokemon(
@@ -435,7 +435,7 @@ Here we're more **explicit** about the **return type** with using the object typ
 
 I haven't mentioned that we can do that because `Promise<Type>` is a **generic** but more on that later.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const API = 'https://pokeapi.co/api/v2/pokemon/'
 
 async function getPokemon(
@@ -471,7 +471,7 @@ const pokemon: string = 'Pikachu'
 
 TypeScript has the same basic **primitive types**.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon: string = 'Pikachu'
 const hp: number = 35
 const caught: boolean = true
@@ -494,7 +494,7 @@ Type `any` is a special type:
 - Type `any` represents **all** possible values
 - You get **no type checking**, so avoid using it
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const apiResponse: any = {
   data: []
 }
@@ -522,7 +522,7 @@ Type `unknown` is the **type-safe** version of `any`:
 - You **can't access any object properties** unless you **type narrow** first and then use **type assertion**
 - Type `unknown` can only be assigned to type `unknown` and type `any`
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const apiResponse: unknown = {
   data: []
 }
@@ -547,7 +547,7 @@ We **narrowed** down what the type of `apiResponse` is, yet we **can't** access 
 
 To solve the problem we have to use **type assertion** that lets TypeScript know about the type.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 if (apiResponse && typeof apiResponse === 'object') {
   const response = apiResponse as { data: [] }
   response.data // no warning ✅
@@ -558,7 +558,7 @@ We're going to learn about **type assertion** later.
 
 `unknown` is **safer** to use than `any` when we **don't know** the function argument, so instead of being able to do **anything** inside `prettyPrint` we have to **narrow** the type of the `input` argument first to be able to use it.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function prettyPrint(input: unknown): string {
   if (Array.isArray(input)) {
     // we can run each value through prettyPrint again
@@ -585,7 +585,7 @@ console.log(prettyValues)
 
 We can use `unknown` to describe a function that returns an unknown value. Because `obj` is `unknown` we have to `narrow` the type first before we do something reckless making it safe.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const json = '{ "id": 1, "name": "Pikachu" }'
 
 function safeParse(value: string): unknown {
@@ -605,7 +605,7 @@ Type `void` is the **absence of having any type**.
 
 There's no point assigning `void` to a variable since only type `undefined` is assignable to type `void`.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 let pokemon: void
 
 // only `undefined` is assignable to `void` ✅
@@ -617,7 +617,7 @@ pokemon = 'Pikachu'
 
 You mostly see type `void` used on functions that **don't** return anything.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 function logPokemon(pokemon: string): void {
   console.log(pokemon)
 }
@@ -627,7 +627,7 @@ logPokemon('Pikachu') // 'Pikachu'
 
 Let's learn how type `void` is useful when used in a `forEach` implementation.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function forEach(
   arr: any[],
   callback: (arg: any, index?: number) => void
@@ -647,7 +647,7 @@ Because we use type `void` as the **return type** for `forEach` we're saying **t
 
 Using the return type `void` **explicity** can save us from returning a value on accident during refactor.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemonList: string[]): void {
   pokemonList.forEach(pokemon => {
     // ...
@@ -672,7 +672,7 @@ Type `never` represents values that **never occur**:
 - You use type `never` when there's **no reachable end point** like a while loop or error exception
 - Variables get the type `never` when **narrowed by type guards** to **remove possibilities** (a great example is preventing impossible states when a prop is passed to a component where you can say if one type of prop gets passed another can't)
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function infiniteLoop(): never {
   while (true) {
     // ...
@@ -692,7 +692,7 @@ function timeout(ms: number): Promise<never> {
 
 Type `unknown` can be used together with **type narrowing** to ensure we have a **check** for each Pokemon type.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function getPokemonByType(
   pokemonType: 'fire' | 'water' | 'electric'
 ) {
@@ -729,7 +729,7 @@ There's **two equivalent** ways to specify an **array type** in TypeScript.
 
 To specify an **array type** you can use the **generics** `Array<Type>` syntax or the `Type[]` syntax.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemon1: Array<string> = ['Bulbasaur', 'Charmander', 'Squirtle']
 
 const pokemon2: string[] = ['Bulbasaur', 'Charmander', 'Squirtle']
@@ -741,7 +741,7 @@ I prefer the `Type[]` syntax because it's less to type.
 
 You can specify the **input** and **output** type of functions.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemon: string[] = []
 
 function addPokemon(name: string): string[] {
@@ -756,7 +756,7 @@ We **explicitly** typed `pokemon` as `string[]`. If TypeScript can't **infer** t
 
 **Anonymous functions** besides using **contextual typing** aren't any different and using **type annotations** is the same.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemon: string[] = []
 
 const addPokemon = (name: string): string[] => {
@@ -769,7 +769,7 @@ addPokemon('Pikachu')
 
 TypeScript uses **contextual typing** to figure out the type of the argument based on how it's used inside an **anonymous function**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemonList = ['Bulbasaur', 'Charmander', 'Squirtle']
 
 // 'Bulbasaur', 'Charmander', 'Squirtle'
@@ -778,7 +778,7 @@ pokemonList.forEach(pokemon => console.log(pokemon))
 
 TypeScript infered `pokemonList` is of type `string[]`. Because of this inside `forEach` it knows the individual `pokemon` type should be of type `string`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // being explicit ✅
 const pokemonList: string[] = ['Bulbasaur', 'Charmander', 'Squirtle']
 
@@ -792,7 +792,7 @@ Your goal isn't to please TypeScript but use it to give you confidence your code
 
 Function **arguments** can be made **optional** by using the `?` operator.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(name: string, hp?: number) {
   console.log({ name, hp })
 }
@@ -831,7 +831,7 @@ logPokemon({ name: 'Pikachu', hp: 35 })
 
 TypeScript has **overload signatures** that let you call a function in different ways.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   name: string
   hp: number
@@ -882,7 +882,7 @@ The **object type** is like a regular object in JavaScript.
 
 If you hover over `pokemonInferedType` TypeScript already knows it's shape.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // infered type
 const pokemonInferedType = {
   name: 'Pikachu'
@@ -896,7 +896,7 @@ const pokemonExplicitType: { name: string } = {
 
 In the next examples we can see how TypeScript treats **missing**, **optional**, and **extra** object properties.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // Property 'id' is missing in type '{ name: string; }' but
 // required in type '{ id: number; name: string; }'. 🚫
 const pokemonMissingProperty: { id: number, name: string } = {
@@ -928,7 +928,7 @@ Just how we assign names to different _types_ 🤭 of people.
 
 You should already be familiar with the **object type** syntax.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Pokemon = { id: number, name: string, pokemonType: string }
 
 const pokemon: Pokemon[] = [{
@@ -943,7 +943,7 @@ pokemon.forEach(pokemon => console.log(pokemon))
 
 Instead of writing `Pokemon[]` where `[]` indicates to TypeScript it's an array of Pokemon we can say `{ id: number, name: string, type: string }[]` which is equivalent.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Pokemon = { id: number, name: string, pokemonType: string }[]
 
 const pokemon: Pokemon = [{
@@ -962,7 +962,7 @@ This saves us from creating another type and using weird grammar like `Pokemons`
 
 The next example shows how we can reuse the `Pokemon` type by using it as the **argument** and **return type** of the `logPokemon` function.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Pokemon = string[] | string
 
 function logPokemon(pokemon: Pokemon): Pokemon {
@@ -993,7 +993,7 @@ console.log(logPokemon())
 
 The next examples shows ways to type different **function expressions** using a **type alias**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type LogPokemon = (pokemon: string) => void
 
 // named function expression
@@ -1012,7 +1012,7 @@ const logPokemon3: LogPokemon = (pokemon) => console.log(pokemon)
 
 The next example shows how we can use a **construct signature** inside a **type alias** to type a **constructor** function.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Pokemon = {
   name: string
   pokemonType: string
@@ -1056,7 +1056,7 @@ Confusing, right? This is just showing you it's possible, so don't think about i
 
 **Interfaces** are another way to name an object type.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   id?: number
   name: string
@@ -1100,7 +1100,7 @@ We haven't learned about **intersections** yet but briefly it just lets us **com
 
 The next example shows how using **intersections** we can extend a **type alias** by combining the type `Pokemon` and `{ pokemonType: 'electric' }` into a new type `Electric`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Pokemon = {
   id: number
   name: string
@@ -1118,7 +1118,7 @@ const pikachu: Electric = {
 
 In the case of **interfaces** we use the **extends** keyword to extend them.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   id: number
   name: string
@@ -1138,7 +1138,7 @@ const pikachu: Electric = {
 
 When using an **interface** you should always keep in mind that you can use an **existing interface** which could lead to some unexpected results.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Window {
   color: string
   style: 'double-hung' | 'casement' | 'awning' | 'slider'
@@ -1165,7 +1165,7 @@ For whatever reason using the **prefix** `IPokemon` for an **interface** is [con
 
 A **union type** is a type made from at least two types and represents **any** values of those types.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: string[] | string) {
   console.log(pokemon)
 }
@@ -1181,7 +1181,7 @@ The `pokemon` argument can only be an **array** of Pokemon of type `string[]` or
 
 **You can only do things with the union type that every member supports** meaning that you can't just use a `string` method **without checks** because you said to TypeScript the type could either be `string[]` or `string`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: string[] | string) {
   // Property 'toUpperCase' does not exist on type 'string[]'. 🚫
   console.log(pokemon.toUpperCase())
@@ -1193,7 +1193,7 @@ logPokemon('Pikachu')
 
 Instead we have to put **checks** in place to **narrow** down the type so TypeScript knows the **exact type**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: string[] | string) {
   if (Array.isArray(pokemon)) {
     // `pokemon` can only be an array ✅
@@ -1217,7 +1217,7 @@ Unfortunately the second `if...else` statement is required because TypeScript ca
 
 In situations where the **union members** like `string[]` and `string` **overlap** and **share** the same methods such as `slice` you don't have to **narrow** the type.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: string[] | string) {
   // works for both types ✅
   console.log(pokemon.slice(0, 1))
@@ -1240,7 +1240,7 @@ The next example shows what you might expect would work but **doesn't** because 
 
 Let's _switch_ 🤭 it up for fun.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   flamethrower?: () => void
   whirlpool?: () => void
@@ -1277,7 +1277,7 @@ The type-checker can't determine if `flamethrower` or `whirpool` is present base
 
 To solve this problem we have to be more **explicit** and **separate** the arguments so TypeScript can be sure of the type.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Fire {
   flamethrower: () => void
   pokemonType: 'fire'
@@ -1324,7 +1324,7 @@ This also helps us **catch mistakes** if something passed through the `switch` s
 
 The next example also shows how we can use **interfaces** and **type aliases** together.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   name: string
   hp: number
@@ -1364,7 +1364,7 @@ I threw in a sneaky **tuple** in `pokemonType` because a Pokemon can have dual-t
 
 If we wanted to use an **interface** we could and it works just the same.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 interface Fire extends Ability, Moves {}
 
 interface FirePokemon extends Pokemon, Fire {}
@@ -1385,7 +1385,7 @@ const formEl = document.getElementById('form')
 
 These types correspond to the [browser API](https://developer.mozilla.org/en-US/docs/Web/API). [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) is the **base class** other elements inherit from. [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) is the **base interface** for HTML elements. That's how we get to the [HTMLFormElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement) that represents a `<form>` element in the DOM (Document Object Model).
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const formEl = document.getElementById('form')
 
 // Property 'reset' does not exist on type 'HTMLElement'. 🚫
@@ -1408,7 +1408,7 @@ If we look at the API for **HTMLElement** the TypeScript error makes complete se
 
 We can be more **specific** about the type of element with **type assertion** using the `as` keyword.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const formEl = document.getElementById('form') as HTMLFormElement
 
 formEl?.reset() // works ✅
@@ -1418,7 +1418,7 @@ The 🧠 pro-tip for how to figure out what element you want is fumbling around 
 
 There's also the alternative angle bracket `<>` syntax for **type assertion**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const formEl = <HTMLFormElement>document.getElementById('form')
 
 formEl?.reset() // works ✅
@@ -1443,7 +1443,7 @@ In the next example we have an **input field** with an **event listener** that t
 <input type="text" id="pokemon" />
 ```
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemonInputEl = document.getElementById('pokemon') as HTMLInputElement
 
 function handleInput(event) {
@@ -1459,7 +1459,7 @@ This makes sense because [Event](https://developer.mozilla.org/en-US/docs/web/ap
 
 This is a **teachable moment** that lets us know we can **leverage TypeScript to help us figure out built-in types** instead of having to look it up.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemonInputEl = document.getElementById('pokemon') as HTMLInputElement
 
 function handleInput(event: Event) {
@@ -1473,7 +1473,7 @@ pokemonInputEl.addEventListener('input', (event) => handleInput(event))
 
 The problem we face has to do again with the type not being specific enough. We want the `value` from `event.target` but we can see the type is `EventTarget` so TypeScript doesn't let us access that property.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemonInputEl = document.getElementById('pokemon') as HTMLInputElement
 
 function handleInput(event: Event) {
@@ -1488,7 +1488,7 @@ TypeScript knows the type is `HTMLInputElement`, so we can use it's methods and 
 
 You **don't** have to keep this knowledge in your head. Let TypeScript and your editor **help you** figure out what type to use.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // event is `MouseEvent` 🐭
 window.addEventListener('mouseover', (event) => console.log('Mouse event'))
 
@@ -1501,7 +1501,7 @@ window.addEventListener('keyup', (event) => console.log('Keyboard event'))
 
 In the previous example we used `!` that asserts the type can't be `null` but keep in mind that when using any **type assertion** you're saying the element can't be `null`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // HTMLElement | null
 const pokemonInputEl = document.getElementById('pokemon')
 
@@ -1515,7 +1515,7 @@ That being said **don't lie** to the TypeScript compiler and only use **type ass
 
 Using the `!` syntax after any expression is a **type assertion** that the value isn't going to be `null` or `undefined`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const formEl = document.getElementById('form')! as HTMLFormElement
 
 formEl.reset() // works ✅
@@ -1527,7 +1527,7 @@ Using `any` and **type assertion** is great when you're just writing code but av
 
 TypeScript tries it's best to not let you do something stupid.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // Conversion of type 'string' to type 'number' may be a mistake because
 // neither type sufficiently overlaps with the other. If this was
 // intentional, convert the expression to 'unknown' first. 🚫
@@ -1536,7 +1536,7 @@ const pokemon = 'Pikachu' as number
 
 That doesn't mean you can't do whatever you want.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemon = 'Pikachu' as unknown as number
 
 // looks great 💥
@@ -1553,7 +1553,7 @@ TypeScript only allows **type assertions** that convert to a **more** specific o
 
 TypeScript has `string`, `number`, and `boolean` literals. The `boolean` type itself is just an **alias** for the `true | false` union.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 // type is string
 let pokemonGeneralType = 'Pikachu'
 
@@ -1563,7 +1563,7 @@ const pokemonLiteralType = 'Pikachu'
 
 This concept is more useful if we combine **type literals** into **unions**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function movePokemon(
   direction: 'up' | 'right' | 'down' | 'left'
 ) {
@@ -1580,7 +1580,7 @@ movePokemon('rigth') // oops! typo. 🚫
 
 Types are used to determine **reading** and **writing** behavior.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function addPokemon(
   name: string,
   pokemonType: '🔥 fire' | '🌀 water' | '⚡ electric'
@@ -1602,7 +1602,7 @@ addPokemon(pokemon.name, pokemon.pokemonType)
 
 We can use **type assertion** on `pokemonType`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemon = {
   name: 'Pikachu',
   pokemonType: '⚡ electric' as '⚡ electric'
@@ -1611,7 +1611,7 @@ const pokemon = {
 
 The easier method is using the `as const` suffix that acts like the **type equivalent** of `const`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const pokemon = {
   name: 'Pikachu',
   pokemonType: '⚡ electric'
@@ -1620,7 +1620,7 @@ const pokemon = {
 
 TypeScript adds a `readonly` type on the `pokemon` properties that signals they **won't change**, so TypeScript knows it's a **literal type** instead of a **general type** like `string` or `number`.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon: {
   readonly name: "Pikachu"
   readonly pokemonType: "electric"
@@ -1642,7 +1642,7 @@ The second syntax is called **index accessors**.
 
 This is reflected in the types system where you can add an **index signature** to unknown properties.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface PokemonAPIResponse {
   [index: string]: unknown
 }
@@ -1658,7 +1658,7 @@ This is useful when we don't have control over an API or time to type out a comp
 
 In the example we might only care about **some** properties and not the rest.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface PokemonAPIResponse {
   // let any other property through that
   // matches the index signature
@@ -1700,7 +1700,7 @@ logPokemon('pikachu') // '35', 'static', 'lightning-rod'
 
 Here's another example where we have Pokemon ratings but don't know all the Pokemon ahead of time.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Rating = 1 | 2 | 3 | 4 | 5
 
 interface PokemonRatings {
@@ -1713,7 +1713,7 @@ interface PokemonRatings {
 
 This is a great opportunity to explain something that might confuse you when dealing with dynamic code where you're accesing object properties such as `object[key]` where `key` is dynamic.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Stats {
   id: number
   hp: number
@@ -1746,7 +1746,7 @@ In reality we want to access the `pokemon` object using the **type literal** `bu
 
 We can see this is true if we change the **index signature** to `string` meaning we can pass **anything** that matches that **index signature**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   [pokemon: string]: Stats
   bulbasaur: Stats
@@ -1761,7 +1761,7 @@ pokemon[bulbasaur]
 
 What you should do is make sure you're passing a **type literal** instead or use the `as const` assertion. I'm only **explicit** here so it's obvious but using **const** already does that.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 const bulbasaur: 'bulbasaur' = 'bulbasaur'
 
 // string literal 'bulbasaur' ✅
@@ -1772,7 +1772,7 @@ pokemon[bulbasaur]
 
 **Type narrowing** is when you **narrow** types to **more specific types**, so you can **limit** what you can do with a certain value.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function getPokemonByType(
   pokemonType: 'fire' | 'water' | 'electric'
 ) {
@@ -1800,7 +1800,7 @@ Let's appreciate for a moment how cool it is that TypeScript just knows the type
 
 The next example shows **type narrowing** using the `in` operator that checks if a property is **in** the object.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type Fire = { flamethrower: () => void }
 
 type Water = { whirlpool: () => void }
@@ -1835,7 +1835,7 @@ If you remember from a previous example there's a distinction between the constr
 
 In the same way we can use `instanceof` to check if a value is an instance of another value.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logDate(date: Date | string) {
   if (date instanceof Date) {
     console.log(date.toUTCString())
@@ -1859,7 +1859,7 @@ A **type guard** is a check against the value returned by `typeof`.
 
 Because TypeScript often knows more than us about some intricacies of JavaScript it can save us from some JavaScript quirks.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: string[] | null) {
   if (typeof pokemon === 'object') {
     // Object is possibly 'null'. 🚫
@@ -1894,7 +1894,7 @@ Take for example a Pokemon list where not every item is a Pokemon. We can use th
 
 We expect TypeScript to **narrow** the type through the `if...else` statement to make sure the item we're passing is a Pokemon, so we can access it's properties but `pokemon` is `unknown`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   name: string
   itemType: string
@@ -1931,7 +1931,7 @@ How do we **narrow** the type of `pokemon` to be `Pokemon`?
 
 We can use **type predicates** to **narrow** the `pokemon` type to `Pokemon` by using the `argumentName is Type` syntax that changes the argument type if the function returns `true`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function isPokemon(value: any): value is Pokemon {
   return value.itemType === 'pokemon' ? true : false
 }
@@ -1959,7 +1959,7 @@ const pokemon: Array<{ name: string, pokemonType: string }> = [{ name: 'Pikachu'
 
 To make the code more readable we can use a **type alias** or **interface**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   name: string
   pokemonType: string
@@ -1972,7 +1972,7 @@ If you remember what we learned before, instead of the `Array<Pokemon>` syntax w
 
 Let's look at an example where we use `logPokemon` to log Pokemon where we don't know the type ahead of time because a user could pass anything from a `string` to an `array`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: any) {
   return pokemon
 }
@@ -1985,7 +1985,7 @@ Hovering over the values we can see the infered type for `logPokemon` is `(pokem
 
 We might think of using a **union type** to handle the types but it's not ideal since it wouldn't **narrow** the type without **type guards**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon(pokemon: string | string[]) {
   return pokemon
 }
@@ -2006,7 +2006,7 @@ It would be easier to let the user pass in their **own type** using **generics**
 
 The **generics** syntax is `<Type>` where `Type` represents the **type variable.** You might see the single letter `T` used instead but I think it's confusing. It makes the code harder to read and you might assume you have to use `T` as a type name. **You can name the type variable anything you want.**
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function logPokemon<Type>(pokemon: Type): Type {
   return pokemon
 }
@@ -2044,7 +2044,7 @@ Let's think about the problem:
 - The `callback` function could have **any** argument and return type based on that array
 - `formatPokemon` is of type `any` because we **don't** know the return type
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function map(
   arr: any,
   callback: (arg: any) => any
@@ -2067,7 +2067,7 @@ Hovering over `formatPokemon` in the log we see it's of type `string[]` and `map
 
 Using proper names for **type variables** makes the code so much easier to reason about.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function map<Input, Output>(
   arr: Input[],
   callback: (arg: Input) => Output
@@ -2090,7 +2090,7 @@ An **interface** can also be generic.
 
 We're creating a **generic** interface `Dictionary` with a **index signature** that accepts any `string` as the object key and it's property has to match the shape of `Type`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Dictionary<Type> {
   [key: string]: Type
 }
@@ -2125,7 +2125,7 @@ So far we've seen **generics** that work with **any** kind of value. We can use 
 
 We use the `extends` keyword to say that `Type` has to have a `length` property.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Length {
   length: number
 }
@@ -2153,7 +2153,7 @@ console.log(numberLength) // undefined
 
 The next example shows a `sortPokemon` function that uses a **generic constraint** to **constrain** the **shape** of the `pokemon` argument to the `Pokemon` interface.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface Pokemon {
   name: string
   hp: number
@@ -2215,7 +2215,7 @@ We can do the type equivalent in TypeScript to make sure the property exists usi
 
 The `keyof` operator takes an object type and gives us a **string or numeric literal union** of its keys.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function getProperty<Type, Key extends keyof Type>(
   obj: Type,
   key: Key
@@ -2274,7 +2274,7 @@ movePokemon(direction[direction])
 
 **Enums** are what you could use in such a case.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 enum Direction {
   Up = 'UP',
   Right = 'RIGHT',
@@ -2312,7 +2312,7 @@ A **tuple** is an array with a **fixed** number of elements.
 
 Use a **tuple** where the order is important.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type RGBColor = [number, number, number]
 
 const color: RGBColor = [255, 255, 255]
@@ -2320,7 +2320,7 @@ const color: RGBColor = [255, 255, 255]
 
 You can specify optional values.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type RGBAColor = [number, number, number, number?]
 
 const color: RGBAColor = [255, 255, 255, 0.4]
@@ -2328,7 +2328,7 @@ const color: RGBAColor = [255, 255, 255, 0.4]
 
 Cartesian coordinates anyone? 🗺️
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 type CartesianCoordinates = [x, y]
 
 const coordinates: CartesianCoordinates = [3, 4]
@@ -2342,7 +2342,7 @@ If you're unfamiliar with classes you can [read about Classes from the MDN Web D
 
 The `readonly` member prevents assignments to the field outside of the constructor.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 class Pokemon {
   readonly name: string
 
@@ -2359,7 +2359,7 @@ pokemon.name = 'Charizard'
 
 The `public` member can be accessed anywhere and it's used by default, so you don't have to type it unless you want to be explicit.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 class Pokemon {
   public name: string
 
@@ -2375,7 +2375,7 @@ pokemon.name = 'Charizard' // no problem ✅
 
 The `protected` member is only visible to subclasses of the class it's declared in.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 class Pokemon {
   protected name: string
 
@@ -2402,7 +2402,7 @@ pokemon.logPokemon() // 'Pikachu'
 
 The `private` member is like `protected` but doesn’t allow access to the member even from subclasses.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 class Pokemon {
   private name: string
 
@@ -2431,7 +2431,7 @@ pokemon.logPokemon() // 'Pikachu'
 
 TypeScript gives us a shorter syntax for declaring a class property from the constructor using **parameter properties** by prefixing it with `public`, `private`, `protected`, or `readonly`.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 class Pokemon {
   name: string
 
@@ -2449,7 +2449,7 @@ class Pokemon {
 
 You can _*implement* 🤭_ an **interface** using the `implements` keyword.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 interface LogPokemon {
   logPokemon(): void
 }
@@ -2470,7 +2470,7 @@ class Pokedex implements LogPokemon {
 
 The syntax for a **generic** class is similar to a **generic** interface syntax.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 class Pokemon<Type> {
   constructor(public pokemon: Type) {}
 }
@@ -2484,7 +2484,7 @@ const pokemonArray = new Pokemon(['Bulbasaur', 'Charmander', 'Squirtle'])
 
 TypeScript introduces the concept of an **abstract class** that's a **contract** used by other classes to **extend** from. The **abstract class** doesn't contain **implementation** and can't be **instantiated**.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 abstract class Pokemon {
   constructor(public name: string) {}
 
@@ -2532,7 +2532,7 @@ In the next example we're going to see how we can use a **method decorator** for
 
 The **decorator** implementation is inside `requiredExperience` that's also known as a **decorator factory** because it returns a function that will be called by the **decorator** at runtime.
 
-```ts:playground.ts
+```ts:playground.ts showLineNumbers
 function requiredExperience() {
   return function(
     target: any,
@@ -2783,7 +2783,7 @@ This has properties we would expect like `length`, `pop`, `push`, and `map`.
 
 By looking at the **type definitions** we can learn how they typed the `map` array method.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 interface Array<T> {
   // ...
   map<U>(
@@ -2805,7 +2805,7 @@ Arguably, the hardest part about TypeScript can be reading and understanding err
 
 First open the **problems** tab in your editor by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> so you have an easier time reading TypeScript errors.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon = {
   bulbasaur: { id: 1, hp: 45, attack: 49, defense: 49 },
   charmander: { id: 2, hp: 39, attack: 52, defense: 43 },
@@ -2851,7 +2851,7 @@ We don't care if `chosenPokemon` type is `any` because that's what TypeScript ca
 
 This is what TypeScript thinks is going on.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 // TypeScript sees the general type `string` 🚫
 const chosenPokemon = pokemon['random string']
 
@@ -2863,7 +2863,7 @@ TypeScript freaks out because it thinks we're passing some random string since w
 
 If you remember, objects are **number indexed** by default.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 interface Pokemon {
   [index: string]: {
     id: number
@@ -2888,7 +2888,7 @@ That works, but it's not what we want.
 
 We just want TypeScript to **infer** the type for us here so we don't have to do it by hand, otherwise we would have to update the **interface** each time there's another Pokemon.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 interface Pokemon {
   bulbasaur: {
     id: number
@@ -2913,7 +2913,7 @@ interface Pokemon {
 
 The problem is that we're not passing the **type literal** `bulbasaur`, so TypeScript can't compare it to the key `bulbasaur` in `pokemon`.
 
-```ts:example.ts
+```ts:example.ts showLineNumbers
 const pokemon = {
   bulbasaur: { id: 1, hp: 45, attack: 49, defense: 49 },
   charmander: { id: 2, hp: 39, attack: 52, defense: 43 },
@@ -2951,7 +2951,7 @@ The great thing about TypeScript is that the community can gather around to crea
 
 In the example we have a simple **HTTP server** in **Node** that sends a JSON response.
 
-```ts:app.ts
+```ts:app.ts showLineNumbers
 const http = require('http')
 
 function requestListener(req, res) {
@@ -3005,7 +3005,7 @@ We found our types! 🎉 The `req` argument expects `IncomingMessage` and the `r
 
 We can import the types from the `http` package.
 
-```ts:app.ts
+```ts:app.ts showLineNumbers
 import * as http from 'http'
 
 import type { IncomingMessage, ServerResponse } from 'http'
@@ -3013,7 +3013,7 @@ import type { IncomingMessage, ServerResponse } from 'http'
 
 The `type` keyword is optional but it makes it clear we're using types and not importing some method.
 
-```ts:app.ts
+```ts:app.ts showLineNumbers
 import * as http from 'http'
 
 import type { IncomingMessage, ServerResponse } from 'http'
