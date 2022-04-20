@@ -4,7 +4,6 @@ description: Best practices I learned for using fonts on your site
 slug: 'using-fonts-on-the-web'
 published: '2021-5-15'
 category: 'general'
-image: 'social-image.png'
 ---
 
 # Best Practices When Using Fonts

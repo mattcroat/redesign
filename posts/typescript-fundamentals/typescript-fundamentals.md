@@ -4,7 +4,6 @@ description: Learn and understand TypeScript through example that's also a refer
 slug: 'typescript-fundamentals'
 published: '2021-7-7'
 category: 'typescript'
-image: 'social-image.png'
 ---
 
 # TypeScript Fundamentals

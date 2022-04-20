@@ -4,7 +4,6 @@ description: Quick demonstration of how to set up Vite and Tailwind
 slug: 'using-tailwind-with-vite'
 published: '2021-10-3'
 category: 'css'
-image: 'social-image.png'
 ---
 
 # Using Tailwind With Vite

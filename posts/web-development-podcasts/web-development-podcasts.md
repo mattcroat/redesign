@@ -4,7 +4,6 @@ description: Let yourself be entertained while you stay up to date with web deve
 slug: 'web-development-podcasts'
 published: '2021-1-31'
 category: 'general'
-image: 'social-image.png'
 ---
 
 # Web Development Podcasts
