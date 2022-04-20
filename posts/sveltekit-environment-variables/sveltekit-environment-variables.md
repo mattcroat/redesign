@@ -3,7 +3,7 @@ title: Using Secret Environment Variables With SvelteKit
 description: Learn how to keep your secret environment variables safe for your API tokens and other secrets.
 slug: sveltekit-environment-variables
 published: 2022-3-24
-category: 'svelte'
+category: 'sveltekit'
 ---
 
 # Using Secret Environment Variables With SvelteKit

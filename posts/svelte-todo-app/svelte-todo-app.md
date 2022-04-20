@@ -4,6 +4,7 @@ description: Learn problem solving by making an awesome Svelte todo app as I gui
 slug: svelte-todo-app
 published: '2022-1-12'
 category: svelte
+series: true
 ---
 
 # Make a Svelte Todo App

@@ -4,6 +4,7 @@ description: Regardless if you're new to JavaScript frameworks or Svelte you're 
 slug: svelte-for-beginners
 published: 2021-12-16
 category: svelte
+series: true
 ---
 
 # Svelte For Beginners
