@@ -154,13 +154,13 @@ svelte-todo/
 
 🖌️ Inside **App.svelte** remove everything.
 
-```html:src/App.svelte {showLineNumbers}
+```html:src/App.svelte showLineNumbers
 <h1>Hello, World 👋</h1>
 ```
 
 If you run the project and visit http://localhost:3000/ you should see "Hello, World 👋" on the screen. If you want you can also change the title of the page inside `index.html`.
 
-```shell:terminal {showLineNumbers}
+```shell:terminal showLineNumbers
 npm run dev
 ```
 
@@ -172,7 +172,7 @@ You can set up as many of path aliases as you want for example `$components`, `$
 
 🖌️ Change `vite.config.js`.
 
-```js:vite.config.js {3,7-11} {showLineNumbers}
+```js:vite.config.js {3,7-11} showLineNumbers
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import path from 'path'
@@ -189,7 +189,7 @@ export default defineConfig({
 
 🖌️ If you're using TypeScript we also need to let the TypeScript compiler know about this.
 
-```json:tsconfig.json {10-13} {showLineNumbers}
+```json:tsconfig.json {10-13} showLineNumbers
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
@@ -214,7 +214,7 @@ export default defineConfig({
 
 <details>
 	<summary>src/styles/global.css</summary>
-	```css:src/styles/global.css {showLineNumbers}
+	```css:src/styles/global.css showLineNumbers
 	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 	
 	*,
@@ -294,7 +294,7 @@ export default defineConfig({
 
 You can include the styles inside `index.html` but you wouldn't benefit from HMR (hot module replacement) meaning you won't see updates instantly as you make changes so let's include the styles inside `App.svelte`.
 
-```html:src/App.svelte {2} {showLineNumbers}
+```html:src/App.svelte {2} showLineNumbers
 <script lang="ts">
 	import '$root/styles/global.css'
 </script>
@@ -312,7 +312,7 @@ First let's create a `Todos.svelte` file in `src/components` and then import it 
 
 🖌️ Inside `Todos.svelte` add this markup.
 
-```html:src/components/Todos.svelte {showLineNumbers}
+```html:src/components/Todos.svelte showLineNumbers
 <main>
   <h1 class="title">todos</h1>
 
@@ -364,7 +364,7 @@ First let's create a `Todos.svelte` file in `src/components` and then import it 
 
 <details>
 	<summary>Todos.svelte</summary>
-	```html:App.svelte {showLineNumbers}
+	```html:App.svelte showLineNumbers
 	<style>
 		 /* Todos */
 	
@@ -565,7 +565,7 @@ First let's create a `Todos.svelte` file in `src/components` and then import it 
 
 🖌️ Update `App.svelte`.
 
-```html:App.svelte {2,6} {showLineNumbers}
+```html:App.svelte {2,6} showLineNumbers
 <script lang="ts">
   import Todos from '$root/components/Todos.svelte'
   import '$root/styles/global.css'
@@ -582,7 +582,7 @@ The use of `autofocus` is discouraged because it's bad for accessibility but in 
 
 If you're using a linter and your editor is complaining at you for using `autofocus` as it should you can disable the rule.
 
-```html:App.svelte {showLineNumbers}
+```html:App.svelte showLineNumbers
 <!-- svelte-ignore a11y-autofocus -->
 <input class="edit" type="text" autofocus />
 ```
@@ -591,7 +591,7 @@ If you're using a linter and your editor is complaining at you for using `autofo
 
 🖌️ Let's use some fake data inside `Todos.svelte` to have something to work with and loop over the todo list.
 
-```html:src/components/Todos.svelte {2,4-10,33-55} {showLineNumbers}
+```html:src/components/Todos.svelte {2,4-10,33-55} showLineNumbers
 <script lang="ts">
 	import type { ITodo } from '$root/types/todo'
 
@@ -666,7 +666,7 @@ If you're using a linter and your editor is complaining at you for using `autofo
 
 🖌️ Create the types in `src/types/todo.ts`.
 
-```ts:src/types/todo.ts {showLineNumbers}
+```ts:src/types/todo.ts showLineNumbers
 export interface ITodo {
   id: string
   text: string
@@ -686,7 +686,7 @@ If you want to you can add `$: console.log(todos)` inside `Todos.svelte` to see 
 
 🖌️ First let's create a `AddTodo.svelte` file in `src/components` and move the markup and styles for it from `Todos.svelte`.
 
-```html:src/components/AddTodo.svelte {showLineNumbers}
+```html:src/components/AddTodo.svelte showLineNumbers
 <form>
   <input type="checkbox" id="toggle-all" class="toggle-all" />
   <label aria-label="Mark all as complete" for="toggle-all">
@@ -751,7 +751,7 @@ Parts of our application depend on the same values such as `todos` and `todosAmo
 
 🖌️ Let's keep it simple and define what we need inside `Todos.svelte` and simply pass the props to `AddTodo.svelte`.
 
-```html:src/components/Todos.svelte {4,14-39,45,47,83} {showLineNumbers}
+```html:src/components/Todos.svelte {4,14-39,45,47,83} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -847,7 +847,7 @@ The form right now submits and reloads the page so we need to prevent the defaul
 
 🖌️ Update `AddTodo.svelte`.
 
-```html:src/components/AddTodo.svelte {1-16,18,19,21,29,32} {showLineNumbers}
+```html:src/components/AddTodo.svelte {1-16,18,19,21,29,32} showLineNumbers
 <script lang="ts">
   type AddTodoType = (todo: string) => void
   type ToggleCompletedType = (event: MouseEvent) => void
@@ -902,7 +902,7 @@ Before we create the `Todo.svelte` component we need to create the methods insid
 
 🖌️ Update `Todos.svelte`.
 
-```html:src/components/Todos.svelte {5,41-48,60} {showLineNumbers}
+```html:src/components/Todos.svelte {5,41-48,60} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -984,7 +984,7 @@ Before we create the `Todo.svelte` component we need to create the methods insid
 
 🖌️ Create a `Todo.svelte` file under `src/components` and move the markup and styles from `Todos.svelte` there and add the props along with types.
 
-```html:src/components/Todo.svelte {showLineNumbers}
+```html:src/components/Todo.svelte showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1112,7 +1112,7 @@ We're also going to use the `class:` directive to apply a `.completed` class if 
 
 🖌️ Update `Todo.svelte` to reflect the changes.
 
-```html:src/components/Todo.svelte {14,26} {showLineNumbers}
+```html:src/components/Todo.svelte {14,26} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1156,7 +1156,7 @@ That's it, great job! 👍️
 
 🖌️ Inside `Todos.svelte` add the method for removing the todo and pass it to `Todo.svelte`.
 
-```html:src/components/Todos.svelte {50-52,64} {showLineNumbers}
+```html:src/components/Todos.svelte {50-52,64} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1242,7 +1242,7 @@ That's it, great job! 👍️
 
 🖌️ In `Todo.svelte` we need to take in the prop and wire up the event to the button.
 
-```html:src/components/Todo.svelte {5,9,29} {showLineNumbers}
+```html:src/components/Todo.svelte {5,9,29} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1292,7 +1292,7 @@ We're going to create a function that takes in the todo `id` to find the todo an
 
 🖌️ Inside `Todos.svelte` we need to add the `editTodo` method and pass it to `Todo.svelte`.
 
-```html:src/components/Todos.svelte {54-57,69} {showLineNumbers}
+```html:src/components/Todos.svelte {54-57,69} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1390,7 +1390,7 @@ The `<li>` is going to have a `class:editing` directive and a `dblclick` event l
 
 🖌️ Update `Todo.svelte`.
 
-```html:src/components/Todo.svelte {6,11,13-42,45,58,71-80} {showLineNumbers}
+```html:src/components/Todo.svelte {6,11,13-42,45,58,71-80} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1486,7 +1486,7 @@ To see how many incomplete todos there are we're going to have a computed proper
 
 🖌️ Update `Todos.svelte`.
 
-```html:src/components/Todos.svelte {6,18,76} {showLineNumbers}
+```html:src/components/Todos.svelte {6,18,76} showLineNumbers
 <script lang="ts">
   import type { ITodo } from '$root/types/todo'
 
@@ -1579,7 +1579,7 @@ To see how many incomplete todos there are we're going to have a computed proper
 
 🖌️ Create `TodosLeft.svelte` inside `src/components`.
 
-```html:src/components/TodosLeft.svelte {showLineNumbers}
+```html:src/components/TodosLeft.svelte showLineNumbers
 <script lang="ts">
   export let incompleteTodos: number
 </script>
@@ -1600,7 +1600,7 @@ When the filter changes we could have a computed property `filteredTodos` which 
 
 🖌️ Let's quickly add the `FiltersType` so we can use it.
 
-```ts:src/types/todo.ts {7} {showLineNumbers}
+```ts:src/types/todo.ts {7} showLineNumbers
 export interface ITodo {
   id: string
   text: string
@@ -1612,7 +1612,7 @@ export type FiltersType = 'all' | 'active' | 'completed'
 
 🖌️ Update `Todos.svelte`.
 
-```html:src/components/Todos.svelte {2,7,17,22,65-78,89,96} {showLineNumbers}
+```html:src/components/Todos.svelte {2,7,17,22,65-78,89,96} showLineNumbers
 <script lang="ts">
   import type { FiltersType, ITodo } from '$root/types/todo'
 
@@ -1722,7 +1722,7 @@ Now the computed value of `filteredTodos` is in charge of showing the todos.
 
 🖌️ Move the markup and styles for filters outside of `Todos.svelte` into a new file `FilterTodos.svelte` and include the props.
 
-```html:src/components/FilterTodos.svelte {showLineNumbers}
+```html:src/components/FilterTodos.svelte showLineNumbers
 <script lang="ts">
   import type { FiltersType } from '$root/types/todo'
 
@@ -1765,7 +1765,7 @@ Instead of repeating the markup and adding logic for every `<button>` we can cre
 
 Each `<button>` is going to have a `click` event listener and `class:selected` directive so we can apply the `.selected` class to the currently selected filter.
 
-```html:src/components/FilterTodos.svelte {9,13-21} {showLineNumbers}
+```html:src/components/FilterTodos.svelte {9,13-21} showLineNumbers
 <script lang="ts">
   import type { FiltersType } from '$root/types/todo'
 
@@ -1800,7 +1800,7 @@ You're almost done! 😄 For the last part we need to clear the completed todos.
 
 🖌️ Inside `Todos.svelte` add a computed value `completedTodos` and a `clearCompleted` function we're going pass as props to `ClearTodos.svelte`.
 
-```html:src/components/Todos.svelte {8,24,82-84,103} {showLineNumbers}
+```html:src/components/Todos.svelte {8,24,82-84,103} showLineNumbers
 <script lang="ts">
   import type { FiltersType, ITodo } from '$root/types/todo'
 
@@ -1914,7 +1914,7 @@ You're almost done! 😄 For the last part we need to clear the completed todos.
 
 🖌️ Create `ClearTodos.svelte` inside `src/components` with the required props.
 
-```html:src/components/ClearTodos.svelte {showLineNumbers}
+```html:src/components/ClearTodos.svelte showLineNumbers
 <script lang="ts">
   type ClearCompletedType = () => void
   type CompletedTodosType = number
@@ -1946,7 +1946,7 @@ What if I told you that you can implement local storage in Svelte in two lines o
 
 🖌️ Replace the placeholder todos in `Todos.svelte` with this code.
 
-```html:src/components/Todos.svelte {4-8} {showLineNumbers}
+```html:src/components/Todos.svelte {4-8} showLineNumbers
 <script lang="ts">
 	// ...
 
@@ -1972,7 +1972,7 @@ This is great but it would be even better if we used a Svelte store to be able t
 
 🖌️ Create a new file `useStorage.ts` inside `src/stores`.
 
-```ts:src/stores/useStorage.ts {showLineNumbers}
+```ts:src/stores/useStorage.ts showLineNumbers
 import { writable } from 'svelte/store'
 
 export function useStorage(key, initialValue) {
@@ -1995,7 +1995,7 @@ This is the TypeScript version because I didn't want to scare you before if you 
 
 > 🐿️ Generics are just variables for types like `<Type>` so it can help us know what kind of type we're dealing with when we don't know what the user is going to pass in.
 
-```ts:src/stores/useStorage.ts {2,4-7,11} {showLineNumbers}
+```ts:src/stores/useStorage.ts {2,4-7,11} showLineNumbers
 import { writable } from 'svelte/store'
 import type { Writable } from 'svelte/store'
 
@@ -2019,7 +2019,7 @@ We're going to see why generics are awesome in a moment.
 
 🖌️ Update `Todos.svelte` to use the store but note we have to change `todos` with a reactive `$todos` value from the store in places where we use it.
 
-```html:src/components/Todos.svelte {3,7,12-15,28,34,41,50,54-55,74} {showLineNumbers}
+```html:src/components/Todos.svelte {3,7,12-15,28,34,41,50,54-55,74} showLineNumbers
 <script lang="ts">
   import type { FiltersType, ITodo } from '$root/types/todo'
   import { useStorage } from '$root/stores/useStorage'
@@ -2118,7 +2118,7 @@ We're going to add a simple **slide** and **fade** transition to the todo list i
 
 🖌️ Update `Todo.svelte` to include the transitions.
 
-```html:src/components/Todo.svelte {2,7} {showLineNumbers}
+```html:src/components/Todo.svelte {2,7} showLineNumbers
 <script lang="ts">
   import { fade, slide } from 'svelte/transition'
 
@@ -2147,7 +2147,7 @@ Building something is the only time when you encounter a problem that requires a
 
 The solution we can use is to have a computed `duration` value for the animation that's going to be `0ms` or `250ms` based on if `filtering` is `true` or `false` in `Todos.svelte` which we can pass to `Todo.svelte`.
 
-```ts:Example.ts {2,4} {showLineNumbers}
+```ts:Example.ts {2,4} showLineNumbers
 function setFilter(newFilter: FiltersType): void {
 	filtering = true
 	selectedFilter = newFilter
@@ -2163,7 +2163,7 @@ This is a great example of learning about the Svelte lifecycle function [tick](h
 
 🖌️ Let's update `Todos.svelte` and pass the `duration` prop to `Todo.svelte`.
 
-```html:src/components/Todos.svelte {2,16,23,66-72,99-105} {showLineNumbers}
+```html:src/components/Todos.svelte {2,16,23,66-72,99-105} showLineNumbers
 <script lang="ts">
   import { tick } from 'svelte'
 
@@ -2284,7 +2284,7 @@ This is a great example of learning about the Svelte lifecycle function [tick](h
 <!-- ... -->
 ```
 
-```html:src/components/Todo.svelte {8,14,20-21} {showLineNumbers}
+```html:src/components/Todo.svelte {8,14,20-21} showLineNumbers
 <script lang="ts">
   import { fade, slide } from 'svelte/transition'
   import type { ITodo } from '$root/types/todo'
