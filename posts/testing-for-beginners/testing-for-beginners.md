@@ -37,7 +37,7 @@ Let's build a simple test framework in a couple of lines of code to see how it w
 
 What's the simplest test we can write?
 
-```js:example.js {showLineNumbers}
+```js:example.js showLineNumbers
 function sum(a, b) {
   return a + b
 }
@@ -54,7 +54,7 @@ We made an assertion! 🥳
 
 From this point we can build or own assertion library. After all the only limit is our imagination.
 
-```js:example.js {5-13,18} {showLineNumbers}
+```js:example.js {5-13,18} showLineNumbers
 function sum(a, b) {
   return a + b
 }
@@ -77,7 +77,7 @@ expect(actual).toBe(expected)
 
 Right now we don't know what test is failing, so let's add a `test` function so we can give the test a name a pass a callback function.
 
-```js:example.js {5-13,25-29} {showLineNumbers}
+```js:example.js {5-13,25-29} showLineNumbers
 function sum(a, b) {
   return a + b
 }
@@ -185,11 +185,11 @@ You can learn more about other methods for [appearance and disappearance](https:
 
 This is an example of a simple test. 🧪
 
-```html:Component.svelte {showLineNumbers}
+```html:Component.svelte showLineNumbers
 <h1>Hello, World! 👋</h1>
 ```
 
-```ts:Component.test.ts {showLineNumbers}
+```ts:Component.test.ts showLineNumbers
 import { render, screen } from '@testing-library/svelte'
 
 import Component from '../Component.svelte'
@@ -249,7 +249,7 @@ npm i -D jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript 
 
 🖌️ The documentation says we should create a Babel config at the root of our project.
 
-```js:babel.config.cjs {showLineNumbers}
+```js:babel.config.cjs showLineNumbers
 module.exports = {
   presets: [
     ['@babel/preset-env', { targets: { node: 'current' } }],
@@ -276,7 +276,7 @@ The documentation says you need `svelte-preprocess` to process TypeScript in Sve
 
 🖌️ Instead of adding the Jest config inside `package.json` we're going to create a Jest config but you can also create one using `npx jest --init` and remove what you don't need.
 
-```js:jest.config.cjs {showLineNumbers}
+```js:jest.config.cjs showLineNumbers
 module.exports = {
   transform: {
     '^.+\\.svelte$': [
@@ -310,7 +310,7 @@ I want to help you understand how **reading documentation isn't scary but an imp
 
 🖌️ Lastly we need to update `package.json` to include the `test` and `test:watch` scripts to run our tests.
 
-```json:package.json {9-10} {showLineNumbers}
+```json:package.json {9-10} showLineNumbers
 {
   "name": "svelte-todo",
   "type": "module",
@@ -346,7 +346,7 @@ I want to help you understand how **reading documentation isn't scary but an imp
 
 🖌️ Let's add a test under `src/components/tests` and if we run `npm run test:watch` Jest should find our tests.
 
-```ts:src/components/tests/example.test.js {showLineNumbers}
+```ts:src/components/tests/example.test.js showLineNumbers
 test('it should work', () => {})
 ```
 
@@ -405,7 +405,7 @@ Keep these things in mind because you might forget it. Testing Library already c
 
 🖌️ Create the `Todos.test.ts` file inside `src/components/tests`.
 
-```ts:src/components/tests/Todos.test.ts {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts showLineNumbers
 import Todos from '../Todos.svelte'
 
 afterEach(() => {
@@ -425,7 +425,7 @@ It might feel weird thinking about how to write a test but it helps if you think
 
 🖌️ Let's write your first real test.
 
-```ts:src/components/tests/Todos.test.ts {1,9-19} {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts {1,9-19} showLineNumbers
 import { fireEvent, render, screen } from '@testing-library/svelte'
 
 import Todos from '../Todos.svelte'
@@ -483,7 +483,7 @@ One 🔥 hot tip I want to share with you is how to debug your tests. To see wha
 
 You can think of it as using `console.log` because you can see the state of the DOM before and after you made a change.
 
-```ts:example.ts {13,16} {showLineNumbers}
+```ts:example.ts {13,16} showLineNumbers
 test('able to add a todo item', async () => {
   render(Todos)
 
@@ -517,7 +517,7 @@ Alright, you're on fire! 🔥 How would we test adding multiple todo items? When
 
 🖌️ Lets add a new test!
 
-```ts:src/components/tests/Todos.test.ts {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts showLineNumbers
 // ...
 
 test('able to add multiple todo items', async () => {
@@ -544,7 +544,7 @@ There's one problem and it's that our editing todo input markup isn't that great
 
 🖌️ Change the editing input inside `Todo.svelte` to include a `data-testid` attribute.
 
-```html:src/components/Todo.svelte {3} {showLineNumbers}
+```html:src/components/Todo.svelte {3} showLineNumbers
 <!-- ... -->
 <input
 	data-testid="edit"
@@ -560,7 +560,7 @@ There's one problem and it's that our editing todo input markup isn't that great
 
 🖌️ Let's add the test for editing the todo.
 
-```ts:src/components/tests/Todos.test.ts {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts showLineNumbers
 // ...
 
 test('able to edit a todo item', async () => {
@@ -594,7 +594,7 @@ In this case this happens when removing a todo so you have to use the `waitFor` 
 
 🖌️ Unfortunately our markup is also poor here so let's add `data-testid` to the button for removing the todo inside `Todo.svelte`.
 
-```html:src/components/Todo.svelte {3} {showLineNumbers}
+```html:src/components/Todo.svelte {3} showLineNumbers
 <!-- ... -->
 <button
 	data-testid="remove"
@@ -607,7 +607,7 @@ In this case this happens when removing a todo so you have to use the `waitFor` 
 
 🖌️ Let's add the test for removing the todo.
 
-```ts:src/components/tests/Todos.test.ts {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts showLineNumbers
 import {
   fireEvent,
   queryByText,
@@ -649,7 +649,7 @@ Testing filtering the todos isn't going to be harder but more verbose. As before
 
 🖌️ To be able to query the todo items we added we should add a `data-testid` with the todo text even if using a proper label would be more desirable but it's the markup we're working with.
 
-```html:src/components/Todo.svelte {3} {showLineNumbers}
+```html:src/components/Todo.svelte {3} showLineNumbers
 <!-- ... -->
 <input
 	data-testid={todo.text}
@@ -664,7 +664,7 @@ Testing filtering the todos isn't going to be harder but more verbose. As before
 
 🖌️ Add the test for filtering the todo items.
 
-```ts:src/components/tests/Todos.test.ts {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts showLineNumbers
 // ...
 
 test('able to filter todo items', async () => {
@@ -716,7 +716,7 @@ For the last test inside `Todos.test.ts` we're going to test if clearing complet
 
 🖌️ This includes adding a bunch of todo items again and completing each one and seeing if pressing the "Clear completed" button works.
 
-```ts:src/components/tests/Todos.test.ts {showLineNumbers}
+```ts:src/components/tests/Todos.test.ts showLineNumbers
 // ...
 
 test('able to clear completed todo items', async () => {
@@ -784,7 +784,7 @@ Since `Todo.svelte` expects props we need to pass it a todo and mock the functio
 
 🖌️ Create a new file `Todo.test.ts` and add a test for displaying a todo item.
 
-```ts:src/components/tests/Todo.test.ts {showLineNumbers}
+```ts:src/components/tests/Todo.test.ts showLineNumbers
 import { render, screen } from '@testing-library/svelte'
 
 import Todo from '../Todo.svelte'
@@ -809,7 +809,7 @@ To pass props to components in Svelte you use an object. We just pass the todo i
 
 🖌️ We're going to do this for every test so let's make it reusable by creating a `renderTodo` function that accepts a todo and returns the props.
 
-```ts:src/components/tests/Todo.test.ts {3-12,15} {showLineNumbers}
+```ts:src/components/tests/Todo.test.ts {3-12,15} showLineNumbers
 // ...
 
 function renderTodo(todo) {
@@ -833,7 +833,7 @@ Our tests are going to look a lot cleaner! 🪄
 
 🖌️ Let's add a test to assert if the user is able to check and uncheck a todo item as completed.
 
-```ts:src/components/tests/Todo.test.ts {showLineNumbers}
+```ts:src/components/tests/Todo.test.ts showLineNumbers
 import { fireEvent, render, screen } from '@testing-library/svelte'
 
 // ...
@@ -852,7 +852,7 @@ test('should be able to check and uncheck todo item as completed', async () => {
 
 🖌️ Another thing I want to test is if the todo item has a class of completed when checked using the `toHaveClass` method.
 
-```ts:src/components/tests/Todo.test.ts {showLineNumbers}
+```ts:src/components/tests/Todo.test.ts showLineNumbers
 // ...
 
 test('should have class of completed when checked', async () => {
@@ -868,7 +868,7 @@ We just need to check if the `editTodo` function has been called using `toHaveBe
 
 🖌️ Lets add the last tests for `Todo.svelte`.
 
-```ts:src/components/tests/Todo.test.ts {showLineNumbers}
+```ts:src/components/tests/Todo.test.ts showLineNumbers
 // ...
 
 test('should update todo item when you press enter', async () => {
@@ -902,7 +902,7 @@ We're going to create a `renderAddTodo` function that accepts an `amount` argume
 
 🖌️ Create the `AddTodo.test.ts` file and add the tests.
 
-```ts:src/components/tests/TodosLeft.test.ts {showLineNumbers}
+```ts:src/components/tests/TodosLeft.test.ts showLineNumbers
 import { fireEvent, render, screen } from '@testing-library/svelte'
 
 import AddTodo from '../AddTodo.svelte'
@@ -954,7 +954,7 @@ We're going to create a reusable `renderTodosLeft` function that accepts a `inco
 
 🖌️ Create the `TodosLeft.test.ts` file and add the tests.
 
-```ts:src/components/tests/TodosLeft.test.ts {showLineNumbers}
+```ts:src/components/tests/TodosLeft.test.ts showLineNumbers
 import { render, screen } from '@testing-library/svelte'
 
 import TodosLeft from '../TodosLeft.svelte'
@@ -1007,7 +1007,7 @@ We're going to create a `renderFilterTodos` function that accepts a `selectedFil
 
 🖌️ Create the `FilterTodos.test.ts` file and add the tests.
 
-```ts:src/components/tests/FilterTodos.test.ts {showLineNumbers}
+```ts:src/components/tests/FilterTodos.test.ts showLineNumbers
 import { render, screen } from '@testing-library/svelte'
 
 import FilterTodos from '../FilterTodos.svelte'
@@ -1086,7 +1086,7 @@ For testing the `ClearTodos.svelte` component we want to test if it's hidden if 
 
 🖌️ Add the `ClearTodos.test.ts` file and add the tests.
 
-```ts:src/components/tests/ClearTodos.test.ts {showLineNumbers}
+```ts:src/components/tests/ClearTodos.test.ts showLineNumbers
 import { render, screen } from '@testing-library/svelte'
 
 import ClearTodos from '../ClearTodos.svelte'

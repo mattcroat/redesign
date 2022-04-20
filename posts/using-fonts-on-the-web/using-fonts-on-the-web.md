@@ -79,7 +79,7 @@ I encourage you to open the [Google Fonts stylesheet](https://fonts.googleapis.c
 
 **Whoa!** This might seem like a lot at first. Fortunately, we only have to look at one example to understand the rest.
 
-```css:example.css
+```css:example.css showLineNumbers
 /* latin */
 @font-face {
   /* name of the font */
@@ -111,7 +111,7 @@ We use the **unicode-range** property to say: "**Only load this font, if a chara
 - **You have localization** where you support multiple languages, but only load the language the user is using
 - You can also use this for **replacing a character from a different font**
 
-```css:example.css
+```css:example.css showLineNumbers
 @font-face {
   font-family: 'Ampersand';
   src: url('FancyFont.woff2');
@@ -229,7 +229,7 @@ I found [Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fo
 
 Assuming you have your font downloaded already which you can do from [Google Fonts](https://fonts.google.com/), [Font Squirrel](https://www.fontsquirrel.com/), or [DaFont](https://www.dafont.com/) the simplest way to declare a font is:
 
-```css:example.css
+```css:example.css showLineNumbers
 /* regular variant  */
 @font-face {
   font-family: 'Inter';
@@ -334,7 +334,7 @@ I'm going to give you the TL;DR since you can do crazy things with variable font
 
 The only other aspect of variable fonts you should understand is the concept of **axis**. Axis are a specified range of controls for features such as **weight**, **width**, **slant**, **optical size**, **italics**, and **custom** ones.
 
-```css:example.css
+```css:example.css showLineNumbers
 @font-face {
   font-family: 'Inter Variable';
   src: url('Inter-Variable.woff2') format('woff2');

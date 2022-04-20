@@ -262,7 +262,7 @@ How many hours have you wasted trying to set up a database for a tutorial? It gi
 
 This is a Prisma schema.
 
-```ts:schema.prisma {showLineNumbers}
+```ts:schema.prisma showLineNumbers
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
@@ -272,7 +272,7 @@ model User {
 
 Generated SQL.
 
-```sql:SQL {showLineNumbers}
+```sql:SQL showLineNumbers
 CREATE TABLE "User" (
   "id" SERIAL,
   "email" TEXT NOT NULL,
@@ -287,7 +287,7 @@ We're going to use a SQLite database that's just a regular file so we don't have
 
 If you want syntax highlighting and formatting you can get the [Prisma VS Code extension](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) and to format on save using Prettier you can add this rule to your VS Code settings (you have to enable **"format on save"** in your settings).
 
-```json:settings.json {showLineNumbers}
+```json:settings.json showLineNumbers
 "[prisma]": {
   "editor.defaultFormatter": "Prisma.prisma"
 }
@@ -315,7 +315,7 @@ That's right, you already have a database! 🤯
 <details>
   <summary>schema.prisma</summary>
 
-```ts:prisma/schema.prisma {showLineNumbers}
+```ts:prisma/schema.prisma showLineNumbers
 generator client {
   provider = "prisma-client-js"
 }
@@ -390,7 +390,7 @@ If you ever want to start fresh you can simply delete `dev.db` and run the same 
 
 🖌️ It's a great idea to `.gitignore` any generated file but our database could contain sensitive information.
 
-```:.gitignore {9} {showLineNumbers}
+```:.gitignore {9} showLineNumbers
 .DS_Store
 node_modules
 /build
@@ -413,7 +413,7 @@ I could leave it here but I want to show you how to 🌱 seed a database or popu
 <details>
 <summary>seed.ts</summary>
 
-```ts:prisma/seed.ts {showLineNumbers}
+```ts:prisma/seed.ts showLineNumbers
 import PrismaClientPkg from '@prisma/client'
 
 // Prisma doesn't support ES Modules so we have to do this
@@ -544,7 +544,7 @@ I figured this out by reading the error and doing some good old fashioned detect
 
 🖌️ Add a seed script inside `package.json`.
 
-```json:package.json {showLineNumbers}
+```json:package.json showLineNumbers
 "prisma": {
   "seed": "node --loader ts-node/esm prisma/seed.ts"
 }
@@ -571,7 +571,7 @@ In this section you're going to learn how to use global styles, nested layouts a
 
 Before I start I'm going to update the path alias in the SvelteKit config because I prefer to use `$root` to be able to access the `src` folder from anywhere in the project.
 
-```js:svelte.config.js {3,10-16} {showLineNumbers}
+```js:svelte.config.js {3,10-16} showLineNumbers
 import adapter from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess'
 import path from 'path'
@@ -594,7 +594,7 @@ const config = {
 export default config
 ```
 
-```json:tsconfig.json {4-7} {showLineNumbers}
+```json:tsconfig.json {4-7} showLineNumbers
 {
 	"compilerOptions": {
     // ...
@@ -608,7 +608,7 @@ export default config
 
 I prefer not to use semicolons and have the line length be shorter so it's easier for me to present code.
 
-```json:.prettierrc {2,6} {showLineNumbers}
+```json:.prettierrc {2,6} showLineNumbers
 {
 	"semi": false,
 	"useTabs": true,
@@ -620,7 +620,7 @@ I prefer not to use semicolons and have the line length be shorter so it's easie
 
 🖌️ First let's update the favicon so it's more appropriate and you can also remove the one inside the `static` folder.
 
-```html:src/app.html {6} {showLineNumbers}
+```html:src/app.html {6} showLineNumbers
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -782,7 +782,7 @@ ol {
 
 🖌️ To start let's add a simple landing page so open `index.svelte` and update it.
 
-```html:routes/index.svelte {showLineNumbers}
+```html:routes/index.svelte showLineNumbers
 <script lang="ts">
 	import { fly } from 'svelte/transition'
 </script>
@@ -859,7 +859,7 @@ Let's see how this looks in practice!
 
 🖌️ Inside `routes` add `__layout.svelte`.
 
-```html:routes/__layout.svelte {showLineNumbers}
+```html:routes/__layout.svelte showLineNumbers
 <script lang="ts">
 	import '$root/styles/global.css'
 </script>
@@ -883,7 +883,7 @@ SvelteKit provides a default error page but it's hard to read so we can do bette
 
 🖌️ Let's add `__error.svelte` inside `routes` to handle errors.
 
-```html:routes/__error.svelte {showLineNumbers}
+```html:routes/__error.svelte showLineNumbers
 <script context="module" lang="ts">
 	import type { ErrorLoad } from '@sveltejs/kit'
 
@@ -940,7 +940,7 @@ In this section you're going to add the home layout for the navigation, main con
 
 🖌️ Create a `home` folder inside `routes` with `index.svelte` inside which should make it available at [http://localhost:3000/home](http://localhost:3000/home).
 
-```html:routes/home/index.svelte {showLineNumbers}
+```html:routes/home/index.svelte showLineNumbers
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
@@ -965,7 +965,7 @@ I created an `<Icon>` component for SVGs to make the code more readable but I re
 <details>
   <summary>icon.svelte</summary>
 
-```html:components/icon.svelte {showLineNumbers}
+```html:components/icon.svelte showLineNumbers
 <script lang="ts">
 	export let name: IconType
 	export let width: string
@@ -1091,7 +1091,7 @@ Before we add the layout we need to add the `<Navigation>` and `<Trending>` comp
 <details>
   <summary>navigation.svelte</summary>
 
-```html:components/navigation.svelte {showLineNumbers}
+```html:components/navigation.svelte showLineNumbers
 <script lang="ts">
 	import { page } from '$app/stores'
 	import Icon from '$root/components/icon.svelte'
@@ -1216,7 +1216,7 @@ The tweet button is just a placeholder so it matches the original design. 😅
 <details>
   <summary>trending.svelte</summary>
 
-```html:components/trending.svelte {showLineNumbers}
+```html:components/trending.svelte showLineNumbers
 <aside>
 	<div class="container">
 		<div class="placeholder" />
@@ -1284,7 +1284,7 @@ Now we can create another nested layout and it's going to inherit the global sty
 
 🖌️ Create a `__layout.svelte` in the `home` folder.
 
-```html:routes/home/__layout.svelte {showLineNumbers}
+```html:routes/home/__layout.svelte showLineNumbers
 <script lang="ts">
 	import Navigation from '$root/components/navigation.svelte'
 	import Trending from '$root/components/trending.svelte'
@@ -1331,7 +1331,7 @@ I want to show you the real power of nested layouts — if a part of your site e
 
 🖌️ Let's add an error page which is going to be used by the other pages.
 
-```html:routes/home/__error.svelte {showLineNumbers}
+```html:routes/home/__error.svelte showLineNumbers
 <script lang="ts" context="module">
 	import type { ErrorLoad } from '@sveltejs/kit'
 
@@ -1380,7 +1380,7 @@ SvelteKit endpoints are just files that export [request handler](https://kit.sve
 
 A `<form>` has an `action` that's the destination that processes the form submission and a `method` to submit the form with.
 
-```html:example.html {showLineNumbers}
+```html:example.html showLineNumbers
 <form action="/api/items" method="GET">
   <button>Get Items</button>
 </form>
@@ -1390,7 +1390,7 @@ A `<form>` has an `action` that's the destination that processes the form submis
 
 You might have an endpoint inside `routes/api/items.ts` that has a `get` function which returns a list of items in a JSON format when you hit the `/api/items` endpoint.
 
-```js:example.js {showLineNumbers}
+```js:example.js showLineNumbers
 export function get() {
   // do some compute on the server
   const items = db.getItems()
@@ -1412,7 +1412,7 @@ If you use a `loader` function inside a component using `fetch` you can expose t
 
 If the endpoint has the same name as the component you can just use the `items` prop from the [shadow endpoint](https://github.com/sveltejs/kit/issues/3532).
 
-```html:example.svelte {showLineNumbers}
+```html:example.svelte showLineNumbers
 <script context="module">
 	// you don't have to do this part!
 	export function loader({ fetch }) {
@@ -1446,7 +1446,7 @@ Because we're using Prisma we can get the data we need and shape it on the serve
 
 🖌️ We should initialize the Prisma client so we can use it. I like to keep third party code inside the `src/lib` folder so create the `prisma.ts` file.
 
-```ts:src/lib/prisma.ts {showLineNumbers}
+```ts:src/lib/prisma.ts showLineNumbers
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
@@ -1456,7 +1456,7 @@ export default prisma
 
 🖌️ I also like to keep my helper functions inside `src/utils` so add a `date.ts` helper that returns "time ago" for the tweet if it's not older than a day otherwise it shows the date.
 
-```ts:src/lib/date.ts {showLineNumbers}
+```ts:src/lib/date.ts showLineNumbers
 export function timePosted(createdAt: Date): string {
 	try {
 		const posted = new Date(createdAt).getTime()
@@ -1489,7 +1489,7 @@ Since authentication is outside the scope of this post we're going to use a hard
 
 🖌️ Start by creating the `index.ts` endpoint inside `home`. It has the same name as `index.svelte` so we get access to the props.
 
-```ts:routes/home/index.ts {showLineNumbers}
+```ts:routes/home/index.ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 import prisma from '$root/lib/prisma'
@@ -1545,7 +1545,7 @@ export const get: RequestHandler = async () => {
 
 🖌️ Let's quickly add a type for the tweet inside `src/types` by creating a `index.ts` file so we can reuse it.
 
-```ts:src/types/index.ts {showLineNumbers}
+```ts:src/types/index.ts showLineNumbers
 export type TweetType = {
 	id: number
 	content: string
@@ -1563,7 +1563,7 @@ Back in `index.svelte` we can use the `tweets` prop. You can log it if you want 
 
 You can print information to the screen using `JSON.stringify` because sometimes it's easier to look at than using the console.
 
-```html:example.svelte {showLineNumbers}
+```html:example.svelte showLineNumbers
 <script>
 	export let tweets
 </script>
@@ -1575,7 +1575,7 @@ You can print information to the screen using `JSON.stringify` because sometimes
 
 We just have to loop over each tweet and show it. This is the shape of our data.
 
-```js:example.js {showLineNumbers}
+```js:example.js showLineNumbers
 {
 	"id": 2,
 	"content": "I love Svelte! ❤️",
@@ -1593,7 +1593,7 @@ We're going to pass each tweet as a prop to a `<Tweet>` component mostly because
 
 🖌️ Update `index.svelte`.
 
-```html:routes/home/index.svelte {showLineNumbers}
+```html:routes/home/index.svelte showLineNumbers
 <script lang="ts">
 	import Tweet from '$root/components/tweet.svelte'
 	import type { TweetType } from '$root/types'
@@ -1876,7 +1876,7 @@ So far we can only read hot takes but we can't post any! 😱 This requires urge
 
 🖌️ Create a `compose.svelte` component inside `components` and import it inside `home/index.svelte`.
 
-```html:components/compose.svelte {showLineNumbers}
+```html:components/compose.svelte showLineNumbers
 <script lang="ts">
 	let tweet = ''
 	let maxCharacters = 140
@@ -1946,7 +1946,7 @@ So far we can only read hot takes but we can't post any! 😱 This requires urge
 </style>
 ```
 
-```html:routes/home/index.svelte {2,8} {showLineNumbers}
+```html:routes/home/index.svelte {2,8} showLineNumbers
 <script lang="ts">
 	import Compose from '$root/components/compose.svelte'
 	// ...
@@ -1961,7 +1961,7 @@ So far we can only read hot takes but we can't post any! 😱 This requires urge
 
 Crisis averted! The form is going to **POST** to `/home` so we can start adding the API inside `home/index.ts`.
 
-```ts:routes/home/index.ts {showLineNumbers}
+```ts:routes/home/index.ts showLineNumbers
 // ...
 
 export const post: RequestHandler = async ({ request }) => {
@@ -2018,7 +2018,7 @@ SvelteKit lets you override HTTP methods just by changing the config and for the
 
 This is our form inside `tweet.svelte` for removing a tweet. We're using a 🥷 sneaky hidden input to send the tweet id.
 
-```html:example.svelte {showLineNumbers}
+```html:example.svelte showLineNumbers
 <form action="/home?_method=delete" method="post">
 	<input type="hidden" name="id" value={tweet.id} />
 	<button
@@ -2036,7 +2036,7 @@ This is our form inside `tweet.svelte` for removing a tweet. We're using a 🥷 
 
 🖌️ Let's update the `svelte.config.js`.
 
-```js:svelte.config.js {showLineNumbers}
+```js:svelte.config.js showLineNumbers
 // ...
 
 const config = {
@@ -2087,7 +2087,7 @@ We can maybe add this to our existing endpoint and figure out what action to tak
 
 🖌️ Add a `like.ts` endpoint inside `home`.
 
-```ts:routes/home/like.ts {showLineNumbers}
+```ts:routes/home/like.ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 export const post: RequestHandler = async ({ request }) => {
@@ -2155,7 +2155,7 @@ You can use `[parameter]` for naming your folder and files to get a dynamic para
 
 🖌️ Add a `[user].svelte` file inside `home/profile/[user].svelte`.
 
-```html:routes/home/profile/[user].svelte {showLineNumbers}
+```html:routes/home/profile/[user].svelte showLineNumbers
 <script lang="ts">
 	import type { User } from '@prisma/client'
 
@@ -2284,7 +2284,7 @@ You can use `[parameter]` for naming your folder and files to get a dynamic para
 
 🖌️ Add a `[user].ts` endpoint inside `home/profile`.
 
-```ts:routes/home/profile/[user].ts {showLineNumbers}
+```ts:routes/home/profile/[user].ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 import prisma from '$root/lib/prisma'
@@ -2355,7 +2355,7 @@ Inside the endpoint you can get the user and the tweet id that's the special url
 
 🖌️ Create the `home/profile/[user]/status/[tweetId]/index.svelte` path.
 
-```html:home/profile/[user]/status/[tweetId]/index.svelte {showLineNumbers}
+```html:home/profile/[user]/status/[tweetId]/index.svelte showLineNumbers
 <h1>Profile</h1>
 ```
 
@@ -2363,7 +2363,7 @@ Try going to a permalink and you should see the title for each one.
 
 🖌️ Create a `index.ts` endpoint in the same place.
 
-```ts:home/profile/[user]/status/[tweetId]/index.ts {showLineNumbers}
+```ts:home/profile/[user]/status/[tweetId]/index.ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 import prisma from '$root/lib/prisma'
@@ -2405,7 +2405,7 @@ export const get: RequestHandler = async ({ params }) => {
 
 🖌️ Update `index.svelte`.
 
-```html:home/profile/[user]/status/[tweetId]/index.svelte {showLineNumbers}
+```html:home/profile/[user]/status/[tweetId]/index.svelte showLineNumbers
 <script lang="ts">
 	import Tweet from '$root/components/tweet.svelte'
 	import type { TweetType } from '$root/types'
@@ -2437,7 +2437,7 @@ I want to show you how awesome nested layouts are inspired by the [Twitter setti
 
 🖌️ First start by creating `index.svelte` inside `home/settings` which is going to be empty.
 
-```html:routes/home/settings/index.svelte {showLineNumbers}
+```html:routes/home/settings/index.svelte showLineNumbers
 <svelte:head>
 	<title>Settings</title>
 </svelte:head>
@@ -2448,7 +2448,7 @@ I want to show you how awesome nested layouts are inspired by the [Twitter setti
 <details>
   <summary>personalization.svelte</summary>
 
-```html:routes/home/settings/personalization.svelte {showLineNumbers}
+```html:routes/home/settings/personalization.svelte showLineNumbers
 <svelte:head>
 	<title>Settings | Personalization</title>
 </svelte:head>
@@ -2461,7 +2461,7 @@ I want to show you how awesome nested layouts are inspired by the [Twitter setti
 <details>
   <summary>data.svelte</summary>
 
-```html:routes/home/settings/data.svelte {showLineNumbers}
+```html:routes/home/settings/data.svelte showLineNumbers
 <svelte:head>
 	<title>Settings | Data</title>
 </svelte:head>
@@ -2474,7 +2474,7 @@ I want to show you how awesome nested layouts are inspired by the [Twitter setti
 <details>
   <summary>cookies.svelte</summary>
 
-```html:routes/home/settings/cookies.svelte {showLineNumbers}
+```html:routes/home/settings/cookies.svelte showLineNumbers
 <svelte:head>
 	<title>Settings | Cookies</title>
 </svelte:head>
@@ -2487,7 +2487,7 @@ I want to show you how awesome nested layouts are inspired by the [Twitter setti
 <details>
   <summary>resources.svelte</summary>
 
-```html:routes/home/settings/resources.svelte {showLineNumbers}
+```html:routes/home/settings/resources.svelte showLineNumbers
 <svelte:head>
 	<title>Settings | Resources</title>
 </svelte:head>
@@ -2501,7 +2501,7 @@ I want to reset the layout because while everything is almost the same the `sett
 
 🖌️ To reset a layout you use `__layout.reset.svelte`.
 
-```html:routes/home/settings/__layout.reset.svelte {showLineNumbers}
+```html:routes/home/settings/__layout.reset.svelte showLineNumbers
 <script lang="ts">
 	import { page } from '$app/stores'
 	import Navigation from '$root/components/navigation.svelte'
@@ -2634,7 +2634,7 @@ If you don't need JavaScript for a simple page you know doesn't change often you
 
 🖌️ Create `index.svelte` inside `home/about`.
 
-```html:routes/home/about/index.svelte {showLineNumbers}
+```html:routes/home/about/index.svelte showLineNumbers
 <script context="module" lang="ts">
 	import { dev } from '$app/env'
 
@@ -2700,7 +2700,7 @@ Let's pretend that actions don't exist. In that case we just need to prevent the
 
 I simplified the form inside `compose.svelte` for this example.
 
-```html:example.svelte {2-12,16} {showLineNumbers}
+```html:example.svelte {2-12,16} showLineNumbers
 <script lang="ts">
 	async function handleSubmit(event: SubmitEvent) {
 		const form = event.target as HTMLFormElement
@@ -2740,7 +2740,7 @@ This is great but we would have to to do this for every form duplicating the wor
 
 🖌️ Create a `form.ts` file inside the `lib` folder.
 
-```ts:lib/form.ts {showLineNumbers}
+```ts:lib/form.ts showLineNumbers
 export const enhance = (form: HTMLFormElement) => {
 	async function handleSubmit(event: Event) {
 		event.preventDefault()
@@ -2773,7 +2773,7 @@ export const enhance = (form: HTMLFormElement) => {
 
 🖌️ Update `compose.svelte` to use the action.
 
-```html:components/compose.svelte {2,13} {showLineNumbers}
+```html:components/compose.svelte {2,13} showLineNumbers
 <script lang="ts">
 	import { enhance } from '$root/lib/form'
 
@@ -2801,7 +2801,7 @@ Since we know the URL that changed from `form.action` we can use `invalidate` pr
 
 🖌️ Update `form.ts`.
 
-```ts:lib/form.ts {1,17-21} {showLineNumbers}
+```ts:lib/form.ts {1,17-21} showLineNumbers
 import { invalidate } from '$app/navigation'
 
 export const enhance = (form: HTMLFormElement) => {
@@ -2845,7 +2845,7 @@ I tried to make the types more readable compared to the `form.ts` example in the
 
 🖌️ This is the final version of `form.ts` with types.
 
-```ts:lib/form.ts {2,4-11,13,14,16-18,34,39-42} {showLineNumbers}
+```ts:lib/form.ts {2,4-11,13,14,16-18,34,39-42} showLineNumbers
 import { invalidate } from '$app/navigation'
 import { page } from '$app/stores'
 
@@ -2902,7 +2902,7 @@ export const enhance: Enhance = (form, { result } = {}) => {
 
 🖌️ Update one line inside `compose.svelte`.
 
-```html:components/compose.svelte {6} {showLineNumbers}
+```html:components/compose.svelte {6} showLineNumbers
 <!-- ... -->
 <form
 	action="/home"
@@ -2917,7 +2917,7 @@ It might seem like a lot but it's just one file we can reuse thanks to actions s
 
 🖌️ The only file we need to update is `tweet.svelte` because we're reusing it for the user profile and the permalink.
 
-```html:components/tweet.svelte {4,36,79} {showLineNumbers}
+```html:components/tweet.svelte {4,36,79} showLineNumbers
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition'
 
@@ -3030,7 +3030,7 @@ This is another benefit of code splitting because every route has its own data a
 
 🖌️ Let's change `navigation.svelte` to take advantage of prefetching.
 
-```html:components/navigation.svelte {11,16,21,26} {showLineNumbers}
+```html:components/navigation.svelte {11,16,21,26} showLineNumbers
 <!-- ... -->
 
 <aside>
@@ -3084,7 +3084,7 @@ One thing we need to know is when the URL changes so we can use the `page` store
 
 🖌️ Create the `transition.svelte` component inside `components`.
 
-```html:components/transition.svelte {showLineNumbers}
+```html:components/transition.svelte showLineNumbers
 <script lang="ts">
 	import { fly } from 'svelte/transition'
 
@@ -3105,7 +3105,7 @@ One thing we need to know is when the URL changes so we can use the `page` store
 
 🖌️ Update `__layout.svelte` inside `home`.
 
-```html:home/__layout.svelte {2,6,12-14} {showLineNumbers}
+```html:home/__layout.svelte {2,6,12-14} showLineNumbers
 <script lang="ts">
 	import { page } from '$app/stores'
 
@@ -3144,7 +3144,7 @@ The file is going to contain all our endpoint functions so just copy it over.
 <details>
 	<summary>prisma.ts</summary>
 
-```ts:utils/prisma.ts {showLineNumbers}
+```ts:utils/prisma.ts showLineNumbers
 import prisma from '$root/lib/prisma'
 import { timePosted } from '$root/utils/date'
 
@@ -3333,7 +3333,7 @@ export async function getUserProfile(
 <details>
 	<summary>routes/home/index.ts</summary>
 
-```ts:routes/home/index.ts {showLineNumbers}
+```ts:routes/home/index.ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 import {
@@ -3377,7 +3377,7 @@ export const del: RequestHandler = async ({ request }) => {
 <details>
 	<summary>routes/home/like.ts</summary>
 
-```ts:routes/home/like.ts {showLineNumbers}
+```ts:routes/home/like.ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 import { likeTweet } from '$root/utils/prisma'
@@ -3399,7 +3399,7 @@ export const post: RequestHandler = async ({ request }) => {
 <details>
 	<summary>home/profile/[user].ts</summary>
 
-```ts:home/profile/[user].ts {showLineNumbers}
+```ts:home/profile/[user].ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 import { getUserProfile } from '$root/utils/prisma'
 
@@ -3419,7 +3419,7 @@ export const get: RequestHandler = async ({ params }) => {
 <details>
 	<summary>home/profile/[user]/status/[tweetId]/index.ts</summary>
 
-```ts:home/profile/[user]/status/[tweetId]/index.ts {showLineNumbers}
+```ts:home/profile/[user]/status/[tweetId]/index.ts showLineNumbers
 import type { RequestHandler } from '@sveltejs/kit'
 
 import { getTweet } from '$root/utils/prisma'

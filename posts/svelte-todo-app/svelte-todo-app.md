@@ -151,13 +151,13 @@ svelte-todo/
 
 🖌️ Inside **App.svelte** remove everything.
 
-```html:src/App.svelte showLineNumbers
+```html:src/App.svelte
 <h1>Hello, World 👋</h1>
 ```
 
 If you run the project and visit http://localhost:3000/ you should see "Hello, World 👋" on the screen. If you want you can also change the title of the page inside `index.html`.
 
-```shell:terminal showLineNumbers
+```shell:terminal
 npm run dev
 ```
 

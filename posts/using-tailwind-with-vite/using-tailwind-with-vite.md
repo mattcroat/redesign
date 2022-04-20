@@ -42,7 +42,7 @@ npx tailwindcss init -p
 
 I like to enable [JIT](https://tailwindcss.com/docs/just-in-time-mode) (Just-in-Time Mode) inside the **Tailwind config** that enables lightning fast build times and having every variant enabled out of the box. If you want to learn more about it watch [Just-In-Time: The Next Generation of Tailwind CSS](https://www.youtube.com/watch?v=3O_3X7InOw8).
 
-```js:tailwind.config.js
+```js:tailwind.config.js showLineNumbers
 module.exports = {
   mode: 'jit',
   purge: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],

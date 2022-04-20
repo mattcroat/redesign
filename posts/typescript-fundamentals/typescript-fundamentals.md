@@ -46,7 +46,7 @@ TypeScript isn't just types — it's popular because this is the kind of **devel
 
 We can add `@ts-check` at the top of a JavaScript file to enable **type checking** in JavaScript.
 
-```js:example.js
+```js:example.js showLineNumbers
 // @ts-check
 
 const pokemon = ['Bulbasaur', 'Charmander', 'Squirtle']
@@ -87,7 +87,7 @@ You can learn more about these features in-depth if you read the [documentation 
 
 There's no way for us to know if the JavaScript code has errors until we see the result on the page and go back to our code editor to fix the mistake and rerun the code.
 
-```js:example.js
+```js:example.js showLineNumbers
 const pikachu = {
   name: 'Pikachu',
   weight: 60
@@ -104,7 +104,7 @@ The editor didn't warn us about mispelling `weight`.
 
 Imagine the same scenario with an API where you pass wrong arguments to a method — **you just hope it works**.
 
-```js:example.ts
+```js:example.ts showLineNumbers
 const pikachu = {
   name: 'Pikachu',
   weight: 60
@@ -152,7 +152,7 @@ addPokemon(1)
 
 Despite the TypeScript error, we can run the TypeScript code because **type errors aren't syntax errors**.
 
-```js:example.js
+```js:example.js showLineNumbers
 const pokemon = []
 
 function addPokemon(pokemonName) {
@@ -238,7 +238,7 @@ Alongside those **primitive types** there are **primitive wrapper objects**:
 
 Let's clear up the difference between **primitive types** and **primitive wrapper objects** so you don't get confused if you should use the lowercase `string` or capitalized `String` as a type.
 
-```js:example.js
+```js:example.js showLineNumbers
 // 'Pikachu'
 const stringPrimitive = 'Pikachu'
 
@@ -256,7 +256,7 @@ The reason we don't use **primitive wrapper objects** is because it's more work 
 
 That being said don't confuse the `new String` **constructor** with the `String` **function** that does **type conversion**.
 
-```js:example.js
+```js:example.js showLineNumbers
 const number = '42'
 
 const string = String(number) // '42'
@@ -275,7 +275,7 @@ isString(1) // false 🚫
 
 So why are we writing **more** code? Let's look at an example of a `addPokemon` function.
 
-```js:example.js
+```js:example.js showLineNumbers
 const pokemon = []
 
 function addPokemon(name, timeAdded) {
@@ -810,7 +810,7 @@ logPokemon('Pikachu', 35)
 
 In JavaScript there is no **function overloading** because we can pass **any** number of parameters of **any** type we then perform **checks** on inside the function.
 
-```js:example.js
+```js:example.js showLineNumbers
 function logPokemon(arg1, arg2) {
   if (typeof arg1 === 'string' && typeof arg2 === 'number') {
     console.log(`${arg1} has ${arg2} HP.`)
@@ -1394,7 +1394,7 @@ formEl?.reset()
 
 If you're not familiar with the [optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) it just says to TypeScript the value can't be `null`.
 
-```js:example.js
+```js:example.js showLineNumbers
 // short-circuit evaluation
 formEl && formEl.reset()
 
@@ -2197,7 +2197,7 @@ In situations where we want to know if properties of an object we are trying to 
 
 Before I show you that let's first look at an example in JavaScript.
 
-```js:example.js
+```js:example.js showLineNumbers
 const pokemon = {
   hp: 35,
   name: 'Pikachu',
@@ -2245,7 +2245,7 @@ You might be familiar with **enums** from other languages. **Enums** are a **fea
 
 In JavaScript it's popular to create an object with some **constants** to reduce the amount of typos.
 
-```js:example.js
+```js:example.js showLineNumbers
 const direction = {
   up: 'UP',
   right: 'RIGHT',
@@ -2254,7 +2254,7 @@ const direction = {
 }
 ```
 
-```js:example.js
+```js:example.js showLineNumbers
 function movePokemon(direction) {
   console.log(direction) // 'UP'
 }
@@ -2264,7 +2264,7 @@ movePokemon(direction.up)
 
 This is very useful when you have some dynamic code.
 
-```js:example.js
+```js:example.js showLineNumbers
 function movePokemon(direction) {
   console.log(direction) // whatever got passed
 }
@@ -2293,7 +2293,7 @@ TypeScript **compiles** Enums to some _interesting_ 🧐 JavaScript code you can
 
 This looks like a _fun_ 😅 interview question.
 
-```js:output.js
+```js:output.js showLineNumbers
 var Direction
 
 (function (Direction) {
@@ -2520,7 +2520,7 @@ Don't sweat it when you would use **decorators** because they're mainly given to
 
 If you're using **decorators** you have to enable **experimental** support for decorators inside `tsconfig.json`.
 
-```json:tsconfig.json
+```json:tsconfig.json showLineNumbers
 {
   "compilerOptions": {
     "experimentalDecorators": true
@@ -2637,7 +2637,7 @@ npx tsc app.ts -w
 
 It's easier to add a command to scripts in your `package.json`.
 
-```json:package.json
+```json:package.json showLineNumbers
 {
   "name": "typescript",
   "scripts": {
@@ -2659,7 +2659,7 @@ npm run dev
 
 If you're not using **Vite** and want **live reload** for your site you can use [live-server](https://www.npmjs.com/package/live-server) together with TypeScript at the same time.
 
-```json:package.json
+```json:package.json showLineNumbers
 {
   "name": "example",
   "scripts": {
@@ -2673,7 +2673,7 @@ If you're not using **Vite** and want **live reload** for your site you can use 
 
 You only have to include the JavaScript file in your HTML file. Using the `defer` attribute loads the JavaScript code after the DOM (Document Object Model) has loaded.
 
-```html:example.html
+```html:example.html showLineNumbers
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -2712,7 +2712,7 @@ You can look at the [TypeScript compiler options](https://www.typescriptlang.org
 
 Let's make the `tsconfig.json` file more readable by removing most of the TypeScript **compiler options** and focusing on a couple of options.
 
-```json:tsconfig.json
+```json:tsconfig.json showLineNumbers
 {
   "compilerOptions": {
     "target": "es5",
@@ -2736,7 +2736,7 @@ Let's make the `tsconfig.json` file more readable by removing most of the TypeSc
 
 Since we set the **rootDir** we don't have specify what file to run inside `package.json` since it watches the entire directory.
 
-```json:package.json
+```json:package.json showLineNumbers
 "scripts": {
   "dev": "npx tsc -w"
 }
