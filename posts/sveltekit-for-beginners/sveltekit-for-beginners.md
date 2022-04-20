@@ -5,8 +5,7 @@ slug: 'sveltekit-for-beginners'
 published: '2022-2-28'
 category: 'sveltekit'
 image: 'social-image.webp'
-series: true
-draft: false
+series
 ---
 
 # Full Stack Web Development With SvelteKit For Beginners
