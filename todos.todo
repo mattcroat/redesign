@@ -4,7 +4,7 @@ General:
   ☐ RSS feed
   ☐ Sitemap
   ☐ Theming
-  ☐ Convert old posts from MDX to Markdown
+  ✔ Convert old posts from MDX to Markdown @done
   ☐ Set HTTP cache-control headers
   ☐ Analytics
   ☐ SEO
