@@ -12,7 +12,8 @@
   color: var(--clr-primary);
 }
 
-.prose p {
+.prose p,
+.prose li {
   font-size: var(--post-txt-size);
   line-height: var(--post-txt-height);
 }
@@ -48,7 +49,7 @@
 .prose ul,
 .prose ol {
   display: grid;
-  row-gap: var(--spacing-16);
+  row-gap: var(--spacing-8);
   list-style-type: none;
   list-style-position: inside;
 }
