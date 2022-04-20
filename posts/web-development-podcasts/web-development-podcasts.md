@@ -9,8 +9,6 @@ image: 'social-image.png'
 
 # Web Development Podcasts
 
-## Table of Contents
-
 ## 1. Career Chats
 
 {% img src="career-chats.webp" alt="Career Chats" %}

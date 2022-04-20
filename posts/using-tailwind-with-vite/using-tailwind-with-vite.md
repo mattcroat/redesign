@@ -11,7 +11,7 @@ image: 'social-image.png'
 
 ## Table of Contents
 
-## 1. Initialize the Project
+## Initialize the Project
 
 Initialize the **Vite** project.
 
@@ -25,7 +25,7 @@ Install **dependencies**.
 npm i
 ```
 
-## 2. Install Tailwind
+## Install Tailwind
 
 **Vite** has [PostCSS](https://postcss.org/) and [Autoprefixer](https://github.com/postcss/autoprefixer) built-in, so there's no need to install it.
 
@@ -33,7 +33,7 @@ npm i
 npm i -D tailwindcss@latest
 ```
 
-## 3. Initialize the Tailwind Config
+## Initialize the Tailwind Config
 
 Depending on your project and folder structure be sure to include what files to **purge** to [optimize for production](https://tailwindcss.com/docs/optimizing-for-production).
 
@@ -58,7 +58,7 @@ module.exports = {
 }
 ```
 
-## 4. Add `@tailwind` Directives
+## Add `@tailwind` Directives
 
 Add this to your styles.
 
@@ -68,7 +68,7 @@ Add this to your styles.
 @tailwind utilities;
 ```
 
-## 5. Import Styles
+## Import Styles
 
 Import your styles.
 
