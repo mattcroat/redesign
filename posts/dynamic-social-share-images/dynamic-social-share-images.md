@@ -22,13 +22,13 @@ In this post I'm going to show you a simple way how to automate that process, so
 
 If you're unfamiliar with the [open graph protocol](https://ogp.me/) it's just **metadata** that represents the content of your site first created by [Facebook](https://www.facebook.com/). Some of the common `<meta>` tags include `og:title`, `og:type`, `og:image`, and `og:url` that are used to display information inside **social cards**.
 
-```html:example.html
+```html:example.html showLineNumbers
 <meta content="https://joyofcode.xyz/og-image.png" property="og:image" />
 ```
 
 Here is a [Twitter](https://twitter.com/) example that displays the **large card** for [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards). Other services such as [Discord](https://discord.com/) can decide to also use these.
 
-```html:example.html
+```html:example.html showLineNumbers
 <meta content="summary_large_image" name="twitter:card" />
 <meta content="https://joyofcode.xyz/og-image.png" name="twitter:image" />
 ```
