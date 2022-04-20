@@ -1,12 +1,12 @@
 ---
 title: Reduce Next.js Bundle Size by Half
-description: Learn how using Preact instead of React can reduce Next.js bundle size in half.
+description: Learn how using Preact instead of React can reduce Next.js bundle size by half.
 slug: next-bundle-size
 published: 2021-9-1
 category: next
 ---
 
-# Reduce Next.js Bundle Size By Half Replacing React With Preact
+# Reduce Next.js Bundle Size By Replacing React With Preact
 
 [Next.js](https://nextjs.org/) is a **meta-framework** built on top of [React](https://reactjs.org/) that solves the problem of **hybrid static and server rendering** for **React**.
 
