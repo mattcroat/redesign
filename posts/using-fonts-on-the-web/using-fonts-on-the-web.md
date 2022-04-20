@@ -13,18 +13,6 @@ image: 'social-image.png'
 
 Using fonts on the web can be complicated, and unwieldy if we don't understand the trade-offs we're making. I want to share what I learned about best practices when it comes to using fonts on the web — and show you some of the pitfalls you can avoid.
 
-## What You're Going to Learn
-
-- How Google Fonts work
-- Unicode explained
-- What are CDN Providers
-- How the Browser HTTP Cache works
-- Picking the right font format
-- Self-hosting fonts
-- Dealing with FOUC, FOIT, FOFT (flash of unstyled content)
-- Variable fonts (future fonts)
-- How to subset fonts for size, and user experience
-
 ## Web Fonts
 
 In the past we could only use a handful of fonts considered web-safe because they were guaranteed to be on each computer. Thanks to CSS, we can specify any font files to be downloaded, and used when someone opens our site. You've probably used [Google Fonts](https://fonts.google.com/) — one of the most popular font providers. You only have to grab a link to a font, and include it in your site.
