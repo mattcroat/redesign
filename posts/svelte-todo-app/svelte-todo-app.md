@@ -8,7 +8,7 @@ category: svelte
 
 # Make a Svelte Todo App
 
-{% embed src="https://www.youtube.com/embed/cQYLPhBmqG8" alt="Make a Svelte Todo App" %}
+{% embed src="https://www.youtube.com/embed/cQYLPhBmqG8" title="Make a Svelte Todo App" %}
 
 ## Table of Contents
 
@@ -18,10 +18,7 @@ You can watch the [Make A Svelte Todo App](https://www.youtube.com/playlist?list
 
 This is an interactive example! 🦄
 
-<Iframe
-  title="Svelte Todo App"
-  src="https://svelte-todo-list-app.netlify.app/"
-/>
+{% embed src="https://svelte-todo-list-app.netlify.app/" title="Svelte Todo App" %}
 
 In the previous [Svelte For Beginners](https://joyofcode.xyz/svelte-for-beginners) post we learned Svelte fundamentals and now it's time to put what we learned into practice.
 
@@ -2136,12 +2133,7 @@ That's it! 🦄
 
 There's one problem though. The transition is happening for each todo item when we change the filter.
 
-<video autoPlay={true} loop muted controls>
-  <source
-    src="/images/svelte-todo-app/filtering-todos-problem.mp4"
-    type="video/mp4"
-  />
-</video>
+{% video src="filtering-todos-problem.mp4" %}
 
 Building something is the only time when you encounter a problem that requires a specific solution so you're going to learn and understand how something works instead of just watching or reading about it.
 
@@ -2317,12 +2309,7 @@ This is a great example of learning about the Svelte lifecycle function [tick](h
 
 That's it! 🥳
 
-<video autoPlay={true} loop muted controls>
-  <source
-    src="/images/svelte-todo-app/filtering-todos-solution.mp4"
-    type="video/mp4"
-  />
-</video>
+{% video src="filtering-todos-solution.mp4" %}
 
 With that we can cross off all the items from the list we wanted to do at the start.
 
