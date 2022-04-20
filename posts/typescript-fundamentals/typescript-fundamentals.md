@@ -1,9 +1,9 @@
 ---
-title: 'TypeScript Fundamentals'
+title: TypeScript Fundamentals
 description: Learn and understand TypeScript through example that's also a reference you can use to help you with types in your own project.
-slug: 'typescript-fundamentals'
-published: '2021-7-7'
-category: 'typescript'
+slug: typescript-fundamentals
+published: 2021-7-7
+category: typescript
 ---
 
 # TypeScript Fundamentals
