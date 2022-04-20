@@ -3,9 +3,9 @@
   "type": "module",
   "scripts": {
     "dev": "env-cmd svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "env-cmd svelte-kit build",
     "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
+    "preview": "env-cmd svelte-kit preview",
     "prepare": "svelte-kit sync",
     "test": "playwright test",
     "check": "svelte-check --tsconfig ./tsconfig.json",
