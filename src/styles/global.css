@@ -33,7 +33,8 @@ svg {
   max-width: 100%;
 }
 
-iframe {
+iframe,
+video {
   width: 100%;
   border: none;
   aspect-ratio: 16 / 9;
