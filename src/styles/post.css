@@ -41,6 +41,10 @@
   margin-bottom: var(--spacing-32);
 }
 
+.prose li > ul {
+  margin-bottom: 0;
+}
+
 .prose ul,
 .prose ol {
   display: grid;
