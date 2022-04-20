@@ -46,11 +46,11 @@ Your first impulse might be opening your editor and starting to code something u
 
 ## Requirements
 
-- [ ] Input field for the todo
-- [ ] Displaying the todos
-- [ ] Create todo
-- [ ] Update todo
-- [ ] Delete todo
+- Input field for the todo
+- Displaying the todos
+- Create todo
+- Update todo
+- Delete todo
 
 That's it! Nothing crazy. Notice how we're missing the _read_ part of CRUD. We're just going to use an object to keep it simple. We can treat it as our database.
 

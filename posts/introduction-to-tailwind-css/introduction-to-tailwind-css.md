@@ -46,7 +46,7 @@ This is our finished card, with the source code.
 
 You can copy the HTML code, if you want to get practice refactoring it to Tailwind later.
 
-```html:index.html
+```html:index.html showLineNumbers
 <div class="container">
   <article class="card">
     <div class="card-image">

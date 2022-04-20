@@ -6,7 +6,7 @@ published: 2021-10-27
 category: general
 ---
 
-# Automate Image Optimization
+# How to Optimize Images
 
 ## Table of Contents
 

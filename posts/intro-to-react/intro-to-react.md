@@ -6,7 +6,7 @@ published: 2021-2-13
 category: react
 ---
 
-# Introduction to React That Answers Why Should You Learn a Framework
+# Introduction to React and Frontend Frameworks
 
 ## Table of Contents
 
