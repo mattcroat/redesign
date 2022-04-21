@@ -2,7 +2,7 @@ General:
   ☐ Newsletter API
   ✔ Page transitions @done
   ✔ RSS feed @done
-  ☐ Sitemap
+  ✔ Sitemap @done
   ☐ Theming
   ✔ Convert old posts from MDX to Markdown @done
   ☐ Set HTTP cache-control headers
@@ -12,7 +12,7 @@ General:
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
   ☐ Social images
   ✔ Prerender landing, newsletter, about, uses page @done
-  ☐ Error page
+  ✔ Error page @done
   ✔ Scrollbar @done
   ✔ Lazy loading @done
   ✔ Series page @done
@@ -45,3 +45,4 @@ Issues:
   ✔ Background blur @done
   ☐ Parse Markdown inside HTML
   ☐ Link CSS in `app.html` so it's not blocking
+  ✔ Return 404 if category doesn't exist @done
