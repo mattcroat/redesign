@@ -6,7 +6,12 @@
   export let posts: PostType[]
 </script>
 
+<svelte:head>
+  <title>Series</title>
+</svelte:head>
+
 <Heading>Series</Heading>
+
 <Posts {posts}>
   <div class="container" slot="title">
     <h3>Entries</h3>

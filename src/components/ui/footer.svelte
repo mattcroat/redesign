@@ -1,5 +1,5 @@
 <script>
-  import { categories } from '$root/lib/config'
+  import { categories, github, twitter, youtube } from '$root/lib/config'
 </script>
 
 <footer>
@@ -20,15 +20,13 @@
       <li><a href="/newsletter">Newsletter</a></li>
       <li><a href="/rss">RSS</a></li>
       <li>
-        <a href="https://www.youtube.com/c/joyofcodedev" target="_blank">
-          YouTube
-        </a>
+        <a href={youtube} target="_blank"> YouTube </a>
       </li>
       <li>
-        <a href="https://twitter.com/joyofcodedev" target="_blank">Twitter</a>
+        <a href={twitter} target="_blank">Twitter</a>
       </li>
       <li>
-        <a href="https://github.com/mattcroat" target="_blank">GitHub</a>
+        <a href={github} target="_blank">GitHub</a>
       </li>
     </ul>
   </div>

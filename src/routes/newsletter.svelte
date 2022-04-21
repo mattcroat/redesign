@@ -7,6 +7,14 @@
   import Newsletter from '$root/components/ui/newsletter.svelte'
 </script>
 
+<svelte:head>
+  <title>Newsletter</title>
+  <meta
+    content="Subscribe for updates and tasty web development treats."
+    name="description"
+  />
+</svelte:head>
+
 <Heading>Newsletter</Heading>
 
 <div class="newsletter">

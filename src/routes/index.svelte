@@ -7,13 +7,35 @@
 
   import Newsletter from '$root/components/ui/newsletter.svelte'
   import Posts from '$root/components/ui/posts.svelte'
+  import {
+    siteDescription,
+    siteImage,
+    siteName,
+    siteTitle,
+    siteUrl,
+    twitter
+  } from '$root/lib/config'
   import type { PostsType } from '$root/types'
 
   export let posts: PostsType
 </script>
 
 <svelte:head>
-  <title>Joy of Code</title>
+  <title>{siteTitle}</title>
+
+  <meta content={siteDescription} name="description" />
+
+  <meta content={siteTitle} property="og:title" />
+  <meta content={siteImage} property="og:image" />
+  <meta content={siteUrl} property="og:url" />
+  <meta content={siteDescription} property="og:description" />
+  <meta content={siteName} property="og:site_name" />
+
+  <meta content={twitter} name="twitter:creator" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content={siteTitle} name="twitter:title" />
+  <meta content={siteDescription} name="twitter:description" />
+  <meta content={siteImage} name="twitter:image" />
 </svelte:head>
 
 <main>
@@ -46,7 +68,7 @@
   <Posts posts={posts.latest}>
     <h3 slot="title">Latest</h3>
     <a slot="see-more" href="/articles">
-      <span>See more</span>
+      <span>See more articles</span>
       <ArrowNarrowRightIcon width="24" height="24" aria-hidden="true" />
     </a>
   </Posts>
@@ -54,7 +76,7 @@
   <Posts posts={posts.series}>
     <h3 slot="title">Series</h3>
     <a slot="see-more" href="/series">
-      <span>See more</span>
+      <span>See more series</span>
       <ArrowNarrowRightIcon width="24" height="24" aria-hidden="true" />
     </a>
   </Posts>

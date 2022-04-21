@@ -1,6 +1,13 @@
 export const siteName = 'Joy Of Code'
-export const siteUrl = 'http://localhost:3000/'
-export const twitterHandle = '@joyofcodedev'
+export const siteUrl = 'https://joyofcode.xyz/'
+export const siteTitle = 'Joy of Code'
+export const siteDescription =
+  'Digital garden growing curious minds with articles about HTML, CSS, JavaScript and things related to web development and design.'
+export const siteImage = `${siteUrl}social.png`
+
+export const twitter = '@joyofcodedev'
+export const youtube = 'https://www.youtube.com/c/joyofcodedev'
+export const github = 'https://github.com/mattcroat'
 
 export const api = 'https://api.github.com'
 export const owner = 'mattcroat'

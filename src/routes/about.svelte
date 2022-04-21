@@ -6,6 +6,10 @@
   import Heading from '$root/components/ui/heading.svelte'
 </script>
 
+<svelte:head>
+  <title>About</title>
+</svelte:head>
+
 <Heading>About</Heading>
 
 <main>

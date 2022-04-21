@@ -10,7 +10,13 @@
   const category = $page.params.category
 </script>
 
+<svelte:head>
+  <title>{categories[category]}</title>
+  <meta content="{categories[category]} category." name="description" />
+</svelte:head>
+
 <Heading>{categories[category]}</Heading>
+
 <Posts {posts}>
   <div class="container" slot="title">
     <div>

@@ -6,6 +6,14 @@
   import Heading from '$root/components/ui/heading.svelte'
 </script>
 
+<svelte:head>
+  <title>Uses</title>
+  <meta
+    content="List of things I use from my code editor to fonts and themes."
+    name="description"
+  />
+</svelte:head>
+
 <Heading>Uses</Heading>
 
 <div class="categories">

@@ -6,7 +6,13 @@
   export let posts: PostType[]
 </script>
 
+<svelte:head>
+  <title>Articles</title>
+  <meta content="List of {posts.length} articles." name="description" />
+</svelte:head>
+
 <Heading>Articles</Heading>
+
 <Posts {posts}>
   <div class="container" slot="title">
     <h3>Archive</h3>

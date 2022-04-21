@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
 
-  import { siteName, siteUrl, twitterHandle } from '$root/lib/config'
+  import { siteName, siteUrl, twitter } from '$root/lib/config'
   import type { FrontMatterType } from '$root/types'
 
   export let content: string
@@ -79,7 +79,7 @@
   <meta content={frontmatter.description} property="og:description" />
   <meta content={siteName} property="og:site_name" />
 
-  <meta content={twitterHandle} name="twitter:creator" />
+  <meta content={twitter} name="twitter:creator" />
   <meta content="summary_large_image" name="twitter:card" />
   <meta content={frontmatter.title} name="twitter:title" />
   <meta content={frontmatter.description} name="twitter:description" />
