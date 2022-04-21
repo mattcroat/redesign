@@ -11,7 +11,7 @@ export const get: RequestHandler = async () => {
     title: `${siteTitle} RSS Feed`,
     description: siteDescription,
     site_url: siteUrl,
-    feed_url: `${siteUrl}feed/rss.xml`
+    feed_url: `${siteUrl}rss.xml`
   })
 
   posts.forEach((post) =>

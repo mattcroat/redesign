@@ -57,7 +57,9 @@
     <div class="newsletter">
       <h2>Subscribe for updates</h2>
       <Newsletter />
-      <p>Subscribe to the <a href="/feed/rss.xml">RSS feed</a> instead.</p>
+      <p>
+        Subscribe to the <a href="/rss.xml" target="_blank">RSS feed</a> instead.
+      </p>
     </div>
   </section>
 
