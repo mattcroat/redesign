@@ -7,7 +7,7 @@ General:
   ✔ Convert old posts from MDX to Markdown @done
   ☐ Set HTTP cache-control headers
   ☐ Analytics
-  ☐ SEO
+  ✔ SEO @done
   ✔ Sounds @done
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
   ☐ Social images
@@ -17,6 +17,7 @@ General:
   ✔ Lazy loading @done
   ✔ Series page @done
   ✔ Articles page @done
+  ☐ Update robots.txt to allow indexing
 
 Data fetching:
   ✔ Post @done
@@ -42,3 +43,4 @@ Issues:
   ☐ Sticky header
   ✔ Input range thumb in Firefox @done
   ✔ Background blur @done
+  ☐ Parse Markdown inside HTML
