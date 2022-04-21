@@ -13,7 +13,7 @@
 
 <div class="container">
   <Popover let:open class="popover">
-    <PopoverButton on:click={() => $sounds.click()}>
+    <PopoverButton aria-label="Categories" on:click={() => $sounds.click()}>
       <MenuAlt1Icon width="24" height="24" />
     </PopoverButton>
 
