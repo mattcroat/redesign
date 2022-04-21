@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    align-self: start;
     margin-top: var(--spacing-32);
   }
 
