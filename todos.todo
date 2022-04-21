@@ -1,7 +1,7 @@
 General:
   ☐ Newsletter API
   ✔ Page transitions @done
-  ☐ RSS feed
+  ✔ RSS feed @done
   ☐ Sitemap
   ☐ Theming
   ✔ Convert old posts from MDX to Markdown @done
@@ -44,3 +44,4 @@ Issues:
   ✔ Input range thumb in Firefox @done
   ✔ Background blur @done
   ☐ Parse Markdown inside HTML
+  ☐ Link CSS in `app.html` so it's not blocking
