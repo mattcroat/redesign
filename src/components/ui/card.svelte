@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twitter } from '$root/lib/config'
+
   import {
     ArrowNarrowRightIcon,
     MailIcon,
@@ -7,6 +9,7 @@
   import Newsletter from './newsletter.svelte'
 
   export let preset: 'edit' | 'newsletter'
+  export let editUrl = ''
 </script>
 
 {#if preset === 'edit'}
@@ -19,7 +22,7 @@
       Every post is a Markdown file so contributing is simple as following the
       link below and pressing the pencil icon inside GitHub to edit it.
     </p>
-    <a class="link" href="/">
+    <a class="link" href={editUrl}>
       <span>Edit on GitHub</span>
       <ArrowNarrowRightIcon width="24" height="24" aria-hidden="true" />
     </a>
@@ -34,8 +37,8 @@
     <span class="title">Subscribe For Updates</span>
     <Newsletter />
     <span class="subscribe">
-      Subscribe to the <a href="/feed/rss.xml">RSS feed</a> instead or follow on
-      <a href="/">Twitter</a>.
+      Subscribe to the <a href="/feed/rss.xml">RSS feed</a> or
+      <a href={twitter}>Twitter</a> instead.
     </span>
   </div>
 {/if}
@@ -43,14 +46,9 @@
 <style>
   .card {
     position: relative;
-    margin-top: var(--spacing-64);
     padding: var(--spacing-32);
     border: 4px solid var(--clr-primary);
     border-radius: var(--rounded-20);
-  }
-
-  .card + .card {
-    margin-bottom: var(--spacing-64);
   }
 
   .card .decorative {

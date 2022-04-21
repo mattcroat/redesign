@@ -2,13 +2,15 @@
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
 
-  import { siteName, siteUrl, twitter } from '$root/lib/config'
+  import Card from '$root/components/ui/card.svelte'
+  import { fileUrl, siteName, siteUrl, twitterHandle } from '$root/lib/config'
   import type { FrontMatterType } from '$root/types'
 
   export let content: string
   export let frontmatter: FrontMatterType
 
   let overlay = false
+  let editUrl = `${fileUrl}/${frontmatter.slug}/${frontmatter.slug}.md`
 
   onMount(() => {
     const headingElement = document.querySelector('h1')
@@ -79,7 +81,7 @@
   <meta content={frontmatter.description} property="og:description" />
   <meta content={siteName} property="og:site_name" />
 
-  <meta content={twitter} name="twitter:creator" />
+  <meta content={twitterHandle} name="twitter:creator" />
   <meta content="summary_large_image" name="twitter:card" />
   <meta content={frontmatter.title} name="twitter:title" />
   <meta content={frontmatter.description} name="twitter:description" />
@@ -93,9 +95,9 @@
   <div class="prose">
     {@html content}
   </div>
-  <div>
-    <!-- Edit -->
-    <!-- Newsletter -->
+  <div class="cards">
+    <Card preset="edit" {editUrl} />
+    <Card preset="newsletter" />
   </div>
 </main>
 
@@ -106,5 +108,13 @@
     background-image: radial-gradient(hsl(173 100% 4% / 40%), var(--clr-bg));
     backdrop-filter: blur(20px);
     z-index: -1;
+  }
+
+  .cards {
+    display: grid;
+    row-gap: var(--spacing-32);
+    max-width: var(--post-txt-length);
+    margin: var(--spacing-32) 0;
+    margin-inline: auto;
   }
 </style>

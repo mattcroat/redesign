@@ -13,7 +13,7 @@
     siteName,
     siteTitle,
     siteUrl,
-    twitter
+    twitterHandle
   } from '$root/lib/config'
   import type { PostsType } from '$root/types'
 
@@ -31,7 +31,7 @@
   <meta content={siteDescription} property="og:description" />
   <meta content={siteName} property="og:site_name" />
 
-  <meta content={twitter} name="twitter:creator" />
+  <meta content={twitterHandle} name="twitter:creator" />
   <meta content="summary_large_image" name="twitter:card" />
   <meta content={siteTitle} name="twitter:title" />
   <meta content={siteDescription} name="twitter:description" />

@@ -5,7 +5,8 @@ export const siteDescription =
   'Digital garden growing curious minds with articles about HTML, CSS, JavaScript and things related to web development and design.'
 export const siteImage = `${siteUrl}social.png`
 
-export const twitter = '@joyofcodedev'
+export const twitterHandle = '@joyofcodedev'
+export const twitter = 'https://twitter.com/joyofcodedev'
 export const youtube = 'https://www.youtube.com/c/joyofcodedev'
 export const github = 'https://github.com/mattcroat'
 
