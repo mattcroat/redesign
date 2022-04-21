@@ -18,7 +18,7 @@
     <p>Follow</p>
     <ul>
       <li><a href="/newsletter">Newsletter</a></li>
-      <li><a href="/rss">RSS</a></li>
+      <li><a href="/feed/rss.xml">RSS</a></li>
       <li>
         <a href={youtube} target="_blank"> YouTube </a>
       </li>

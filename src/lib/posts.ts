@@ -48,7 +48,7 @@ export async function getRateLimit(): Promise<RateType> {
 /**
  * Get posts data from `data/posts.json` on GitHub
  */
-async function getPostsData() {
+export async function getPostsData() {
   const response = await fetch(postsDataUrl, {
     headers: {
       ...headers,
