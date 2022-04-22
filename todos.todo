@@ -1,5 +1,5 @@
 General:
-  ☐ Newsletter API
+  ✔ Newsletter API @done
   ✔ Page transitions @done
   ✔ RSS feed @done
   ✔ Sitemap @done
@@ -20,6 +20,7 @@ General:
   ☐ Update robots.txt to allow indexing
   ☐ Views
   ☐ Editor
+  ☐ Add license and contributing
 
 Data fetching:
   ✔ Post @done
@@ -55,5 +56,5 @@ Issues:
   ✔ Input range thumb in Firefox @done
   ✔ Background blur @done
   ☐ Parse Markdown inside HTML
-  ☐ Link CSS in `app.html` so it's not blocking
+  ✔ Use SCSS to import styles and save on HTTP requests @done
   ✔ Return 404 if category doesn't exist @done
