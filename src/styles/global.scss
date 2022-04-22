@@ -1,87 +1,5 @@
-/*
-  Reset
-*/
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--clr-scrollbar-thumb);
-  border-radius: var(--rounded-20);
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-iframe,
-video {
-  width: 100%;
-  border: none;
-  aspect-ratio: 16 / 9;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-button,
-input {
-  font: inherit;
-  color: inherit;
-  border: none;
-}
-
-button {
-  font: inherit;
-  background: none;
-  cursor: pointer;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-/*
-  Variables
-*/
-
 :root {
   /* Post */
-
   --post-txt-size: 16px;
   --post-txt-length: 60ch;
   --post-txt-height: 40px;
@@ -90,7 +8,6 @@ ol {
   --post-blockquote-border: hsl(173 10% 10%);
 
   /* Font */
-
   --font-sans: 'Poppins', sans-serif;
   --font-serif: 'Arsenica', serif;
   --font-mono: Source Code Pro, monospace;
@@ -104,7 +21,6 @@ ol {
   --font-96: 9.6rem;
 
   /* Spacing */
-
   --spacing-4: 0.4rem;
   --spacing-8: 0.8rem;
   --spacing-16: 1.6rem;
@@ -114,13 +30,11 @@ ol {
   --spacing-128: 12.8rem;
 
   /* Global */
-
   --clr-primary: hsl(173 100% 66%);
   --clr-txt: hsl(0 0% 98%);
   --clr-bg: hsl(210 7% 11%);
 
   /* Hero */
-
   --clr-hero-txt: hsl(174 27% 73%);
   --clr-hero-bg: linear-gradient(
     270deg,
@@ -134,7 +48,6 @@ ol {
   --clr-input-border: hsl(0 0% 21%);
 
   /* Card */
-
   --clr-card-bg: linear-gradient(
     180deg,
     hsl(180 7% 14%) 0%,
@@ -144,17 +57,14 @@ ol {
   --clr-card-txt: hsl(0 0% 78%);
 
   /* Footer */
-
   --clr-footer-txt: hsl(0 0% 78%);
   --clr-footer-bg: hsl(210 5% 7%);
 
   /* Link */
-
   --clr-link-txt: hsl(0 100% 98%);
   --clr-link-background: hsl(0 0% 4%);
 
   /* Menu */
-
   --clr-menu-text: hsl(0 0% 78%);
   --clr-menu-bg: linear-gradient(
     180deg,
@@ -170,7 +80,6 @@ ol {
   --clr-theme-active: hsl(177 100% 80%);
 
   /* Code */
-
   --clr-code-bg: hsl(173 60% 4%);
   --clr-code-title: hsl(173 100% 94%);
   --clr-code-border: hsl(173 10% 10%);
@@ -180,108 +89,31 @@ ol {
   --clr-code-inline-bg: hsl(173 60% 4%);
 
   /* Scrollbar */
-
   --clr-scrollbar-thumb: hsl(173 10% 20%);
 
   /* Shadows */
-
   --shadow-sm: 0px 0px 4px 4px hsl(0 0% 0% / 4%);
   --shadow-md: 0px 0px 10px 4px hsl(0 0% 0% / 10%);
   --shadow-lg: 0px 0px 20px 8px hsl(0 0% 0% / 20%);
 
   /* Border radius */
-
   --rounded-4: 4px;
   --rounded-20: 20px;
 }
 
-/*
-  Font declarations
-*/
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/poppins/Poppins-Regular.woff2') format('woff2');
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/poppins/Poppins-Medium.woff2') format('woff2');
+::-webkit-scrollbar-track {
+  background-color: none;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/poppins/Poppins-Bold.woff2') format('woff2');
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-scrollbar-thumb);
+  border-radius: var(--rounded-20);
 }
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/fonts/poppins/Poppins-Black.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Arsenica';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/arsenica/Arsenica-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/source-code-pro/SourceCodePro-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/source-code-pro/SourceCodePro-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'OpenDyslexic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/openDyslexic/OpenDyslexic-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'OpenDyslexic Mono';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/openDyslexic/OpenDyslexic-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'OpenDyslexic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/openDyslexic/OpenDyslexicMono-Regular.woff2') format('woff2');
-}
-
-/*
-  Styles
-*/
 
 html {
   font-size: 62.5%;

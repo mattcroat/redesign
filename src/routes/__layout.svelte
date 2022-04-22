@@ -5,10 +5,7 @@
   import Footer from '$root/components/ui/footer.svelte'
   import Transition from '$root/components/transition/index.svelte'
 
-  import '$root/styles/global.css'
-  import '$root/styles/post.css'
-  import '$root/styles/themes.css'
-  import '$root/styles/code.css'
+  import '$root/styles/styles.scss'
 </script>
 
 <Transition type="fade">
