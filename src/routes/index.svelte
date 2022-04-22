@@ -13,6 +13,7 @@
     siteName,
     siteTitle,
     siteUrl,
+    twitter,
     twitterHandle
   } from '$root/lib/config'
   import type { PostsType } from '$root/types'
@@ -58,7 +59,8 @@
       <h2>Subscribe for updates</h2>
       <Newsletter />
       <p>
-        Subscribe to the <a href="/rss.xml" target="_blank">RSS feed</a> instead.
+        Subscribe to the <a href="/rss.xml" target="_blank">RSS feed</a> or
+        <a href={twitter} target="_blank">Twitter</a> instead.
       </p>
     </div>
   </section>
