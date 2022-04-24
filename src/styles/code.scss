@@ -65,7 +65,7 @@ html[data-font='dyslexic'] .prose code {
   border-bottom: none;
   border-top-left-radius: var(--rounded-20);
   border-top-right-radius: var(--rounded-20);
-  box-shadow: var(--shadow-sm);
+  z-index: 1;
 }
 
 .prose .line-number::before {
@@ -94,57 +94,52 @@ html[data-font='dyslexic'] .prose code {
   background-color: hsl(0 84% 60% / 20%);
 }
 
-.prose .token.comment,
-.prose .token.prolog,
-.prose .token.doctype,
-.prose .token.cdata {
-  color: var(--color-token-6);
+.prose .token.regex,
+.prose .token.important,
+.prose .token.variable,
+.prose .token.function,
+.prose .token.class-name,
+.prose .language-css .token.rule {
+  color: var(--clr-token-1);
 }
 
-.prose .token.punctuation {
-  color: var(--color-token-4);
+.prose .token.keyword,
+.prose .language-css .token.variable,
+.prose .language-css .token.selector,
+.prose .language-css .token.pseudo-element {
+  color: var(--clr-token-2);
 }
 
-.prose .token.property,
 .prose .token.tag,
 .prose .token.boolean,
-.prose .token.number,
 .prose .token.constant,
 .prose .token.symbol,
-.prose .token.deleted {
-  color: var(--color-token-3);
+.prose .token.deleted,
+.prose .token.entity,
+.prose .token.url,
+.prose .style .token.string {
+  color: var(--clr-token-3);
 }
 
-.prose .token.selector,
+.prose .token.operator,
+.prose .token.punctuation,
+.prose .literal-property.property,
+.prose .token.property,
 .prose .token.attr-name,
 .prose .token.string,
 .prose .token.char,
 .prose .token.builtin,
-.prose .token.inserted {
-  color: var(--color-token-5);
+.prose .token.inserted,
+.prose .language-css .unit,
+.prose .language-css .token.function,
+.prose .token.atrule .token.property,
+.prose .token.atrule .token.rule {
+  color: var(--clr-token-4);
 }
 
-.prose .token.operator,
-.prose .token.entity,
-.prose .token.url,
-.prose .language-css .token.string,
-.prose .style .token.string {
-  color: var(--color-token-3);
-}
-
-.prose .token.atrule,
-.prose .token.attr-value,
-.prose .token.keyword {
-  color: var(--color-token-2);
-}
-
-.prose .token.function,
-.prose .token.class-name {
-  color: var(--color-token-1);
-}
-
-.prose .token.regex,
-.prose .token.important,
-.prose .token.variable {
-  color: var(--color-highlight);
+.prose .token.comment,
+.prose .token.prolog,
+.prose .token.doctype,
+.prose .token.cdata {
+  color: var(--clr-token-5);
 }

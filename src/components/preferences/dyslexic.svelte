@@ -73,11 +73,11 @@
   }
 
   .switch-container :global(.switch-enabled) {
-    background-color: hsl(0 0% 24%);
+    background-color: var(--clr-switch-on-bg);
   }
 
   .switch-container :global(.switch-disabled) {
-    background-color: hsl(0 0% 10%);
+    background-color: var(--clr-switch-off-bg);
   }
 
   .toggle {

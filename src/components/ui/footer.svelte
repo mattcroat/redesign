@@ -112,7 +112,7 @@
     justify-self: center;
     background-image: linear-gradient(
       120deg,
-      hsl(270, 70%, 40%),
+      hsl(270, 70%, 60%),
       hsl(225, 74%, 58%)
     );
     border-radius: 100%;

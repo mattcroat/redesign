@@ -58,7 +58,7 @@
     height: 48px;
     margin: var(--spacing-16) 0;
     border-radius: var(--rounded-4);
-    border: 1px solid hsl(0 0% 21%);
+    border: 1px solid var(--clr-input-border);
     box-shadow: var(--shadow-sm);
   }
 
