@@ -105,7 +105,7 @@
   .overlay {
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(hsl(173 100% 4% / 40%), var(--clr-bg));
+    background-image: radial-gradient(hsl(173 100% 4% / 80%), var(--clr-bg));
     backdrop-filter: blur(20px);
     z-index: -1;
   }
