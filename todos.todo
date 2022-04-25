@@ -3,7 +3,7 @@ General:
   ✔ Page transitions @done
   ✔ RSS feed @done
   ✔ Sitemap @done
-  ☐ Theming
+  ✔ Theming @done
   ✔ Convert old posts from MDX to Markdown @done
   ✔ Set HTTP cache-control headers @done
   ☐ Analytics
@@ -18,9 +18,9 @@ General:
   ✔ Series page @done
   ✔ Articles page @done
   ☐ Update robots.txt to allow indexing
-  ☐ Views
+  ✔ Views @done
   ☐ Editor
-  ☐ Add license and contributing
+  ✔ Add license and contributing @done
 
 Data fetching:
   ✔ Post @done
@@ -55,6 +55,5 @@ Issues:
   ☐ Sticky header
   ✔ Input range thumb in Firefox @done
   ✔ Background blur @done
-  ☐ Parse Markdown inside HTML
   ✔ Use SCSS to import styles and save on HTTP requests @done
   ✔ Return 404 if category doesn't exist @done
