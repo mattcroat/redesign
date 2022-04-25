@@ -14,6 +14,9 @@
 - ✍️ Posts are stored inside the `posts` folder and are used to build the page using the 🔌 GitHub API but `data` is where posts metadata is stored in a single `posts.json` to serve as a database
 - The project is hosted on [Vercel](https://vercel.com/) and uses [ignored build step](https://vercel.com/docs/concepts/projects/overview#ignored-build-step) thanks to `ignore-step.mjs` to avoid redeploy for those special folders
 - The tests use [Playwright](https://playwright.dev/) for end-to-end testing
+- For analytics I use [Google Analytics](https://analytics.google.com/) and don't store any personal or identifiable data and I try to turn off anything spooky
+- For the newsletter I use [Buttondown](https://buttondown.email/) when I remember to send one and it's awesome
+- I use [Supabase](https://supabase.com/) for the post views
 
 ## 🙏 Use Issues to Find Answers
 
