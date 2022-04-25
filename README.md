@@ -13,6 +13,7 @@
 - The editor uses ⚡️ SvelteKit for the frontend and 📜 [Monaco Editor](https://github.com/microsoft/monaco-editor) (code editor which powers [VS Code](https://code.visualstudio.com/)) as the editor to manage content using the 🔌 GitHub API
 - ✍️ Posts are stored inside the `posts` folder and are used to build the page using the 🔌 GitHub API but `data` is where posts metadata is stored in a single `posts.json` to serve as a database
 - The project is hosted on [Vercel](https://vercel.com/) and uses [ignored build step](https://vercel.com/docs/concepts/projects/overview#ignored-build-step) thanks to `ignore-step.mjs` to avoid redeploy for those special folders
+- The tests use [Playwright](https://playwright.dev/) for end-to-end testing
 
 ## 🤗 Contribute
 
