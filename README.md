@@ -6,6 +6,8 @@
 
 [Joy of Code](https://joyofcode.xyz/) is a digital garden growing curious minds with a wide variety of topics from web development to web design.
 
+Reading isn't your thing? I understand. You can find the posts in video form on [YouTube](https://www.youtube.com/c/JoyofCodeDev) and I plan on uploading the content to [Odysee](https://odysee.com/) in the future.
+
 ## 🧭 Technologies
 
 - ⚡️ [SvelteKit](https://kit.svelte.dev/) is used for the frontend with server-side rendering and prerendering static pages
@@ -20,7 +22,7 @@
 
 ## 🙏 Use Issues to Find Answers
 
-If you need help or something changed and isn't working when following a post or video series I made you can go to the [issues](https://github.com/mattcroat/redesign/issues) and find the right to find the answer or bring it to my attention — I hope in general people might even help each other out this way.
+If you need help or something changed and isn't working when following a post or video series I made you can go to the [issues](https://github.com/mattcroat/redesign/issues) and find one I opened to find the answer or bring it to my attention — I hope in general people might even help each other out this way.
 
 This avoids having to hunt down the issue you have in YouTube comments or places like Discord that aren't indexed by search results and are lost forever.
 
