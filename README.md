@@ -4,9 +4,7 @@
 
 ## 🧑‍🎨 What is Joy of Code?
 
-[Joy of Code](https://joyofcode.xyz/) is a digital garden growing curious minds with a wide variety of topics from web development to web design.
-
-Reading isn't your thing? I understand. You can find the posts in video form on [YouTube](https://www.youtube.com/c/JoyofCodeDev) and I plan on uploading the content to [Odysee](https://odysee.com/) in the future.
+[Joy of Code](https://joyofcode.xyz/) is a digital garden growing curious minds with a wide variety of topics from web development to web design. If reading isn't your thing watch the video version on [YouTube](https://www.youtube.com/c/JoyofCodeDev). I plan on mirroring the content to [Odysee](https://odysee.com/) in the future.
 
 ## 🧭 Technologies
 
