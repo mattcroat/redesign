@@ -86,7 +86,7 @@
     gap: var(--spacing-16);
   }
 
-  .card form {
+  .card :global(form) {
     margin: var(--spacing-16) 0;
   }
 </style>

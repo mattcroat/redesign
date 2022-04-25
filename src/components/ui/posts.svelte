@@ -1,9 +1,16 @@
 <script lang="ts">
   import { EyeIcon } from '@rgossiaux/svelte-heroicons/outline'
+
   import Transition from '$root/components/transition/index.svelte'
   import type { PostType } from '$root/types'
 
   export let posts: PostType[]
+
+  async function getViews(slug: string): Promise<string> {
+    const response = await fetch(`/api/views/${slug}`)
+    const { views } = await response.json()
+    return views.toLocaleString()
+  }
 </script>
 
 <section>
@@ -16,7 +23,13 @@
           <article class="card">
             <span class="views">
               <EyeIcon width="24" height="24" aria-hidden="true" />
-              <span>9,000</span>
+              {#await getViews(post.slug)}
+                <span>Reading power level...</span>
+              {:then views}
+                <span>{views}</span>
+              {:catch}
+                <span>It's over 9,000!</span>
+              {/await}
             </span>
             <div class="details">
               <span class="title">{post.title}</span>
