@@ -15,6 +15,12 @@
 - The project is hosted on [Vercel](https://vercel.com/) and uses [ignored build step](https://vercel.com/docs/concepts/projects/overview#ignored-build-step) thanks to `ignore-step.mjs` to avoid redeploy for those special folders
 - The tests use [Playwright](https://playwright.dev/) for end-to-end testing
 
+## 🙏 Use Issues to Find Answers
+
+If you need help or something changed and isn't working when following a post or video series I made you can go to the [issues](https://github.com/mattcroat/redesign/issues) and find the right to find the answer or bring it to my attention — I hope in general people might even help each other out this way.
+
+This avoids having to hunt down the issue you have in YouTube comments or places like Discord that aren't indexed by search results and are lost forever.
+
 ## 🤗 Contribute
 
 **First time contributors are welcome** — in fact this is the reason why I wanted to make it possible to contribute so you can get your first open source contribution.
