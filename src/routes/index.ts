@@ -9,8 +9,10 @@ export const get: RequestHandler = async () => {
     status: 200,
     body: { posts },
     headers: {
-      // 'Cache-Control': `max-age=60, s-maxage=${60}, ETag=${etag}, If-None-Match=${etag}`
-      'Cache-Control': `max-age=60, s-maxage=${60}`
+      // 'Cache-Control': `max-age=600, s-maxage=${60}`,
+      // ETag: etag,
+      // 'If-None-Match': etag
+      'Cache-Control': `max-age=0, s-maxage=${60}`
     }
   }
 }
