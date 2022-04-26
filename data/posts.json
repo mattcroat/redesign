@@ -1,28 +1,26 @@
-{
-  "posts": [
-    {
-      "views": 11354,
-      "title": "TypeScript Fundamentals",
-      "description": "Learn how learning TypeScript can help you with the ladies and how to become the true typing champion.",
-      "category": "typescript"
-    },
-    {
-      "views": 1746,
-      "title": "Full Stack SvelteKit For Beginners",
-      "description": "SvelteKit is an opinionated full stack framework that ties the frontend and backend together.",
-      "category": "svelte"
-    },
-    {
-      "views": 364,
-      "title": "Design For Developers",
-      "description": "Learn enough visual design to be dangerous with actual tips instead of theory style your way to that premium salary.",
-      "category": "design"
-    },
-    {
-      "views": 685,
-      "title": "Using Secret Environment Variables With SvelteKit",
-      "description": "Learn how to keep your secret environment variables safe for your API tokens and other secrets.",
-      "category": "svelte"
-    }
-  ]
-}
+[
+  {
+    "views": 11354,
+    "title": "TypeScript Fundamentals",
+    "description": "Learn how learning TypeScript can help you with the ladies and how to become the true typing champion.",
+    "category": "typescript"
+  },
+  {
+    "views": 1746,
+    "title": "Full Stack SvelteKit For Beginners",
+    "description": "SvelteKit is an opinionated full stack framework that ties the frontend and backend together.",
+    "category": "svelte"
+  },
+  {
+    "views": 364,
+    "title": "Design For Developers",
+    "description": "Learn enough visual design to be dangerous with actual tips instead of theory style your way to that premium salary.",
+    "category": "design"
+  },
+  {
+    "views": 685,
+    "title": "Using Secret Environment Variables With SvelteKit",
+    "description": "Learn how to keep your secret environment variables safe for your API tokens and other secrets.",
+    "category": "svelte"
+  }
+]
