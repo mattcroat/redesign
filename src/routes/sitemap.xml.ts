@@ -39,14 +39,12 @@ export const get: RequestHandler = async () => {
     </urlset>
   `.trim()
 
-  const cacheDuration = 60 * 60 * 24 // 24 hours
-
   return {
     status: 200,
     body: sitemap,
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': `max-age=0, s-maxage=${cacheDuration}`
+      'Cache-Control': `max-age=0, s-maxage=${60 * 60 * 24}`
     }
   }
 }
