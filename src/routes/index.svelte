@@ -41,7 +41,7 @@
       <span class="kicker">Latest post</span>
       <h1 class="title">{posts.latestPost.title}</h1>
       <p class="description">
-        {posts.latestPost.title}
+        {posts.latestPost.description}
       </p>
       <a class="continue-reading" href={posts.latestPost.slug}>
         <span>Continue reading</span>
