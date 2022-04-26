@@ -20,7 +20,10 @@ export const get: RequestHandler = async ({ params }) => {
   return {
     response: 202,
     body: { views: data.views },
-    headers: { 'Content-Type': 'application/json' }
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': `max-age=0, s-maxage=${60 * 60}` // 1 hour
+    }
   }
 }
 
