@@ -98,12 +98,11 @@ export async function getPosts(): Promise<PostsType> {
       .slice(0, postLimit)
   }
 
-  // Hit Supabase API to get views
-  // function getPopularPosts(posts: PostType[]): PostType[] {
-  //   return posts.sort((firstElement, secondElement) => {
-  //     return firstElement.views - secondElement.views
-  //   })
-  // }
+  function getPopularPosts(posts: PostType[]): PostType[] {
+    return posts.sort((firstElement, secondElement) => {
+      return secondElement.views - firstElement.views
+    })
+  }
 
   function getSeries(posts: PostType[]): PostType[] {
     return posts.filter((post) => post.series).slice(0, postLimit)
@@ -115,7 +114,7 @@ export async function getPosts(): Promise<PostsType> {
 
   const latestPost = getLatestPosts(posts)[0]
   const latest = getLatestPosts(posts)
-  const popular = latest // placeholder
+  const popular = getPopularPosts(posts)
   const series = getSeries(posts)
   const picks = getPicks(posts)
 

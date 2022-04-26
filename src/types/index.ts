@@ -23,6 +23,7 @@ export type PostMarkdownType = {
 }
 
 export type PostType = {
+  views: number
   title: string
   description: string
   slug: string
