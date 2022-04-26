@@ -10,11 +10,11 @@ export const get: RequestHandler = async ({ params }) => {
     .single()
 
   if (error) {
-    return { response: 404, body: { error: error.message } }
+    return { response: 400, body: { error: error.message } }
   }
 
   if (!data) {
-    return { response: 404, body: { error: `The post doesn't exist.` } }
+    return { response: 400, body: { error: `The post doesn't exist.` } }
   }
 
   return {

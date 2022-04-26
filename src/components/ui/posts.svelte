@@ -2,15 +2,10 @@
   import { EyeIcon } from '@rgossiaux/svelte-heroicons/outline'
 
   import Transition from '$root/components/transition/index.svelte'
+  import { getViews } from '$root/lib/supabase'
   import type { PostType } from '$root/types'
 
   export let posts: PostType[]
-
-  async function getViews(slug: string): Promise<string> {
-    const response = await fetch(`/api/views/${slug}`)
-    const { views } = await response.json()
-    return views.toLocaleString()
-  }
 </script>
 
 <section>

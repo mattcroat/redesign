@@ -1,10 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
+  import { dev } from '$app/env'
 
   import Card from '$root/components/ui/card.svelte'
   import { fileUrl, siteName, siteUrl, twitterHandle } from '$root/lib/config'
   import type { FrontMatterType } from '$root/types'
+  import { updateViews } from '$root/lib/supabase'
 
   export let content: string
   export let frontmatter: FrontMatterType
@@ -69,15 +71,9 @@
       )
   })
 
-  async function updateViews(slug: string): Promise<void> {
-    await fetch(`api/views/${slug}`, {
-      method: 'post',
-      body: JSON.stringify(slug),
-      headers: { 'Content-Type': 'application/json' }
-    })
+  if (!dev) {
+    updateViews(frontmatter.slug)
   }
-
-  updateViews(frontmatter.slug)
 </script>
 
 <svelte:head>
