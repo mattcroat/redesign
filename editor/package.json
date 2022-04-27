@@ -47,7 +47,6 @@
 		"remark-slug": "^7.0.1",
 		"remark-smartypants": "^2.0.0",
 		"remark-toc": "^8.0.1",
-		"remark-unwrap-images": "^3.0.1",
 		"socket.io": "^4.4.1",
 		"socket.io-client": "^4.4.1",
 		"unified": "^10.1.2"
