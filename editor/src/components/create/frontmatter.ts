@@ -37,7 +37,7 @@ export const frontmatter = `
 
 	{% embed src="image.webp" title="Description" %}
 
-	{% video video.mp4 %}
+	{% video src="video.mp4" %}
 `
 	.trim()
 	.replace(/\t/g, '')

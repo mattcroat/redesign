@@ -11,7 +11,6 @@ import remarkHeadings from 'remark-autolink-headings'
 import remarkSlug from 'remark-slug'
 import remarkSmartypants from 'remark-smartypants'
 import remarkTableofContents from 'remark-toc'
-// import remarkUnwrapImages from 'remark-unwrap-images'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeCodeTitles from 'rehype-code-titles'
 

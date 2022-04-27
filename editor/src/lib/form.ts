@@ -66,9 +66,7 @@ export const enhance: Enhance = (
 		try {
 			const response = await fetch(form.action, {
 				method: form.method,
-				headers: {
-					accept: 'application/json'
-				},
+				headers: { accept: 'application/json' },
 				body: data
 			})
 
