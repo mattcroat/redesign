@@ -1,10 +1,9 @@
 ---
 title: How Code Sandboxes Avoid Flashing Iframe Updates
-description: Learn how online code editors are able to update the contents of the iframe without causing flashing
-slug: 'avoid-flashing-iframe'
-published: '2021-9-29'
-category: 'javascript'
-image: '/images/social-image.png'
+description: Learn how online code editors are able to update the contents of the iframe without causing flashing.
+slug: avoid-flashing-iframe
+published: 2021-9-29
+category: javascript
 ---
 
 # How Code Sandboxes Avoid Flashing Iframe Updates
@@ -19,12 +18,12 @@ At first I wondered how could this be — does it use some clever **DOM** update
 
 First let me show you the offending code.
 
-```html:index.html
+```html:index.html showLineNumbers
 <textarea spellcheck="false"></textarea>
 <iframe></iframe>
 ```
 
-```js:app.js
+```js:app.js showLineNumbers
 const editorElement = document.querySelector('textarea')
 const iframeElement = document.querySelector('iframe')
 
@@ -43,12 +42,7 @@ editorElement.addEventListener('input', (event) => {
 })
 ```
 
-<video autoPlay={true} loop muted controls>
-  <source
-    src="/images/avoid-flashing-iframe/iframe-flashing.mp4"
-    type="video/mp4"
-  />
-</video>
+{% video src="iframe-flashing.mp4" %}
 
 The code just takes a `<textarea>` input and updates the `srcdoc` attribute of the `<iframe>` creating a minimal code sandbox.
 
@@ -60,7 +54,7 @@ The **solution** to the flashing iframe is to not update the `srcdoc` each time 
 
 We can do this using the [window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method from the parent `window` and listen for **messages** inside the `<iframe>` using the [message event listener](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event).
 
-```js:app.js
+```js:app.js showLineNumbers
 const editorElement = document.querySelector('textarea')
 const iframeElement = document.querySelector('iframe')
 
@@ -93,12 +87,7 @@ editorElement.addEventListener('input', (event) => {
 })
 ```
 
-<video autoPlay={true} loop muted controls>
-  <source
-    src="/images/avoid-flashing-iframe/iframe-without-flashing.mp4"
-    type="video/mp4"
-  />
-</video>
+{% video src="iframe-without-flashing.mp4" %}
 
 You can determine what to do based on the `type`. For example you can inject **CSS**, or insert a `<script>` tag to execute **JavaScript** code.
 
