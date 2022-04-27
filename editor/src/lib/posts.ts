@@ -1,5 +1,6 @@
 import { markdownToHTML, frontMatter } from './markdown'
 import { mainBranch, postsDataUrl, postsUrl } from './config'
+import { supabase } from './supabase'
 import type {
 	FrontMatterType,
 	GetSHAType,
@@ -92,7 +93,7 @@ async function getFrontMatter(slug: string): Promise<FrontMatterType> {
  * This is responsible for updating `data/posts.json`
  * posts metadata because it's more efficient computing
  * things like sorting posts by category or series than
- * making a HTTP request for every post when you do
+ * making a HTTP request for every post
  */
 export async function updatePosts(): Promise<void> {
 	const response = await fetch(postsUrl, { headers })
@@ -104,11 +105,21 @@ export async function updatePosts(): Promise<void> {
 	const postsData: GitHubAPIResponseType[] = await response.json()
 	const slugs = postsData.map((post) => post.name)
 
+	const { data, error } = await supabase.from('views').select('slug, views')
+
+	if (error) {
+		throw new Error(`💩 Something went wrong fetching views: ${error.message}`)
+	}
+
 	let posts = []
 	for (const slug of slugs) {
-		posts = [...posts, await getFrontMatter(slug)]
+		const views = data.find((data) => data.slug === slug).views
+		const post = await getFrontMatter(slug)
+		posts = [...posts, { views, ...post }]
 	}
 	const serializedPosts = JSON.stringify(posts, null, 2)
+
+	console.log(serializedPosts)
 
 	const updatePosts = await fetch(postsDataUrl, {
 		method: 'PUT',

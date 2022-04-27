@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {
 		PlusCircleIcon,
+		RefreshIcon,
 		TrashIcon
 	} from '@rgossiaux/svelte-heroicons/outline'
 
@@ -17,10 +18,20 @@
 
 <main>
 	<section>
-		<h2>Create post</h2>
-		<div class="create-post">
-			<a href="/create">Create post</a>
-			<PlusCircleIcon width="24" height="24" />
+		<h2>Actions</h2>
+
+		<div class="actions">
+			<div class="create-post">
+				<a href="/create">Create post</a>
+				<PlusCircleIcon width="24" height="24" />
+			</div>
+
+			<div class="update-posts">
+				<form method="post">
+					<button type="submit">Update posts.json</button>
+				</form>
+				<RefreshIcon width="24" height="24" />
+			</div>
 		</div>
 	</section>
 
@@ -68,7 +79,13 @@
 		gap: var(--spacing-8);
 	}
 
-	.create-post {
+	.actions {
+		display: flex;
+		gap: var(--spacing-24);
+	}
+
+	.actions .create-post,
+	.actions .update-posts {
 		width: max-content;
 		display: flex;
 		justify-content: space-between;
@@ -77,14 +94,13 @@
 		padding: var(--spacing-24);
 		background-color: hsl(220 20% 16%);
 		border-radius: var(--rounded-20);
-		box-shadow: 0px 2px 4px hsl(0 0% 0% / 4%);
+		box-shadow: var(--shadow-sm);
 	}
 
 	.post {
 		display: flex;
 		justify-content: space-between;
 		padding: 2rem;
-		border-bottom: 1px solid hsl(220 20% 24%);
 	}
 
 	.post:nth-child(odd) {
