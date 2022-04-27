@@ -24,9 +24,15 @@
 	--spacing-64: 6.4rem;
 	--spacing-128: 12.8rem;
 
-	--post-blockquote-txt: hsl(0 0% 40%);
-	--post-blockquote-bg: hsl(0 0% 98%);
-	--post-blockquote-border: hsl(0 0% 84%);
+	--clr-primary: hsl(173 100% 66%);
+	--clr-txt: hsl(0 0% 98%);
+	--clr-bg: hsl(210 7% 11%);
+
+	--post-blockquote-txt: hsl(173 100% 94%);
+	--post-blockquote-bg: hsl(173 60% 4%);
+	--post-blockquote-border: hsl(173 10% 10%);
+
+	--clr-link-txt: hsl(0 100% 98%);
 
 	--clr-code-bg: hsl(173 60% 4%);
 	--clr-code-title: hsl(173 100% 94%);
@@ -110,8 +116,13 @@ body {
 body {
 	font-family: var(--font-sans);
 	font-size: var(--font-18);
-	color: hsl(0 0% 98%);
-	background-color: hsl(220 20% 14%);
+	color: var(--clr-txt);
+	background-color: var(--clr-bg);
+}
+
+h1,
+h2 {
+	color: var(--clr-primary);
 }
 
 h1 {
@@ -124,7 +135,7 @@ h2 {
 
 a {
 	text-decoration: none;
-	color: tomato;
+	color: var(--clr-link-txt);
 }
 
 a:hover {
@@ -132,7 +143,7 @@ a:hover {
 }
 
 img {
-	width: 100%;
+	max-width: 100%;
 	display: block;
 	border-radius: var(--radius-1);
 }
