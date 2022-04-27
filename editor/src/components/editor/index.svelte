@@ -11,7 +11,13 @@
 	export let title = ''
 	export let markdown = ''
 
-	const post = writable({ slug, title, markdown, preview: true })
+	const post = writable({
+		slug,
+		title,
+		markdown,
+		preview: true,
+		scrollPosition: 0
+	})
 	setContext('post', post)
 
 	$: columns = $post.preview ? 'repeat(2, 50%)' : '1fr'

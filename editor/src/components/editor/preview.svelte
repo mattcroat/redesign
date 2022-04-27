@@ -6,6 +6,7 @@
 	const socket = io()
 	const post: EditorPostType = getContext('post')
 
+	let previewEl: HTMLElement
 	let preview = ''
 
 	$: {
@@ -14,10 +15,12 @@
 		// receive message from server
 		socket.on('previewUpdate', (html) => (preview = html))
 	}
+
+	$: previewEl ? (previewEl.scrollTop = $post.scrollPosition) : ''
 </script>
 
 {#if $post.preview}
-	<section class="preview">
+	<section bind:this={previewEl} class="preview">
 		<div class="prose">
 			{@html preview}
 		</div>

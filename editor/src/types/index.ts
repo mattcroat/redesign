@@ -67,4 +67,5 @@ export type EditorPostType = Writable<{
 	title: string
 	markdown: string
 	preview: boolean
+	scrollPosition: number
 }>

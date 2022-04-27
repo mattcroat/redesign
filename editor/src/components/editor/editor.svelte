@@ -66,6 +66,10 @@
 			$post.markdown = editor.getValue()
 		})
 
+		editor.onDidScrollChange(() => {
+			$post.scrollPosition = editor.getScrollTop()
+		})
+
 		return () => {
 			editor.dispose()
 		}
