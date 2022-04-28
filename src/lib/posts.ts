@@ -99,9 +99,11 @@ export async function getPosts(): Promise<PostsType> {
   }
 
   function getPopularPosts(posts: PostType[]): PostType[] {
-    return posts.sort((firstElement, secondElement) => {
-      return secondElement.views - firstElement.views
-    })
+    return posts
+      .sort((firstElement, secondElement) => {
+        return secondElement.views - firstElement.views
+      })
+      .slice(0, postLimit)
   }
 
   function getSeries(posts: PostType[]): PostType[] {
