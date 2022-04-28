@@ -27,7 +27,16 @@
 			</div>
 
 			<div class="update-posts">
-				<form method="post">
+				<form
+					method="post"
+					use:enhance={{
+						pending: async () => success(`👻 Updating posts.json`),
+						error: async ({ response }) => {
+							const { error } = await response.json()
+							failure(error)
+						}
+					}}
+				>
 					<button type="submit">Update posts.json</button>
 				</form>
 				<RefreshIcon width="24" height="24" />

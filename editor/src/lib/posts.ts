@@ -119,8 +119,6 @@ export async function updatePosts(): Promise<void> {
 	}
 	const serializedPosts = JSON.stringify(posts, null, 2)
 
-	console.log(serializedPosts)
-
 	const updatePosts = await fetch(postsDataUrl, {
 		method: 'PUT',
 		headers,
