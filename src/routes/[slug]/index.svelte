@@ -5,8 +5,8 @@
 
   import Card from '$root/components/ui/card.svelte'
   import { fileUrl, siteName, siteUrl, twitterHandle } from '$root/lib/config'
-  import type { FrontMatterType } from '$root/types'
   import { updateViews } from '$root/lib/supabase'
+  import type { FrontMatterType } from '$root/types'
 
   export let content: string
   export let frontmatter: FrontMatterType

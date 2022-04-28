@@ -2,10 +2,10 @@
   import { EyeIcon } from '@rgossiaux/svelte-heroicons/outline'
 
   import Transition from '$root/components/transition/index.svelte'
-  import { getViews } from '$root/lib/supabase'
-  import type { PostType } from '$root/types'
+  import type { PostType, ViewType } from '$root/types'
 
   export let posts: PostType[]
+  export let views: ViewType[]
 </script>
 
 <section>
@@ -18,13 +18,13 @@
           <article class="card">
             <span class="views">
               <EyeIcon width="24" height="24" aria-hidden="true" />
-              {#await getViews(post.slug)}
-                <span>Reading power level...</span>
-              {:then views}
-                <span>{views}</span>
-              {:catch}
-                <span>It's over 9,000!</span>
-              {/await}
+              {#if views}
+                <span>
+                  {views
+                    .find((data) => data.slug === post.slug)
+                    .views.toLocaleString()}
+                </span>
+              {/if}
             </span>
             <div class="details">
               <span class="title">{post.title}</span>
