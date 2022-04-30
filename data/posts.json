@@ -168,7 +168,7 @@
     "category": "next"
   },
   {
-    "views": 944,
+    "views": 946,
     "title": "Svelte For Beginners",
     "description": "Regardless if you're new to JavaScript frameworks or Svelte you're going to learn everything you should know for the majority of things you're going to build using Svelte.",
     "slug": "svelte-for-beginners",
@@ -177,13 +177,12 @@
     "series": true
   },
   {
-    "views": 203,
+    "views": 206,
     "title": "Svelte Headless UI Component Library",
     "description": "Svelte Headless UI is an awesome unopinionated component library.",
-    "slug": "sveltekit-headless-ui",
+    "slug": "svelte-headless-ui",
     "published": "2022-4-29",
-    "category": "svelte",
-    "draft": true
+    "category": "svelte"
   },
   {
     "views": 380,
@@ -195,7 +194,7 @@
     "series": true
   },
   {
-    "views": 692,
+    "views": 693,
     "title": "Using Secret Environment Variables With SvelteKit",
     "description": "Learn how to keep your secret environment variables safe for your API tokens and other secrets.",
     "slug": "sveltekit-environment-variables",
@@ -203,7 +202,7 @@
     "category": "sveltekit"
   },
   {
-    "views": 1828,
+    "views": 1829,
     "title": "Full Stack SvelteKit For Beginners",
     "description": "SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.",
     "slug": "sveltekit-for-beginners",
