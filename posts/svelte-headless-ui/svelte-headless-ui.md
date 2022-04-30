@@ -25,7 +25,7 @@ A headless UI component library on the other hand doesn't have opinions — mean
 
 [Svelte Headless UI](https://svelte-headlessui.goss.io/docs) is an unofficial port of the [Headless UI for Tailwind CSS](https://headlessui.dev/) component library. It works great with [Tailwind](https://tailwindcss.com/) but it's **optional** - in fact I don't use Tailwind in Svelte projects because I prefer to write regular CSS when I can which is harder to do using React.
 
-Svelte Headless UI has 9 components including **Dialog**, **Disclosure**,  **Listbox**, **Menu**, **Popover**,  **Radio Group**, **Switch**, **Tabs** and **Transition**.
+Svelte Headless UI has 9 components including **Dialog**, **Disclosure**, **Listbox**, **Menu**, **Popover**, **Radio Group**, **Switch**, **Tabs** and **Transition**.
 
 Shout-out to [Ryan Gossiaux](https://github.com/rgossiaux) for making this project.
 
@@ -56,7 +56,7 @@ Let's look at a regular boring `<select>` menu inside Svelte that holds some sho
 <details>
   <summary>select.svelte</summary>
 
-  ```html:select.svelte showLineNumbers
+```html:select.svelte showLineNumbers
 <script lang="ts">
 	const shows = [
 		{ id: 1, name: 'Cowboy Bebop', completed: false },
@@ -88,6 +88,7 @@ Let's look at a regular boring `<select>` menu inside Svelte that holds some sho
 	}
 </style>
 ```
+
 </details>
 
 {% img src="select.webp" alt="Regular HTML select menu" %}
@@ -161,6 +162,7 @@ I created a `listbox.svelte` component for this example but it's not important. 
 	</Listbox>
 </div>
 ```
+
 </details>
 
 The `<Listbox>` component take the selected value and uses `on:change` to change the selected item using a custom event from `event.details` which you could move to a function instead.
@@ -217,6 +219,7 @@ I stole the SVG for the arrows from the example in the documenation and I'm goin
 	</Listbox>
 </div>
 ```
+
 </details>
 
 It's just regular HTML at the end of the day so let's style it.
@@ -295,6 +298,7 @@ It's just regular HTML at the end of the day so let's style it.
 	}
 </style>
 ```
+
 </details>
 
 The `.listbox` is used as the relative parent for `.options` that have an `absolute` position. I added some **disabled** styles and since we know when the element is active or selected we can target it and even add some fun emojis using **pseudo-elements**.
@@ -348,6 +352,7 @@ To do so we need to take control of if the `<Listbox>` is open or not by adding 
 
 <!-- ... -->
 ```
+
 </details>
 
 That's it! 🥳
