@@ -14,30 +14,29 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeCodeTitles from 'rehype-code-titles'
 
 export async function markdownToHTML(markdown) {
-	const { content } = matter(markdown)
+  try {
+    const { content } = matter(markdown)
 
-	try {
-		const result = await unified()
-			.use(fromMarkdown)
-			.use([
-				remarkGfm,
-				remarkHeadings,
-				remarkSlug,
-				remarkSmartypants,
-				[remarkTableofContents, { tight: true }]
-			])
-			.use(fromMarkdownToHtml, { allowDangerousHtml: true })
-			.use(rehypeCodeTitles)
-			.use(rehypePrism)
-			.use(parseHtmlAndMarkdown)
-			.use(toHtml)
-			.process(content)
-		const processedMarkdown = result.value
-		return processedMarkdown
-	} catch (error) {
-		if (error instanceof Error) {
-			console.error(error.message)
-			return
-		}
-	}
+    const result = await unified()
+      .use(fromMarkdown)
+      .use([
+        remarkGfm,
+        remarkHeadings,
+        remarkSlug,
+        remarkSmartypants,
+        [remarkTableofContents, { tight: true }],
+      ])
+      .use(fromMarkdownToHtml, { allowDangerousHtml: true })
+      .use(rehypeCodeTitles)
+      .use(rehypePrism)
+      .use(parseHtmlAndMarkdown)
+      .use(toHtml)
+      .process(content)
+    const processedMarkdown = result.value
+    return processedMarkdown
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(`💩 Error parsing Markdown: ${error.message}`)
+    }
+  }
 }
