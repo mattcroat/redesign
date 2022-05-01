@@ -11,7 +11,7 @@ export const get: RequestHandler = async () => {
     'uses',
     'about',
     ...Object.keys(categories).map((category) => `categories/${category}`),
-    ...(await getPostsData()).map((post) => post.slug)
+    ...(await getPostsData()).map((post) => post.slug),
   ]
 
   console.log(pages)
@@ -44,7 +44,7 @@ export const get: RequestHandler = async () => {
     body: sitemap,
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': `max-age=0, s-maxage=${60 * 60 * 24}`
-    }
+      'Cache-Control': `max-age=0, s-maxage=${60 * 60 * 24}`,
+    },
   }
 }

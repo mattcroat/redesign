@@ -6,7 +6,7 @@ import { categories } from '$root/lib/config'
 export const get: RequestHandler = async ({ params }) => {
   if (!categories[params.category]) {
     return {
-      status: 404
+      status: 404,
     }
   }
 
@@ -15,6 +15,6 @@ export const get: RequestHandler = async ({ params }) => {
   return {
     status: 200,
     body: { posts },
-    headers: { 'Cache-Control': `max-age=0, s-maxage=${60}` }
+    headers: { 'Cache-Control': `max-age=0, s-maxage=${60}` },
   }
 }

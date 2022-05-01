@@ -4,7 +4,7 @@
   import {
     ArrowNarrowRightIcon,
     MailIcon,
-    PencilAltIcon
+    PencilAltIcon,
   } from '@rgossiaux/svelte-heroicons/outline'
   import Newsletter from './newsletter.svelte'
 

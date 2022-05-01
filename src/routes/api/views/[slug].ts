@@ -14,7 +14,7 @@ export const post: RequestHandler = async ({ request }) => {
   if (!views.data) {
     const { error } = await supabase.from('views').insert({
       slug,
-      views: 1
+      views: 1,
     })
     if (error) {
       return { response: 400, body: { error: error.message } }
@@ -25,7 +25,7 @@ export const post: RequestHandler = async ({ request }) => {
     const { error } = await supabase
       .from('views')
       .update({
-        views: views.data.views + 1
+        views: views.data.views + 1,
       })
       .match({ slug })
 
@@ -36,6 +36,6 @@ export const post: RequestHandler = async ({ request }) => {
 
   return {
     status: 303,
-    headers: { location: '/' }
+    headers: { location: '/' },
   }
 }

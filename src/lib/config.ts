@@ -25,7 +25,7 @@ export const categories = {
   next: 'Next.js',
   typescript: 'TypeScript',
   svelte: 'Svelte',
-  sveltekit: 'SvelteKit'
+  sveltekit: 'SvelteKit',
 }
 
 // https://api.github.com/repos/user/repo/contents/data/posts.json

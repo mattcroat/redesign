@@ -41,14 +41,14 @@ export function rehypeCopyCode() {
         {
           type: 'element',
           tagName: 'span',
-          children: [{ type: 'text', value }]
+          children: [{ type: 'text', value }],
         },
         {
           type: 'element',
           tagName: 'button',
           properties: { className: ['copy'] },
-          children: [{ type: 'text', value: `Copy` }]
-        }
+          children: [{ type: 'text', value: `Copy` }],
+        },
       ]
     })
   }

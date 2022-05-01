@@ -10,7 +10,7 @@
     const response = await fetch('/api/subscribe', {
       method: 'post',
       body: JSON.stringify(email),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     })
     const subscribe = await response.json()
 

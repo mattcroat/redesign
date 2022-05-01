@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Editor from '$root/components/editor/index.svelte'
+  import Editor from '$root/components/editor/index.svelte'
 
-	export let slug = ''
-	export let title = ''
-	export let markdown = ''
+  export let slug = ''
+  export let title = ''
+  export let markdown = ''
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+  <title>{title}</title>
 </svelte:head>
 
 <Editor {slug} {title} {markdown} />

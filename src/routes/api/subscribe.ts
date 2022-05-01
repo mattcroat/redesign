@@ -9,7 +9,7 @@ export const post: RequestHandler = async ({ request }) => {
   if (!email) {
     return {
       status: 400,
-      body: { error: 'You forget the email. 😊' }
+      body: { error: 'You forget the email. 😊' },
     }
   }
 
@@ -19,8 +19,8 @@ export const post: RequestHandler = async ({ request }) => {
       body: JSON.stringify({ email }),
       headers: {
         Authorization: `Token ${API_KEY}`,
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
 
     if (!response.ok) {
@@ -29,26 +29,26 @@ export const post: RequestHandler = async ({ request }) => {
       if (text.includes('already subscribed')) {
         return {
           status: 400,
-          body: { error: `You're already subscribed. 😊` }
+          body: { error: `You're already subscribed. 😊` },
         }
       }
 
       return {
         status: 400,
-        body: { error: text }
+        body: { error: text },
       }
     }
 
     return {
       status: 201,
       body: { success: 'Thank you for subscribing! 🥳' },
-      headers: { location: '/' }
+      headers: { location: '/' },
     }
   } catch (error) {
     if (error instanceof Error) {
       return {
         response: 500,
-        body: { error: error.message }
+        body: { error: error.message },
       }
     }
   }

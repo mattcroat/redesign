@@ -15,6 +15,6 @@ export async function updateViews(slug: string): Promise<void> {
   await fetch(`api/views/${slug}`, {
     method: 'post',
     body: JSON.stringify(slug),
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
   })
 }

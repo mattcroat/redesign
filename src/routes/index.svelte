@@ -11,7 +11,7 @@
     siteTitle,
     siteUrl,
     twitter,
-    twitterHandle
+    twitterHandle,
   } from '$root/lib/config'
   import type { PostsType, ViewType } from '$root/types'
 

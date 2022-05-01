@@ -16,7 +16,7 @@ export const get: RequestHandler = async () => {
     body: views,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': `max-age=0, s-maxage=${60 * 60}` // 1 hour
-    }
+      'Cache-Control': `max-age=0, s-maxage=${60 * 60}`, // 1 hour
+    },
   }
 }

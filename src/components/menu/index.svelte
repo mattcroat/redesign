@@ -3,7 +3,7 @@
   import {
     Popover,
     PopoverButton,
-    PopoverPanel
+    PopoverPanel,
   } from '@rgossiaux/svelte-headlessui'
   import { MenuAlt1Icon } from '@rgossiaux/svelte-heroicons/outline'
 

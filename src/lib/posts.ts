@@ -4,13 +4,13 @@ import type {
   PostMarkdownType,
   PostsType,
   PostType,
-  RateType
+  RateType,
 } from '$root/types'
 
 const headers = {
   // GitHub suggests to include the API version
   Accept: 'application/vnd.github.v3+json',
-  Authorization: `token ${process.env.GH_TOKEN}`
+  Authorization: `token ${process.env.GH_TOKEN}`,
 }
 
 /**
@@ -32,7 +32,7 @@ export async function getRateLimit(): Promise<RateType> {
 
   const resetTimeLocale = resetTime.toLocaleTimeString('en', {
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
   })
 
   return {
@@ -41,7 +41,7 @@ export async function getRateLimit(): Promise<RateType> {
     remaining,
     remainingMinutes,
     reset,
-    resetTimeLocale
+    resetTimeLocale,
   }
 }
 
@@ -53,8 +53,8 @@ export async function getPostsData() {
     headers: {
       ...headers,
       // https://docs.github.com/en/rest/overview/media-types
-      Accept: 'application/vnd.github.v3.raw'
-    }
+      Accept: 'application/vnd.github.v3.raw',
+    },
   })
 
   if (!response.ok) {
@@ -83,7 +83,7 @@ export async function getPosts(): Promise<PostsType> {
 
       return {
         ...post,
-        description
+        description,
       }
     })
 
@@ -126,7 +126,7 @@ export async function getPosts(): Promise<PostsType> {
     latest,
     popular,
     series,
-    picks
+    picks,
   }
 }
 
@@ -151,8 +151,8 @@ export async function getPost(slug: string): Promise<PostMarkdownType> {
     headers: {
       ...headers,
       // https://docs.github.com/en/rest/overview/media-types
-      Accept: 'application/vnd.github.v3.raw'
-    }
+      Accept: 'application/vnd.github.v3.raw',
+    },
   })
 
   if (!response.ok) {

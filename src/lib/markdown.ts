@@ -81,7 +81,7 @@ export async function markdownToHTML(markdown: string): Promise<ContentType> {
 
       // Generates table of contents from headings
       // `tight` removes <p> from <li> when nested
-      [remarkTableofContents, { tight: true }]
+      [remarkTableofContents, { tight: true }],
     ])
     // To be able to parse a mix of Markdown and HTML
     // `remark-rehype` is required with `rehype-raw`
@@ -109,6 +109,6 @@ export async function markdownToHTML(markdown: string): Promise<ContentType> {
 
   return {
     content: processedMarkdown as string,
-    frontmatter: data as FrontMatterType
+    frontmatter: data as FrontMatterType,
   }
 }

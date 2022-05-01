@@ -1855,9 +1855,9 @@ export async function get() {
 
   return {
     headers: {
-      'Cache-Control': 'max-age=0, s-maxage=60'
+      'Cache-Control': 'max-age=0, s-maxage=60',
     },
-    body: { data }
+    body: { data },
   }
 }
 ```

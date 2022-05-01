@@ -11,7 +11,7 @@ export const get: RequestHandler = async () => {
     title: `${siteTitle} RSS Feed`,
     description: siteDescription,
     site_url: siteUrl,
-    feed_url: `${siteUrl}rss.xml`
+    feed_url: `${siteUrl}rss.xml`,
   })
 
   posts.forEach((post) =>
@@ -19,7 +19,7 @@ export const get: RequestHandler = async () => {
       title: post.title,
       description: post.description,
       url: `${siteUrl}${post.slug}`,
-      date: post.published
+      date: post.published,
     })
   )
 
@@ -28,7 +28,7 @@ export const get: RequestHandler = async () => {
     body: feed.xml({ indent: true }),
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': `max-age=0, s-maxage=${60 * 60}`
-    }
+      'Cache-Control': `max-age=0, s-maxage=${60 * 60}`,
+    },
   }
 }

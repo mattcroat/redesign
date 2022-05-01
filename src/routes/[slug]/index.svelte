@@ -20,7 +20,7 @@
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0 // invoke when element is not visible
+      threshold: 0, // invoke when element is not visible
     }
 
     function handleIntersect([entry]) {
