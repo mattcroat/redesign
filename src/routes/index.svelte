@@ -3,7 +3,6 @@
 
   import Newsletter from '$root/components/ui/newsletter.svelte'
   import Posts from '$root/components/ui/posts.svelte'
-  import { getViews } from '$root/lib/supabase'
   import {
     siteDescription,
     siteImage,
@@ -13,12 +12,9 @@
     twitter,
     twitterHandle,
   } from '$root/lib/config'
-  import type { PostsType, ViewType } from '$root/types'
+  import type { PostsType } from '$root/types'
 
   export let posts: PostsType
-
-  let views: ViewType[]
-  getViews().then((data) => (views = data))
 </script>
 
 <svelte:head>
@@ -65,11 +61,11 @@
     </div>
   </section>
 
-  <Posts posts={posts.popular} {views}>
+  <Posts posts={posts.popular}>
     <h3 slot="title">Popular</h3>
   </Posts>
 
-  <Posts posts={posts.latest} {views}>
+  <Posts posts={posts.latest}>
     <h3 slot="title">Latest</h3>
     <a slot="see-more" href="/articles">
       <span>See more articles</span>
@@ -77,7 +73,7 @@
     </a>
   </Posts>
 
-  <Posts posts={posts.series} {views}>
+  <Posts posts={posts.series}>
     <h3 slot="title">Series</h3>
     <a slot="see-more" href="/series">
       <span>See more series</span>
@@ -85,7 +81,7 @@
     </a>
   </Posts>
 
-  <Posts posts={posts.picks} {views}>
+  <Posts posts={posts.picks}>
     <h3 slot="title">Picks</h3>
   </Posts>
 </main>

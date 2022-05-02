@@ -1,13 +1,9 @@
 <script lang="ts">
   import Heading from '$root/components/ui/heading.svelte'
   import Posts from '$root/components/ui/posts.svelte'
-  import { getViews } from '$root/lib/supabase'
-  import type { PostType, ViewType } from '$root/types'
+  import type { PostType } from '$root/types'
 
   export let posts: PostType[]
-
-  let views: ViewType[]
-  getViews().then((data) => (views = data))
 </script>
 
 <svelte:head>
@@ -16,7 +12,7 @@
 
 <Heading>Series</Heading>
 
-<Posts {posts} {views}>
+<Posts {posts}>
   <div class="container" slot="title">
     <h3>Entries</h3>
     <div>

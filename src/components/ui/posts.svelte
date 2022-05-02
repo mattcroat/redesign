@@ -2,10 +2,10 @@
   import { EyeIcon } from '@rgossiaux/svelte-heroicons/outline'
 
   import Transition from '$root/components/transition/index.svelte'
-  import type { PostType, ViewType } from '$root/types'
+  import { views } from '$root/stores/views'
+  import type { PostType } from '$root/types'
 
   export let posts: PostType[]
-  export let views: ViewType[]
 </script>
 
 <section>
@@ -18,13 +18,11 @@
           <article class="card">
             <span class="views">
               <EyeIcon width="24" height="24" aria-hidden="true" />
-              {#if views}
-                <span>
-                  {views
-                    .find((data) => data.slug === post.slug)
-                    .views.toLocaleString()}
-                </span>
-              {/if}
+              <span>
+                {$views
+                  .find((data) => data.slug === post.slug)
+                  .views.toLocaleString()}
+              </span>
             </span>
             <div class="details">
               <span class="title">{post.title}</span>

@@ -40,5 +40,3 @@ export type PostsType = {
   series: PostType[]
   picks: PostType[]
 }
-
-export type ViewType = { slug: string; views: number }
