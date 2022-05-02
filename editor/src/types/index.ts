@@ -23,9 +23,8 @@ export type GitHubAPIPostType = {
   slug: string
   published: string
   category: string
-  image: string
-  series: string
-  draft: string
+  series?: string
+  draft?: string
 }
 
 export type GetSHAType = {
@@ -53,7 +52,6 @@ export type FrontMatterType = {
   slug: string
   published: string
   category: string
-  image: string
 }
 
 export type PostType = {

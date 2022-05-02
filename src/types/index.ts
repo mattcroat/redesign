@@ -13,7 +13,6 @@ export type FrontMatterType = {
   slug: string
   published: string
   category: string
-  image: string
 }
 
 export type PostMarkdownType = {
@@ -29,9 +28,8 @@ export type PostType = {
   slug: string
   published: string
   category: string
-  image: string
-  series: string
-  draft: string
+  series?: string
+  draft?: string
 }
 
 export type PostsType = {
