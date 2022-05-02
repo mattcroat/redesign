@@ -4,7 +4,13 @@
   import { dev } from '$app/env'
 
   import Card from '$root/components/ui/card.svelte'
-  import { fileUrl, siteName, siteUrl, twitterHandle } from '$root/lib/config'
+  import {
+    fileUrl,
+    postImage,
+    siteName,
+    siteUrl,
+    twitterHandle,
+  } from '$root/lib/config'
   import { updateViews } from '$root/lib/supabase'
   import type { FrontMatterType } from '$root/types'
 
@@ -13,6 +19,7 @@
 
   let overlay = false
   let editUrl = `${fileUrl}/${frontmatter.slug}/${frontmatter.slug}.md`
+  let image = `${postImage}${encodeURIComponent(frontmatter.title)}.png`
 
   onMount(() => {
     const headingElement = document.querySelector('h1')
@@ -82,7 +89,7 @@
   <meta content={frontmatter.description} name="description" />
 
   <meta content={frontmatter.title} property="og:title" />
-  <meta content={frontmatter.image} property="og:image" />
+  <meta content={image} property="og:image" />
   <meta content={siteUrl} property="og:url" />
   <meta content={frontmatter.description} property="og:description" />
   <meta content={siteName} property="og:site_name" />
@@ -91,7 +98,7 @@
   <meta content="summary_large_image" name="twitter:card" />
   <meta content={frontmatter.title} name="twitter:title" />
   <meta content={frontmatter.description} name="twitter:description" />
-  <meta content={frontmatter.image} name="twitter:image" />
+  <meta content={image} name="twitter:image" />
 </svelte:head>
 
 <main>
