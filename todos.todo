@@ -10,7 +10,7 @@ General:
   ✔ SEO @done
   ✔ Sounds @done
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
-  ☐ Social images
+  ✔ Social images @done
   ✔ Prerender landing, newsletter, about, uses page @done
   ✔ Error page @done
   ✔ Scrollbar @done
