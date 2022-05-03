@@ -1,8 +1,8 @@
 [
   {
     "views": 371,
-    "title": "How Code Sandboxes Avoid Flashing Iframe Updates",
-    "description": "Learn how online code editors are able to update the contents of the iframe without causing flashing.",
+    "title": "How Code Sandboxes Update Content",
+    "description": "How do code sandboxes update the iframe without causing flashing?",
     "slug": "avoid-flashing-iframe",
     "published": "2021-9-29",
     "category": "javascript"
@@ -64,7 +64,7 @@
     "category": "typescript"
   },
   {
-    "views": 231,
+    "views": 232,
     "title": "Great Developers Steal",
     "description": "What is open source education? Find out how it can help you learn and improve faster.",
     "slug": "great-developers-steal",
@@ -80,7 +80,7 @@
     "category": "general"
   },
   {
-    "views": 334,
+    "views": 335,
     "title": "How to Think Like a Developer",
     "description": "Learn how to develop problem solving skills.",
     "slug": "how-to-think-like-a-developer",
@@ -129,8 +129,8 @@
   },
   {
     "views": 211,
-    "title": "How to Take Screenshots of Entire Pages and DOM Elements",
-    "description": "Learn how to screenshot the page and DOM elements without extensions.",
+    "title": "Use Developer Tools to Screenshot the Entire Page",
+    "description": "You don't need extensions to screenshot the page, sections and elements.",
     "slug": "screenshot-page-and-dom-elements",
     "published": "2021-10-4",
     "category": "general"
@@ -210,7 +210,7 @@
     "category": "sveltekit"
   },
   {
-    "views": 1917,
+    "views": 1918,
     "title": "Full Stack SvelteKit For Beginners",
     "description": "SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.",
     "slug": "sveltekit-for-beginners",
@@ -220,7 +220,7 @@
   },
   {
     "views": 308,
-    "title": "Syntax Highlight JavaScript Template Strings",
+    "title": "Syntax Highlight Template Strings",
     "description": "Syntax highlight, and code completion inside JavaScript template strings.",
     "slug": "template-strings-syntax-highlight",
     "published": "2021-9-7",
@@ -236,7 +236,7 @@
     "series": true
   },
   {
-    "views": 11456,
+    "views": 11457,
     "title": "TypeScript Fundamentals",
     "description": "Learn TypeScript through example — the missing TypeScript reference.",
     "slug": "typescript-fundamentals",
@@ -244,7 +244,7 @@
     "category": "typescript"
   },
   {
-    "views": 475,
+    "views": 476,
     "title": "Best Practices When Using Fonts",
     "description": "Everything I know about best practices when using fonts on the web.",
     "slug": "using-fonts-on-the-web",
