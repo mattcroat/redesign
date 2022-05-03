@@ -1,6 +1,6 @@
 ---
 title: Favicon That Works for Light and Dark Mode
-description: Learn how you can use a SVG favicon to respect the user color scheme preference.
+description: How to make a favicon that respects the user color scheme preference?
 slug: dark-mode-favicon
 published: 2021-8-29
 category: css

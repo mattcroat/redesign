@@ -1,6 +1,6 @@
 ---
 title: Svelte For Beginners
-description: Regardless if you're new to JavaScript frameworks or Svelte you're going to learn everything you should know for the majority of things you're going to build using Svelte.
+description: Start building things with the Svelte JavaScript framework today.
 slug: svelte-for-beginners
 published: 2021-12-16
 category: svelte

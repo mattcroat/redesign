@@ -1,6 +1,6 @@
 ---
 title: TypeScript Fundamentals
-description: Learn and understand TypeScript through example that's also a reference you can use to help you with types in your own project.
+description: learn TypeScript through example — the missing TypeScript reference.
 slug: typescript-fundamentals
 published: 2021-7-7
 category: typescript

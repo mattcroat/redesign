@@ -1,6 +1,6 @@
 ---
 title: Space Elements With Flexbox Instead of Margin
-description: I'm going to show you how using Flexbox to space elements is easier than using margin.
+description: Find out how using Flexbox to space elements is easier than using margin.
 slug: space-elements-with-flexbox
 published: 2021-8-31
 category: css

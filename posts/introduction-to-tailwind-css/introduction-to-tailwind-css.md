@@ -1,6 +1,6 @@
 ---
 title: Introduction to Tailwind CSS
-description: Introduction to Tailwind CSS
+description: What is Tailwind CSS and why it's so beloved?
 slug: introduction-to-tailwind-css
 published: 2021-3-20
 category: css

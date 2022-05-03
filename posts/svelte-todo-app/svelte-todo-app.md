@@ -1,6 +1,6 @@
 ---
 title: Make a Svelte Todo App
-description: Learn problem solving by making an awesome Svelte todo app as I guide you through my thought process.
+description: Learn Svelte by making an awesome Svelte todo app.
 slug: svelte-todo-app
 published: '2022-1-12'
 category: svelte

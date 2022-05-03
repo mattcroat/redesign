@@ -1,6 +1,6 @@
 ---
 title: Web Development Podcasts
-description: Let yourself be entertained while you stay up to date with web development
+description: Stay up to date with web development and entertained.
 slug: 'web-development-podcasts'
 published: '2021-1-31'
 category: 'general'
