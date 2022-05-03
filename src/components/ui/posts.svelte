@@ -13,16 +13,20 @@
 
   <div class="cards">
     {#each posts as post, index}
-      <Transition type="stagger" stagger={index}>
+      <Transition
+        transition={{ type: 'stagger', duration: index, delay: 1000 }}
+      >
         <a href={post.slug}>
           <article class="card">
             <span class="views">
               <EyeIcon width="24" height="24" aria-hidden="true" />
-              <span>
-                {$views
-                  .find((data) => data.slug === post.slug)
-                  .views.toLocaleString()}
-              </span>
+              {#if $views.length > 0}
+                <span>
+                  {$views
+                    .find((data) => data.slug === post.slug)
+                    .views.toLocaleString()}
+                </span>
+              {/if}
             </span>
             <div class="details">
               <span class="title">{post.title}</span>
