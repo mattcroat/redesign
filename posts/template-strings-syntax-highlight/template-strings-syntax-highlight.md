@@ -1,5 +1,5 @@
 ---
-title: Syntax Highlight JavaScript Template Strings
+title: Syntax Highlight Template Strings
 description: Syntax highlight, and code completion inside JavaScript template strings.
 slug: template-strings-syntax-highlight
 published: 2021-9-7

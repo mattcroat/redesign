@@ -1,6 +1,6 @@
 ---
-title: How Code Sandboxes Avoid Flashing Iframe Updates
-description: Learn how online code editors are able to update the contents of the iframe without causing flashing.
+title: How Code Sandboxes Update Content
+description: How do code sandboxes update the iframe without causing flashing?
 slug: avoid-flashing-iframe
 published: 2021-9-29
 category: javascript
