@@ -49,7 +49,9 @@
   }
 
   .stagger {
+    opacity: 0;
     animation-name: stagger;
+    animation-fill-mode: forwards;
   }
 
   @keyframes fadeIn {
@@ -63,9 +65,11 @@
 
   @keyframes stagger {
     from {
+      opacity: 0;
       transform: translateY(50px);
     }
     to {
+      opacity: 1;
       transform: translateY(0px);
     }
   }

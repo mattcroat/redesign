@@ -8,7 +8,7 @@
   import '$root/styles/styles.scss'
 </script>
 
-<Transition transition={{ type: 'fade', duration: 1000 }}>
+<Transition transition={{ type: 'fade', duration: 250 }}>
   <div class="grid">
     <Header />
     <Transition transition={{ type: 'page', url: $page.url }}>

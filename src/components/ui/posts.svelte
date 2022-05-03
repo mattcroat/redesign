@@ -13,9 +13,7 @@
 
   <div class="cards">
     {#each posts as post, index}
-      <Transition
-        transition={{ type: 'stagger', duration: index, delay: 1000 }}
-      >
+      <Transition transition={{ type: 'stagger', duration: index, delay: 300 }}>
         <a href={post.slug}>
           <article class="card">
             <span class="views">
