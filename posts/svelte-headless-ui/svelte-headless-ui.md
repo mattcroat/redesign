@@ -8,15 +8,15 @@ category: svelte
 
 # Svelte Headless UI Component Library
 
+{% embed src="https://www.youtube.com/embed/7mE1UbRwU3w" title="Svelte Headless UI Component Library" %}
+
 ## Table of Contents
 
-## Introduction
+## What is a headless UI component library?
 
-At the end of this post you're going to learn how to make a custom select menu using Svelte Headless UI.
+At the end of this post you're going to learn how to make a custom `<select>` menu using the Svelte Headless UI component library.
 
 {% img src="listbox.webp" alt="Custom drop down menu showing anime options" %}
-
-## Svelte Headless UI
 
 You might be used to using a component library like [Material UI](https://sveltematerialui.com/) or any other which is great if you enjoy it but you can find yourself fighting against it's opinions.
 
@@ -48,7 +48,7 @@ If you want to make a custom `<select>` menu yourself **you can** but you don't 
 
 This is what component libraries take care of for us and when I need something simpler and don't want to reinvent the wheel I reach for a headless UI solution.
 
-## Boring Select Menu
+## Regular Boring Select Menus
 
 Let's look at a regular boring `<select>` menu inside Svelte that holds some shows a user can select.
 
@@ -96,7 +96,7 @@ There's nothing remarkable about the regular HTML `<select>` element besides how
 
 You can put a fresh coat of paint on it maybe but you don't have control of anything else.
 
-## Making a Custom Select Menu
+## Custom Select Menu With Svelte Headless UI
 
 Let me show you how simple it is to make a custom `<select>` menu using the `<Listbox>` component and transitions with Svelte transitions.
 
@@ -234,22 +234,19 @@ It's just regular HTML at the end of the day so let's style it.
 		max-width: 280px;
 		position: relative;
 		font-weight: 500;
-		color: hsl(220, 20%, 98%);
+		color: hsl(220 20% 98%);
 	}
 
 	.listbox :global(.button) {
 		width: 100%;
-
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem;
-
 		font-family: inherit;
 		font-size: inherit;
 		color: inherit;
-
-		background-color: hsl(220, 20%, 2%);
+		background-color: hsl(220 20% 2%);
 		border: none;
 		border-radius: 10px;
 	}
@@ -266,7 +263,7 @@ It's just regular HTML at the end of the day so let's style it.
 		right: 0;
 		left: 0;
 		padding: 1rem;
-		background-color: hsl(220, 20%, 4%);
+		background-color: hsl(220 20% 4%);
 		border-radius: 10px;
 		list-style: none;
 	}
@@ -277,11 +274,11 @@ It's just regular HTML at the end of the day so let's style it.
 	}
 
 	.listbox :global(.option[aria-disabled='true']) {
-		color: hsl(220, 20%, 30%);
+		color: hsl(220 20% 30%);
 	}
 
 	.listbox :global(.active) {
-		color: hsl(220, 80%, 70%);
+		color: hsl(220 80% 70%);
 	}
 
 	.listbox :global(.active)::before {
@@ -355,8 +352,6 @@ To do so we need to take control of if the `<Listbox>` is open or not by adding 
 </details>
 
 That's it! 🥳
-
-## Conclusion
 
 If you're working on a large project with more people this might not work for you if you need more components but I prefer this approach because it's so easy to use your own design system.
 
