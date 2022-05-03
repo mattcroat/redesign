@@ -1,6 +1,6 @@
 [
   {
-    "views": 349,
+    "views": 371,
     "title": "How Code Sandboxes Avoid Flashing Iframe Updates",
     "description": "Learn how online code editors are able to update the contents of the iframe without causing flashing.",
     "slug": "avoid-flashing-iframe",
@@ -8,7 +8,7 @@
     "category": "javascript"
   },
   {
-    "views": 225,
+    "views": 229,
     "title": "Clean Git History Using Rebase",
     "description": "How to have a clean Git history using rebase.",
     "slug": "clean-git-history",
@@ -16,7 +16,7 @@
     "category": "git"
   },
   {
-    "views": 1872,
+    "views": 1907,
     "title": "Create a JavaScript Code Sandbox",
     "description": "Create a JavaScript code sandbox using Vite and TypeScript.",
     "slug": "create-a-coding-sandbox",
@@ -24,7 +24,7 @@
     "category": "typescript"
   },
   {
-    "views": 202,
+    "views": 204,
     "title": "Create a Markdown Blog Using Next.js",
     "description": "Learn how to create a Markdown blog using Next.js.",
     "slug": "create-a-markdown-blog",
@@ -32,7 +32,7 @@
     "category": "next"
   },
   {
-    "views": 687,
+    "views": 702,
     "title": "How to Style CSS Focus Outline",
     "description": "Learn the importance of CSS focus outline for accessibility and how to style it.",
     "slug": "css-focus-outline",
@@ -40,15 +40,15 @@
     "category": "css"
   },
   {
-    "views": 259,
+    "views": 266,
     "title": "Favicon That Works for Light and Dark Mode",
-    "description": "Learn how you can use a SVG favicon to respect the user color scheme preference.",
+    "description": "How to make a favicon that respects the user color scheme preference?",
     "slug": "dark-mode-favicon",
     "published": "2021-8-29",
     "category": "css"
   },
   {
-    "views": 371,
+    "views": 379,
     "title": "Design For Developers",
     "description": "Learn enough visual design to be dangerous with actual tips instead of theory.",
     "slug": "design-for-developers",
@@ -58,21 +58,21 @@
   {
     "views": 180,
     "title": "Dynamic Social Share Images",
-    "description": "Learn how to automate creating social share images for your socials.",
+    "description": "Automate creating social share images for social media sites.",
     "slug": "dynamic-social-share-images",
     "published": "2021-10-7",
     "category": "typescript"
   },
   {
-    "views": 228,
+    "views": 231,
     "title": "Good Developers Copy, Great Developers Steal",
-    "description": "Learn what is open source education and how it can help you learn and improve faster.",
+    "description": "What is open source education? Find out how it can help you learn and improve faster.",
     "slug": "great-developers-steal",
     "published": "2021-3-7",
     "category": "javascript"
   },
   {
-    "views": 212,
+    "views": 220,
     "title": "How to Optimize Images",
     "description": "How to optimize images and automate image optimization using Squoosh.",
     "slug": "how-to-optimize-images",
@@ -80,7 +80,7 @@
     "category": "general"
   },
   {
-    "views": 327,
+    "views": 334,
     "title": "How to Think Like a Developer",
     "description": "Learn how to develop problem solving skills.",
     "slug": "how-to-think-like-a-developer",
@@ -88,23 +88,23 @@
     "category": "general"
   },
   {
-    "views": 247,
+    "views": 260,
     "title": "Introduction to React and Frontend Frameworks",
-    "description": "Learn why we use frontend JavaScript frameworks like React and what problems do they solve.",
+    "description": "Why do we use frontend JavaScript frameworks and what problems do they solve?",
     "slug": "intro-to-react",
     "published": "2021-2-13",
     "category": "react"
   },
   {
-    "views": 210,
+    "views": 212,
     "title": "Introduction to Tailwind CSS",
-    "description": "Introduction to Tailwind CSS",
+    "description": "What is Tailwind CSS and why it's so beloved?",
     "slug": "introduction-to-tailwind-css",
     "published": "2021-3-20",
     "category": "css"
   },
   {
-    "views": 1388,
+    "views": 1416,
     "title": "Reduce Next.js Bundle Size by Half",
     "description": "Learn how using Preact instead of React can reduce Next.js bundle size by half.",
     "slug": "next-bundle-size",
@@ -112,7 +112,7 @@
     "category": "next"
   },
   {
-    "views": 222,
+    "views": 229,
     "title": "How to Structure Your React Projects",
     "description": "Learn how to keep your React projects organized.",
     "slug": "react-project-structure",
@@ -128,7 +128,7 @@
     "category": "git"
   },
   {
-    "views": 208,
+    "views": 211,
     "title": "How to Take Screenshots of Entire Pages and DOM Elements",
     "description": "Learn how to screenshot the page and DOM elements without extensions.",
     "slug": "screenshot-page-and-dom-elements",
@@ -144,7 +144,7 @@
     "category": "css"
   },
   {
-    "views": 191,
+    "views": 192,
     "title": "Use The Simpler CSS Color Syntax",
     "description": "Learn how to write simpler CSS color syntax thanks to CSS Color Module Level 4.",
     "slug": "simpler-color-syntax",
@@ -152,15 +152,15 @@
     "category": "css"
   },
   {
-    "views": 173,
+    "views": 174,
     "title": "Space Elements With Flexbox Instead of Margin",
-    "description": "I'm going to show you how using Flexbox to space elements is easier than using margin.",
+    "description": "Find out how using Flexbox to space elements is easier than using margin.",
     "slug": "space-elements-with-flexbox",
     "published": "2021-8-31",
     "category": "css"
   },
   {
-    "views": 176,
+    "views": 178,
     "title": "Static Pages Without JavaScript",
     "description": "Remove client-side JavaScript in Next.js for production on a per-page basis.",
     "slug": "static-pages-without-javascript",
@@ -168,16 +168,16 @@
     "category": "next"
   },
   {
-    "views": 946,
+    "views": 978,
     "title": "Svelte For Beginners",
-    "description": "Regardless if you're new to JavaScript frameworks or Svelte you're going to learn everything you should know for the majority of things you're going to build using Svelte.",
+    "description": "Start building things with the Svelte JavaScript framework today.",
     "slug": "svelte-for-beginners",
     "published": "2021-12-16T00:00:00.000Z",
     "category": "svelte",
     "series": true
   },
   {
-    "views": 206,
+    "views": 382,
     "title": "Svelte Headless UI Component Library",
     "description": "Svelte Headless UI is an awesome unopinionated component library.",
     "slug": "svelte-headless-ui",
@@ -185,16 +185,24 @@
     "category": "svelte"
   },
   {
-    "views": 380,
+    "views": 386,
     "title": "Make a Svelte Todo App",
-    "description": "Learn problem solving by making an awesome Svelte todo app as I guide you through my thought process.",
+    "description": "Learn Svelte by making an awesome Svelte todo app.",
     "slug": "svelte-todo-app",
     "published": "2022-1-12",
     "category": "svelte",
     "series": true
   },
   {
-    "views": 693,
+    "title": "Using SvelteKit And WebSockets",
+    "description": "Learn how to use a custom SvelteKit server for WebSockets.",
+    "slug": "sveltekit-and-websockets",
+    "published": "2022-5-1",
+    "category": "sveltekit",
+    "draft": true
+  },
+  {
+    "views": 703,
     "title": "Using Secret Environment Variables With SvelteKit",
     "description": "Learn how to keep your secret environment variables safe for your API tokens and other secrets.",
     "slug": "sveltekit-environment-variables",
@@ -202,7 +210,7 @@
     "category": "sveltekit"
   },
   {
-    "views": 1829,
+    "views": 1917,
     "title": "Full Stack SvelteKit For Beginners",
     "description": "SvelteKit is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.",
     "slug": "sveltekit-for-beginners",
@@ -211,7 +219,7 @@
     "series": true
   },
   {
-    "views": 304,
+    "views": 308,
     "title": "Syntax Highlight Inside ES6 Template Strings",
     "description": "How to get syntax highlight, and code completion inside ES6 template strings.",
     "slug": "template-strings-syntax-highlight",
@@ -219,7 +227,7 @@
     "category": "javascript"
   },
   {
-    "views": 194,
+    "views": 199,
     "title": "Testing User Interfaces For Beginners",
     "description": "Gain confidence your code works and learn how to test user interfaces with Testing Library for any frontend JavaScript framework.",
     "slug": "testing-for-beginners",
@@ -228,15 +236,15 @@
     "series": true
   },
   {
-    "views": 11405,
+    "views": 11456,
     "title": "TypeScript Fundamentals",
-    "description": "Learn and understand TypeScript through example that's also a reference you can use to help you with types in your own project.",
+    "description": "learn TypeScript through example — the missing TypeScript reference.",
     "slug": "typescript-fundamentals",
     "published": "2021-7-7",
     "category": "typescript"
   },
   {
-    "views": 468,
+    "views": 475,
     "title": "Best Practices When Using Fonts",
     "description": "Everything I know about using fonts on the web and best practices.",
     "slug": "using-fonts-on-the-web",
@@ -252,9 +260,9 @@
     "category": "css"
   },
   {
-    "views": 193,
+    "views": 196,
     "title": "Web Development Podcasts",
-    "description": "Let yourself be entertained while you stay up to date with web development",
+    "description": "Stay up to date with web development and entertained.",
     "slug": "web-development-podcasts",
     "published": "2021-1-31",
     "category": "general"
