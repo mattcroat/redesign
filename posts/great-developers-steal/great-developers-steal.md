@@ -1,5 +1,5 @@
 ---
-title: Good Developers Copy, Great Developers Steal
+title: Great Developers Steal
 description: What is open source education? Find out how it can help you learn and improve faster.
 slug: great-developers-steal
 published: 2021-3-7
