@@ -1,18 +1,18 @@
 <script lang="ts">
   import { fly } from 'svelte/transition'
+  import { page } from '$app/stores'
 
   interface Transition {
     type: 'fade' | 'stagger' | 'page'
     duration?: number
     delay?: number
-    url?: URL
   }
 
   export let transition: Transition
 </script>
 
 {#if transition.type === 'page'}
-  {#key transition.url}
+  {#key $page.url}
     <div in:fly={{ y: -50, duration: 250 }}>
       <slot />
     </div>

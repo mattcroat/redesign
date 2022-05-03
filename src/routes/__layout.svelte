@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { page } from '$app/stores'
-
   import Header from '$root/components/ui/header.svelte'
   import Footer from '$root/components/ui/footer.svelte'
   import Transition from '$root/components/transition/index.svelte'
@@ -11,7 +9,7 @@
 <Transition transition={{ type: 'fade', duration: 250 }}>
   <div class="grid">
     <Header />
-    <Transition transition={{ type: 'page', url: $page.url }}>
+    <Transition transition={{ type: 'page' }}>
       <slot />
     </Transition>
     <Footer />
