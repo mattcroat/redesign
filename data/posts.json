@@ -65,7 +65,7 @@
   },
   {
     "views": 231,
-    "title": "Good Developers Copy, Great Developers Steal",
+    "title": "Great Developers Steal",
     "description": "What is open source education? Find out how it can help you learn and improve faster.",
     "slug": "great-developers-steal",
     "published": "2021-3-7",
@@ -89,7 +89,7 @@
   },
   {
     "views": 260,
-    "title": "Introduction to React and Frontend Frameworks",
+    "title": "Introduction to React",
     "description": "Why do we use frontend JavaScript frameworks and what problems do they solve?",
     "slug": "intro-to-react",
     "published": "2021-2-13",
@@ -104,7 +104,7 @@
     "category": "css"
   },
   {
-    "views": 1416,
+    "views": 1417,
     "title": "Reduce Next.js Bundle Size by Half",
     "description": "Learn how using Preact instead of React can reduce Next.js bundle size by half.",
     "slug": "next-bundle-size",
@@ -220,8 +220,8 @@
   },
   {
     "views": 308,
-    "title": "Syntax Highlight Inside ES6 Template Strings",
-    "description": "How to get syntax highlight, and code completion inside ES6 template strings.",
+    "title": "Syntax Highlight JavaScript Template Strings",
+    "description": "Syntax highlight, and code completion inside JavaScript template strings.",
     "slug": "template-strings-syntax-highlight",
     "published": "2021-9-7",
     "category": "javascript"
@@ -238,7 +238,7 @@
   {
     "views": 11456,
     "title": "TypeScript Fundamentals",
-    "description": "learn TypeScript through example — the missing TypeScript reference.",
+    "description": "Learn TypeScript through example — the missing TypeScript reference.",
     "slug": "typescript-fundamentals",
     "published": "2021-7-7",
     "category": "typescript"
@@ -246,7 +246,7 @@
   {
     "views": 475,
     "title": "Best Practices When Using Fonts",
-    "description": "Everything I know about using fonts on the web and best practices.",
+    "description": "Everything I know about best practices when using fonts on the web.",
     "slug": "using-fonts-on-the-web",
     "published": "2021-5-15",
     "category": "general"
