@@ -113,7 +113,7 @@ export async function updatePosts(): Promise<void> {
 
   let posts = []
   for (const slug of slugs) {
-    const views = data.find((data) => data.slug === slug).views
+    const views = data.find((data) => data.slug === slug)?.views
     const post = await getFrontMatter(slug)
     posts = [...posts, { views, ...post }]
   }
