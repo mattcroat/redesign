@@ -3,10 +3,10 @@ import { browser } from '$app/env'
 
 import { getViews } from '$root/lib/supabase'
 
-let postViews = []
-
 if (browser) {
-  postViews = await getViews()
+  getViews().then((result) => {
+    views.set(result)
+  })
 }
 
-export const views = writable(postViews)
+export const views = writable([])
