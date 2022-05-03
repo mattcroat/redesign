@@ -63,6 +63,7 @@
   .container {
     width: 24px;
     height: 24px;
+    z-index: 10;
   }
 
   .container :global(.popover) {
