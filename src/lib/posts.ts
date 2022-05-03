@@ -87,46 +87,46 @@ export async function getPosts(): Promise<PostsType> {
       }
     })
 
-  function getLatestPosts(posts: PostType[]): PostType[] {
-    return posts
-      .sort((firstElement, secondElement) => {
-        return (
-          new Date(secondElement.published).getTime() -
-          new Date(firstElement.published).getTime()
-        )
-      })
-      .slice(0, postLimit)
+  function sortedPosts(): PostType[] {
+    return posts.sort((firstElement, secondElement) => {
+      return (
+        new Date(secondElement.published).getTime() -
+        new Date(firstElement.published).getTime()
+      )
+    })
   }
 
-  function getPopularPosts(posts: PostType[]): PostType[] {
-    return posts
+  function getLatestPosts(): PostType[] {
+    return sortedPosts().slice(0, postLimit)
+  }
+
+  function getPopularPosts(): PostType[] {
+    return sortedPosts()
       .sort((firstElement, secondElement) => {
         return secondElement.views - firstElement.views
       })
       .slice(0, postLimit)
   }
 
-  function getSeries(posts: PostType[]): PostType[] {
-    return posts.filter((post) => post.series).slice(0, postLimit)
+  function getSeries(): PostType[] {
+    return sortedPosts()
+      .filter((post) => post.series)
+      .slice(0, postLimit)
   }
 
-  function getPicks(posts: PostType[]): PostType[] {
-    return posts.sort(() => Math.random() - 0.5).slice(0, postLimit)
+  function getPicks(): PostType[] {
+    return sortedPosts()
+      .sort(() => Math.random() - 0.5)
+      .slice(0, postLimit)
   }
-
-  const latestPost = getLatestPosts(posts)[0]
-  const latest = getLatestPosts(posts)
-  const popular = getPopularPosts(posts)
-  const series = getSeries(posts)
-  const picks = getPicks(posts)
 
   return {
-    posts,
-    latestPost,
-    latest,
-    popular,
-    series,
-    picks,
+    posts: sortedPosts(),
+    latestPost: getLatestPosts()[0],
+    latest: getLatestPosts(),
+    popular: getPopularPosts(),
+    series: getSeries(),
+    picks: getPicks(),
   }
 }
 
