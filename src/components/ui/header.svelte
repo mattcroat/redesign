@@ -1,11 +1,12 @@
 <script lang="ts">
   import Menu from '$root/components/menu/index.svelte'
   import Preferences from '$root/components/preferences/index.svelte'
+  import { siteName } from '$root/lib/config'
 </script>
 
 <header>
   <div class="logo">
-    <a href="/">Joy of Code</a>
+    <a href="/">{siteName}</a>
   </div>
 
   <nav>
