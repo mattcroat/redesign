@@ -6,7 +6,7 @@ General:
   ✔ Theming @done
   ✔ Convert old posts from MDX to Markdown @done
   ✔ Set HTTP cache-control headers @done
-  ☐ Analytics
+  ✔ Analytics @done
   ✔ SEO @done
   ✔ Sounds @done
   ☐ Configure Vercel to not redeploy for `/posts` and `/data`
@@ -58,3 +58,6 @@ Issues:
   ✔ Use SCSS to import styles and save on HTTP requests @done
   ✔ Return 404 if category doesn't exist @done
   ✔ Fix errors preventing post editing @done
+  ☐ Reset defaults are wrong
+  ☐ Views crashing page
+  ☐ Caching is bewildering
