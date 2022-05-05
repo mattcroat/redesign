@@ -74,15 +74,11 @@
   footer ul {
     width: max-content;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: column;
     column-gap: var(--spacing-32);
     row-gap: var(--spacing-16);
     margin-top: var(--spacing-16);
-  }
-
-  html[data-font='dyslexic'] footer ul {
-    grid-template-rows: repeat(5, 1fr);
   }
 
   footer li a {
@@ -112,8 +108,8 @@
     justify-self: center;
     background-image: linear-gradient(
       120deg,
-      hsl(270, 70%, 60%),
-      hsl(225, 74%, 58%)
+      hsl(270 70% 60%),
+      hsl(225 74% 58%)
     );
     border-radius: 100%;
   }
@@ -135,10 +131,6 @@
   }
 
   @media (min-width: 860px) {
-    footer ul {
-      grid-template-rows: repeat(5, 1fr);
-    }
-
     footer figure {
       grid-column: column-start 9 / -1;
     }
