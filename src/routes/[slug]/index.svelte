@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
-  import { dev } from '$app/env'
+  import { browser, dev } from '$app/env'
 
   import Card from '$root/components/ui/card.svelte'
   import {
@@ -78,7 +78,7 @@
       )
   })
 
-  if (!dev) {
+  if (!dev && browser) {
     updateViews(frontmatter.slug)
   }
 </script>

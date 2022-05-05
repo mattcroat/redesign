@@ -16,6 +16,7 @@ export const post: RequestHandler = async ({ request }) => {
       slug,
       views: 1,
     })
+
     if (error) {
       return { response: 400, body: { error: error.message } }
     }
