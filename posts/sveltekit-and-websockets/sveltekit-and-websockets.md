@@ -11,13 +11,11 @@ draft: true
 
 ## Table of Contents
 
-## The Problem
+## SvelteKit and WebSockets
 
-SvelteKit by default doesn't have any special API for WebSockets as it's a priority for after SvelteKit has an official release.
+By the end of this post you're going to learn how to make WebSockets work in SvelteKit for development and production.
 
-You can't open a web socket connection from a SvelteKit endpoint so to solve the problem you can create a separate server but that's awful and I'm tired of dealing with the Node modules ecosystem.
-
-If you're reading this in the future SvelteKit might have native support for WebSockets similar to how it does HTTP request methods so it might be worth it checking the documentation.
+If you're reading this in the future SvelteKit might have native support for WebSockets similar to how it does HTTP request methods so it might be worth checking the documentation.
 
 ```ts:endpoint.ts showLineNumbers
 export const  get: RequestHandler = async () => { /* ... */ }
@@ -28,15 +26,17 @@ export const  post: RequestHandler = async () => { /* ... */ }
 export async function ws: WebSocketRequestHandler = async () => { /* ... */ }
 ```
 
-I found this inside a [discussion about native support for WebSockets inside SvelteKit](https://github.com/sveltejs/kit/issues/1491) if you want to have a read.
+You can read more about it inside the [discussion about native support for WebSockets inside SvelteKit](https://github.com/sveltejs/kit/issues/1491) if you want.
 
-## Using a Simple WebSocket Server Vite Plugin For Development
+One solution is to create a separate server but then you have to run two things on separate ports so let me show you how you can do it using SvelteKit instead.
 
-To make use of WebSockets during development you can hook into the Vite development server.
+## WebSockets For Development
+
+To make use of WebSockets during development you need to write a simple Vite plugin that hooks into the Vite development server.
 
 Thanks to [Bob Fanger](https://github.com/bfanger) for his [workaround](https://github.com/sveltejs/kit/issues/1491#issuecomment-955205323).
 
-This might sound intimidating but it's not — trust me I'm not an expert on this. 😂
+This might sound intimidating but it's not — trust me I'm not an expert I just did some research through trial and error. 😄
 
 Vite has a [configureServer hook](https://vitejs.dev/guide/api-plugin.html#configureserver) which lets you configure the development server.
 
@@ -53,27 +53,25 @@ const plugin = {
 }
 ```
 
-That's it! The final example only has more code related to Socket.io.
+That's it! The final code only has more code related to Socket.io but you can use any WebSocket library.
 
-```js:svelte.config.js {3, 5-21, 28-30} showLineNumbers
+So we don't have to backtrack make sure you install the [Node adapter](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) with `npm i @sveltejs/adapter-node` because it's required for this to work.
+
+Add the plugin code inside `svelte.config.js` or extract it into a separate file. 
+
+```js:svelte.config.js {1, 4, 6-15, 22-24} showLineNumbers
 import adapter from '@sveltejs/adapter-node'
 import preprocess from 'svelte-preprocess'
+
 import { Server } from 'socket.io'
 
-const webSocketServer = {
+export const webSocketServer = {
   name: 'webSocketServer',
-  async configureServer(server) {
-    // do whatever you have to do 🪄
+  configureServer(server) {
     const io = new Server(server.httpServer)
 
-    io.on('connection', (socket) => {      
-      // receive a message from the client
-      socket.on('update', async (message) => {
-        console.log(message)
-
-        // send message to the client
-        socket.emit('update',  'Goodbye, World!")
-      })
+    io.on('connection', (socket) => {
+      socket.emit('eventFromServer', 'Hello, World 👋')
     })
   },
 }
@@ -85,7 +83,7 @@ const config = {
     adapter: adapter(),
     vite: {
       plugins: [webSocketServer],
-    }
+    },
   },
 }
 
@@ -94,8 +92,96 @@ export default config
 
 > 🐿️ Use a dynamic import if you need to import code that's not a module inside `webSocketServer` for example `const code = await import('./code.js')` otherwise you're going to encounter an error.
 
-## Using a Custom Server For Production
+Here's an example how this works using `Socket.io` on the client.
 
-Thanks to the [SvelteKit Node adapter](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) you can create a [custom server](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) and do whatever you want.
+```html:example.svelte
+<script lang="ts">
+  import { io } from 'socket.io-client'
 
-I'm going to use Express just for WebSockets and let SvelteKit handle everything else using middleware so you don't have separate backends.
+  const socket = io()
+
+  socket.on('eventFromServer', (message) => {
+    console.log(message)
+  })
+</script>
+```
+
+If you start the development server with `npm run dev` it should work and you should see the `Hello, World 👋` message in the console!
+
+If you want to emmit a message when a value changes don't forget you can use a reactive block.
+
+```html:example.svelte
+<script lang="ts">
+  // ...
+
+  $: {
+    // send message to server
+    socket.emit('eventFromClient', $reactiveValue)
+  }
+</script>
+```
+
+## WebSockets For Production
+
+Thanks to the Sveltekit [Node adapter](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) you can create a [custom server](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) and do whatever you want.
+
+I'm going to use [Express](https://expressjs.com/) because it's a minimal web framework.
+
+```shell:terminal
+npm i express
+```
+
+The Node adapter after using `npm run build` creates the `index.js` and `handler.js` files in your `build` folder. Creating a custom server works by importing the `handler` from `build/handler.js` and using your custom server by creating a script instead of `index.js`.
+
+Make sure you create the `build` folder.
+
+```shell:terminal
+npm run build
+```
+
+At the root of the project just because it's easier to include it in the script I've created a folder `server/index.js`.
+
+```js:server/index.js showLineNumbers
+import express from 'express'
+import { createServer } from 'http'
+import { Server } from 'socket.io'
+
+import { handler } from '../build/handler.js'
+
+const port = 3000
+const app = express()
+const server = createServer(app)
+
+const io = new Server(server)
+
+io.on('connection', (socket) => {
+  socket.emit('eventFromServer', 'Hello, World 👋')
+})
+
+// let SvelteKit handle everything else using Express middleware
+// https://github.com/sveltejs/kit/tree/master/packages/adapter-node#custom-server
+app.use(handler)
+
+server.listen(port)
+```
+
+The remaining thing to do is to add the script inside `package.json`.
+
+```json:package.json showLineNumbers
+{
+  "scripts": {
+    "start": "node ./server"
+    // ...
+  }
+}
+```
+
+That's it! 🥳
+
+You can run `npm start` and everything should work.
+
+This looks similar to the Vite plugin from earlier but it's just a simple Express server.
+
+If you need to pass environment variables I have a post on [using environment variables in SvelteKit](https://joyofcode.xyz/sveltekit-environment-variables).
+
+Thanks for reading! 🏄️
