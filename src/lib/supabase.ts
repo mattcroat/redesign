@@ -12,7 +12,7 @@ interface View {
 
 export async function getViews(): Promise<View[]> {
   try {
-    const response = await fetch(`/api/views`)
+    const response = await fetch(`/api/views.json`)
     return await response.json()
   } catch (error) {
     console.error(`getViews: ${error.message}`)
