@@ -64,15 +64,18 @@
 
       // otherwise check for user preference
       if (!userTheme && prefersDarkMode) {
+        htmlElement.dataset.theme = '🌛 Night'
         localStorage.theme = '🌛 Night'
       }
 
       if (!userTheme && prefersLightMode) {
+        htmlElement.dataset.theme = '☀️ Daylight'
         localStorage.theme = '☀️ Daylight'
       }
 
       // if nothing is set default to dark mode
       if (!userTheme && !prefersDarkMode && !prefersLightMode) {
+        htmlElement.dataset.theme = '🌛 Night'
         localStorage.theme = '🌛 Night'
       }
     </script>
