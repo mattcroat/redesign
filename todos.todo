@@ -58,6 +58,6 @@ Issues:
   ✔ Use SCSS to import styles and save on HTTP requests @done
   ✔ Return 404 if category doesn't exist @done
   ✔ Fix errors preventing post editing @done
-  ☐ Reset defaults are wrong
-  ☐ Views crashing page
-  ☐ Caching is bewildering
+  ✔ Reset defaults are wrong @done
+  ✔ Invalid URL for views @done
+  ✔ Caching not working as expected @done
