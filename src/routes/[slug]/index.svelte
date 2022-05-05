@@ -4,7 +4,9 @@
   export const load: Load = ({ props }) => {
     return {
       props,
-      cache: { maxage: 80 },
+      cache: {
+        maxage: props.maxage,
+      },
     }
   }
 </script>

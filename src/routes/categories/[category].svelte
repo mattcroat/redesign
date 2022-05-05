@@ -1,3 +1,14 @@
+<script context="module" lang="ts">
+  import type { Load } from '@sveltejs/kit'
+
+  export const load: Load = ({ props }) => {
+    return {
+      props,
+      cache: { maxage: 60 * 60 },
+    }
+  }
+</script>
+
 <script lang="ts">
   import { page } from '$app/stores'
 
