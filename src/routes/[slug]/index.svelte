@@ -14,7 +14,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
-  // import { browser, dev } from '$app/env'
+  import { browser, dev } from '$app/env'
 
   import Card from '$root/components/ui/card.svelte'
   import {
@@ -24,7 +24,7 @@
     siteUrl,
     twitterHandle,
   } from '$root/lib/config'
-  // import { updateViews } from '$root/lib/supabase'
+  import { updateViews } from '$root/lib/supabase'
   import type { FrontMatterType } from '$root/types'
 
   export let content: string
@@ -91,10 +91,9 @@
       )
   })
 
-  // todo: enable this in production
-  // if (!dev && browser) {
-  //   updateViews(frontmatter.slug)
-  // }
+  if (!dev && browser) {
+    updateViews(frontmatter.slug)
+  }
 </script>
 
 <svelte:head>
