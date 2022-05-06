@@ -21,17 +21,26 @@ This avoids having to hunt down the issue you have in YouTube comments or places
 ## 🧭 Technologies
 
 - ⚡️ [SvelteKit](https://kit.svelte.dev/) is used for the frontend with server-side rendering and prerendering static pages
+
 - 🔌 [GitHub API](https://docs.github.com/en/rest) is used to manage content so GitHub is the content management system
+
 - The editor uses ⚡️ SvelteKit for the frontend and 📜 [Monaco Editor](https://github.com/microsoft/monaco-editor) (code editor which powers [VS Code](https://code.visualstudio.com/)) as the editor to manage content using the 🔌 GitHub API
+
 - ✍️ Posts are stored inside the `posts` folder and are used to build the page using the 🔌 GitHub API but `data` is where posts metadata is stored in a single `posts.json` to serve as a database
-- The project is hosted on [Vercel](https://vercel.com/) and uses [ignored build step](https://vercel.com/docs/concepts/projects/overview#ignored-build-step) thanks to `ignore-step.mjs` to avoid redeploy for those special folders
+
+- The project is hosted on [Vercel](https://vercel.com/) and uses [ignored build step](https://vercel.com/docs/concepts/projects/overview#ignored-build-step) with `git diff HEAD^ HEAD --quiet . ':(exclude)editor/*' ':(exclude)posts/*' ':(exclude)data/*'` to avoid redeploy for those special folders
+
 - The tests use [Playwright](https://playwright.dev/) for end-to-end testing
+
 - Analytics use [Google Analytics](https://analytics.google.com/)
+
 - Newsletter uses [Buttondown](https://buttondown.email/) when I remember to send one 🤭
+
 - Post views use [Supabase](https://supabase.com/)
+
 - Social share images use [mattcroat/social-share-images](https://github.com/mattcroat/social-share-images)
 
-## 👷 Setup
+## 📜 Setup
 
 The project uses 📦️ [pnpm](https://pnpm.io/) but any package manager is going to work.
 
@@ -47,7 +56,7 @@ git clone https://github.com/mattcroat/joy-of-code.git
 pnpm i
 ```
 
-📜 Run the development server with `pnpm run dev` or build and preview the project with `pnpm run build && pnpm run preview`.
+💿️ Run the development server with `pnpm run dev` or build and preview the project with `pnpm run build && pnpm run preview`.
 
 ```sh
 pnpm run dev
