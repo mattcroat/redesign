@@ -8,7 +8,7 @@
     <ul>
       {#each Object.entries(categories) as [slug, category]}
         <li>
-          <a href={slug}>{category}</a>
+          <a href="/categories/{slug}">{category}</a>
         </li>
       {/each}
     </ul>
