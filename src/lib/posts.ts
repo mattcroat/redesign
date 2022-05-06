@@ -137,7 +137,9 @@ export async function getPostsByCategory(
   category: string
 ): Promise<PostType[]> {
   const posts = await getPostsData()
-  const postsByCategory = posts.filter((post) => post.category === category)
+  const postsByCategory = posts.filter(
+    (post) => !post.draft && post.category === category
+  )
   return postsByCategory
 }
 
