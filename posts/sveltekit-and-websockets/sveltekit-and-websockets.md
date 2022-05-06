@@ -11,7 +11,7 @@ draft: true
 
 ## Table of Contents
 
-## SvelteKit and WebSockets
+## Introduction
 
 By the end of this post you're going to learn how to make WebSockets work in SvelteKit for development and production.
 
