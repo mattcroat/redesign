@@ -36,7 +36,7 @@ To make use of WebSockets during development you need to write a simple Vite plu
 
 Thanks to [Bob Fanger](https://github.com/bfanger) for his [workaround](https://github.com/sveltejs/kit/issues/1491#issuecomment-955205323).
 
-This might sound intimidating but it's not — trust me I'm not an expert I just did some research through trial and error. 😄
+This might sound intimidating but it's not — trust me I'm not an expert. 😄
 
 Vite has a [configureServer hook](https://vitejs.dev/guide/api-plugin.html#configureserver) which lets you configure the development server.
 
@@ -55,7 +55,7 @@ const plugin = {
 
 That's it! The final code only has more code related to Socket.io but you can use any WebSocket library.
 
-So we don't have to backtrack make sure you install the [Node adapter](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) with `npm i @sveltejs/adapter-node` because it's required for this to work.
+To avoid backtracking install the [Node adapter](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) with `npm i @sveltejs/adapter-node` because it's required for this to work.
 
 Add the plugin code inside `svelte.config.js` or extract it into a separate file. 
 
@@ -131,7 +131,7 @@ I'm going to use [Express](https://expressjs.com/) because it's a minimal web fr
 npm i express
 ```
 
-The Node adapter after using `npm run build` creates the `index.js` and `handler.js` files in your `build` folder. Creating a custom server works by importing the `handler` from `build/handler.js` and using your custom server by creating a script instead of `index.js`.
+The Node adapter creates the `index.js` and `handler.js` files in your `build` folder when you run `npm run build` — creating a custom server works by importing the `handler` from `build/handler.js` and using your custom server by creating a script instead of `index.js`.
 
 Make sure you create the `build` folder.
 
@@ -165,7 +165,7 @@ app.use(handler)
 server.listen(port)
 ```
 
-The remaining thing to do is to add the script inside `package.json`.
+Add the script to start the server inside `package.json`.
 
 ```json:package.json showLineNumbers
 {
