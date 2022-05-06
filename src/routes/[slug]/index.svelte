@@ -13,7 +13,6 @@
 
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { fade } from 'svelte/transition'
   import { browser, dev } from '$app/env'
 
   import Card from '$root/components/ui/card.svelte'
@@ -26,32 +25,13 @@
   } from '$root/lib/config'
   import { updateViews } from '$root/lib/supabase'
   import type { FrontMatterType } from '$root/types'
+  import Overlay from '$root/components/ui/overlay.svelte'
 
   export let content: string
   export let frontmatter: FrontMatterType
 
-  let overlay = false
   let editUrl = `${fileUrl}/${frontmatter.slug}/${frontmatter.slug}.md`
   let image = `${postImage}${encodeURIComponent(frontmatter.title)}.png`
-
-  onMount(() => {
-    const headingElement = document.querySelector('h1')
-
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0, // invoke when element is not visible
-    }
-
-    function handleIntersect([entry]) {
-      !entry.isIntersecting ? (overlay = true) : (overlay = false)
-    }
-
-    const observer = new IntersectionObserver(handleIntersect, options)
-    observer.observe(headingElement)
-
-    return () => observer.unobserve(headingElement)
-  })
 
   onMount(() => {
     const copyBtnElement = document.querySelectorAll('.copy')
@@ -115,9 +95,8 @@
 </svelte:head>
 
 <main>
-  {#if overlay}
-    <div transition:fade={{ duration: 300 }} class="overlay" />
-  {/if}
+  <Overlay />
+
   <div class="prose">
     {@html content}
   </div>
@@ -128,14 +107,6 @@
 </main>
 
 <style>
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background-image: var(--post-overlay-bg);
-    backdrop-filter: blur(20px);
-    z-index: -1;
-  }
-
   .cards {
     display: grid;
     row-gap: var(--spacing-32);
