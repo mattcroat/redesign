@@ -22,7 +22,7 @@
                 <span>
                   {$views
                     .find((data) => data.slug === post.slug)
-                    .views.toLocaleString()}
+                    ?.views.toLocaleString() ?? 0}
                 </span>
               {/if}
             </span>
